@@ -1,0 +1,44 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Cache directories
+.cache/
+node_modules/
+.npm/
+.yarn/
+
+# Generated test files
+test_output/
+coverage/
+
+# Local development
+local_test_*
+debug_*
