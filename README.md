@@ -115,12 +115,117 @@ Based on IndyDevDan's Agentic Engineering principles and latest 2025 research:
 ./10x-agentic-coding.sh -m "websearch,fetch,github,memory" my-project
 ```
 
-## 🎯 Requirements
+## 🛠️ MCP Server Setup Guide
 
+### Prerequisites
 - **Claude Code** or **Claude Desktop** with MCP support
-- **Git** for version control
-- **Node.js** (for some MCPs)
-- **Python** (for some MCPs)
+- **Git** for version control  
+- **Node.js 18+** (for npm-based MCPs)
+- **Python 3.8+** with pip/uvx (for Python-based MCPs)
+
+### 🔧 Required MCP Servers
+
+#### 1. **Fetch MCP Server** 🌐
+```bash
+npx -y @modelcontextprotocol/server-fetch
+```
+📚 [Repository](https://github.com/modelcontextprotocol/servers/tree/main/src/fetch)
+
+#### 2. **GitHub MCP Server** 🐙  
+```bash
+export GITHUB_PERSONAL_ACCESS_TOKEN="your_token"
+npx -y @modelcontextprotocol/server-github
+```
+📚 [Repository](https://github.com/modelcontextprotocol/servers) | 🔑 [Token Setup](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
+
+#### 3. **Memory MCP Server** 🧠
+```bash
+npx -y @modelcontextprotocol/server-memory
+```
+📚 [Repository](https://github.com/modelcontextprotocol/servers/tree/main/src/memory)
+
+#### 4. **SQLite MCP Server** 🗄️
+```bash
+uvx mcp-server-sqlite --db-path ./analytics.db
+```
+📚 [Repository](https://github.com/jparkerweb/mcp-sqlite)
+
+#### 5. **Filesystem MCP Server** 📁
+```bash
+npm install -g @modelcontextprotocol/server-filesystem
+```
+📚 [Repository](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem)
+
+#### 6. **WebSearch MCP** 🔍
+```bash
+# Option A: Tavily (requires API key)
+uvx tavily-mcp-server
+# Option B: Brave Search (requires API key)  
+npx -y brave-search-mcp
+```
+
+### 🚀 Claude Desktop Configuration
+
+**Config Location:**
+- **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+
+**Example Configuration:**
+```json
+{
+  "mcpServers": {
+    "fetch": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"]
+    },
+    "github": {
+      "command": "npx", 
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "your_token"
+      }
+    },
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"]
+    },
+    "sqlite": {
+      "command": "uvx",
+      "args": ["mcp-server-sqlite", "--db-path", "./analytics.db"]
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/your/projects"]
+    }
+  }
+}
+```
+
+### 📚 Resources
+- **Official Docs**: [modelcontextprotocol.io](https://modelcontextprotocol.io)
+- **Server Registry**: [Awesome MCP Servers](https://github.com/wong2/awesome-mcp-servers)
+- **Community Examples**: [MCP Examples](https://github.com/modelcontextprotocol/servers)
+
+## 🎓 Essential Learning Resources
+
+**Master the fundamentals behind this agentic approach:**
+
+### 🎥 **Context Engineering Mastery**
+- **[Cole Medin's Context Engineering](https://youtube.com/@ColeMedin)** - "Context Engineering is the New Vibe Coding"
+  - Revolutionary approach moving from intuition-based to structured AI-assisted development
+  - **Key Resource**: [Context Engineering Intro](https://github.com/coleam00/context-engineering-intro)
+
+### 🚀 **Agentic Development Techniques** 
+- **[IndyDevDan's Agentic Coding](https://youtube.com/@IndyDevDan)** - "Agentic Claude Code: 3 Codebase Folders for TOP 1% AI Coding"
+  - Advanced codebase organization for maximum AI assistance
+  - Principled AI coding methodologies and "living software" concepts
+  - Practical strategies for enterprise-grade AI-assisted development
+
+**Why This Matters:**
+- **Reliability**: Structured approaches vs "vibe-based" coding  
+- **Scalability**: Reproducible patterns for consistent results
+- **Quality**: Measurable improvements in AI-generated code
+- **Enterprise Readiness**: Professional-grade AI development workflows
 
 ## 📚 Documentation
 
