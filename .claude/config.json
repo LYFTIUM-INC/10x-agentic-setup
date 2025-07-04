@@ -1,0 +1,24 @@
+{
+  "projectName": "10x-agentic-setup",
+  "projectType": "generic",
+  "enhanced": true,
+  "version": "10x",
+  "setupDate": "2025-07-04T15:17:37-07:00",
+  "setupMethod": "local",
+  "features": {
+    "globalIntelligence": true,
+    "competitiveAnalysis": true,
+    "provenPatterns": true,
+    "predictiveCapabilities": true,
+    "continuousEvolution": true,
+    "mcpOrchestration": true
+  },
+  "mcps": [
+    "websearch",
+    "fetch", 
+    "github",
+    "memory",
+    "sqlite",
+    "filesystem"
+  ]
+}

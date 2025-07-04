@@ -42,3 +42,8 @@ coverage/
 # Local development
 local_test_*
 debug_*
+# 10X Agentic Coding
+Knowledge/context/memory/session_*.md
+Knowledge/context/memory/temp_*.md
+.claude/temp/
+Instructions/temp/
