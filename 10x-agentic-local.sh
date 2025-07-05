@@ -856,6 +856,7 @@ Each command orchestrates multiple MCPs for maximum intelligence:
 - **filesystem**: Enhanced file system operations
 - **memory**: Persistent learning and pattern recognition
 - **sqlite**: Metrics tracking and performance analytics
+- **context7**: Real-time documentation and current API examples
 
 ### 🎯 **Core Principles**
 1. **Global Pattern Access**: Leverage Fortune 500 and tech giant methodologies
@@ -955,7 +956,8 @@ create_claude_config() {
     "github",
     "memory",
     "sqlite",
-    "filesystem"
+    "filesystem",
+    "context7"
   ]
 }
 EOF

@@ -17,6 +17,7 @@
 - **websearch**: "[detected_frameworks] latest updates security patches"
 - **websearch**: "migration guide [current_version] to [latest_version]"
 - **fetch**: Download latest framework documentation for gap analysis
+- **context7**: Access real-time framework documentation (add "use context7" for current API references)
 - **github**: Research issues and solutions for similar tech stacks
 - **memory**: Review previous analysis patterns and learnings
 

@@ -16,6 +16,7 @@
 - **websearch**: "[tech_stack] performance benchmarks scalability"
 - **github**: Find proven architectures for similar scale/requirements
 - **fetch**: Download latest framework documentation and best practices
+- **context7**: Access real-time framework documentation (add "use context7" for current API refs)
 - **websearch**: "[chosen_technologies] security vulnerabilities updates"
 - **memory**: Review relevant organizational patterns
 
