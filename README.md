@@ -81,6 +81,7 @@ The revolutionary **analyze_and_execute** command implements a Central Coordinat
 - **memory** - Cross-session learning and context
 - **sqlite** - Data storage and analytics
 - **filesystem** - Enhanced file operations
+- **context7** - Real-time documentation and current API examples
 - **sequential-thinking** - Complex reasoning capabilities
 
 ## 🎯 Agentic Engineering Paradigms
@@ -164,6 +165,13 @@ uvx tavily-mcp-server
 npx -y brave-search-mcp
 ```
 
+#### 7. **Context7 MCP** 📖
+**Purpose**: Real-time documentation access and version-specific code examples
+```bash
+npx -y @upstash/context7-mcp
+```
+📚 [Repository](https://github.com/upstash/context7) | **Key Feature**: Eliminates AI hallucinations with up-to-date docs
+
 ### 🚀 Claude Desktop Configuration
 
 **Config Location:**
@@ -196,6 +204,10 @@ npx -y brave-search-mcp
     "filesystem": {
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-filesystem", "/your/projects"]
+    },
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"]
     }
   }
 }
