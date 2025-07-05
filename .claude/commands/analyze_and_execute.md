@@ -18,7 +18,7 @@
 **1.1 Project Intelligence Gathering**
 - **filesystem**: Deep project structure analysis - identify all file types, patterns, and technologies
 - **filesystem**: Analyze existing documentation, README files, and project configuration
-- **memory**: Check previous project analysis patterns and successful workflows
+- **smart_memory_10x**: Check previous project analysis patterns and successful workflows
 - **github**: Research similar project architectures and proven patterns
 - **cached_websearch_10x**: "project type analysis best practices enterprise development"
 
@@ -71,6 +71,11 @@ Where:
 - `/git:smart_commit_10x` - Intelligent collaboration
 - `/learn_and_adapt_10x` - Continuous intelligence evolution
 
+**INTELLIGENCE COMMANDS:**
+- `/cached_websearch_10x` - Smart web search with automatic caching and redundancy elimination
+- `/smart_search_cache_10x` - Advanced search cache management and analytics
+- `/smart_memory_10x` - Unified memory orchestrator across Memory MCP, Knowledge/ files, and Search Cache
+
 **PROJECT-SPECIFIC COMMANDS:**
 - `/local_command_generator_10x` - Project-specific command creator with filesystem analysis
 
@@ -108,7 +113,7 @@ Execute commands using **Multi-Agent Communication Paradigms**:
 
 **3.3 Continuous Learning Integration**
 
-- **memory**: Store execution patterns and success metrics
+- **smart_memory_10x**: Store execution patterns and success metrics with intelligent routing
 - **sqlite**: Track command effectiveness and performance data
 - **self-improvement**: Refine prioritization based on outcomes
 
