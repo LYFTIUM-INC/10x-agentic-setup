@@ -20,7 +20,7 @@
 - **filesystem**: Analyze existing documentation, README files, and project configuration
 - **memory**: Check previous project analysis patterns and successful workflows
 - **github**: Research similar project architectures and proven patterns
-- **websearch**: "project type analysis best practices enterprise development"
+- **cached_websearch_10x**: "project type analysis best practices enterprise development"
 
 **1.2 Technology Stack Detection & Intelligence**
 - **Auto-detect**: Framework, languages, dependencies, build tools

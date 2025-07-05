@@ -1,0 +1,40 @@
+{
+  "cache_settings": {
+    "version": "1.0",
+    "max_age_days": 30,
+    "similarity_threshold": 80,
+    "max_cache_size_mb": 500,
+    "cleanup_frequency": "weekly",
+    "auto_supplement": true,
+    "relevance_decay": 0.95,
+    "database_path": "Knowledge/intelligence/search_cache/index/cache.db",
+    "cache_directory": "Knowledge/intelligence/search_cache/"
+  },
+  "domains": [
+    "development",
+    "security", 
+    "performance",
+    "architecture",
+    "ai",
+    "tools",
+    "testing",
+    "deployment"
+  ],
+  "search_enhancement": {
+    "add_year": true,
+    "add_enterprise_context": true,
+    "add_tech_stack": true,
+    "filter_by_recency": true
+  },
+  "performance_targets": {
+    "cache_hit_rate": 70,
+    "api_reduction": 80,
+    "response_time_improvement": 300
+  },
+  "maintenance": {
+    "archive_threshold_days": 90,
+    "min_usage_for_retention": 2,
+    "vacuum_frequency": "monthly",
+    "backup_frequency": "weekly"
+  }
+}
