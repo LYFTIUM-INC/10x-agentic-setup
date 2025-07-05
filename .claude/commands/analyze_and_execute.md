@@ -71,6 +71,9 @@ Where:
 - `/git:smart_commit_10x` - Intelligent collaboration
 - `/learn_and_adapt_10x` - Continuous intelligence evolution
 
+**PROJECT-SPECIFIC COMMANDS:**
+- `/local_command_generator_10x` - Project-specific command creator with filesystem analysis
+
 **2.3 Dependency-Aware Sequencing**
 
 Apply **Orchestrator-Worker Pattern** with dependency resolution:

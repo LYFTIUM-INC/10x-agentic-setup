@@ -45,6 +45,9 @@ This project has been enhanced with **10X MCP-Integrated Commands** that leverag
 
 # Continuous Learning with Global Patterns
 /learn_and_adapt_10x
+
+# Project-Specific Command Generation
+/local_command_generator_10x
 ```
 
 ## 🔥 10X Enhancement Features
