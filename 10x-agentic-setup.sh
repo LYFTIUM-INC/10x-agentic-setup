@@ -118,6 +118,7 @@ create_all_10x_commands() {
     
     # Create comprehensive 10X commands with existence checks
     create_command_if_not_exists "analyze_and_execute.md" "$commands_dir" create_analyze_and_execute
+    create_command_if_not_exists "smart_research_and_document_10x.md" "$commands_dir" create_smart_research_and_document_10x
     create_command_if_not_exists "layered_agentic_analysis.md" "$commands_dir" create_layered_agentic_analysis
     create_command_if_not_exists "deep_analysis_10x.md" "$commands_dir" create_deep_analysis_10x
     create_command_if_not_exists "project_accelerator_10x.md" "$commands_dir" create_project_accelerator_10x
@@ -144,22 +145,38 @@ create_command_if_not_exists() {
     local function_arg="${4:-$base_dir}"
     
     local full_path="$base_dir/$command_file"
+    local should_update=false
     
     if [[ -f "$full_path" ]]; then
-        # Check if command needs updating (simple version check)
+        # Check if command needs updating with multiple criteria
         if grep -q "🤖 Generated with \[Claude Code\]" "$full_path" 2>/dev/null; then
-            print_status "Command exists and appears current: $command_file"
-            return 0
+            # Check for new MCP integrations (qdrant, meilisearch, gpt-researcher)
+            if ! grep -q "qdrant\|meilisearch\|gpt-researcher" "$full_path" 2>/dev/null; then
+                print_warning "Updating command with new MCP integrations: $command_file"
+                should_update=true
+            else
+                print_status "Command exists and appears current: $command_file"
+                return 0
+            fi
         else
-            print_warning "Updating outdated command: $command_file"
+            print_warning "Updating outdated command (missing signature): $command_file"
+            should_update=true
+        fi
+        
+        # Create backup if updating
+        if [[ "$should_update" == true ]]; then
             cp "$full_path" "$full_path.backup.$(date +%Y%m%d_%H%M%S)"
         fi
     else
         print_status "Creating new command: $command_file"
+        should_update=true
     fi
     
-    # Call the creation function
-    $create_function "$function_arg"
+    # Call the creation function if needed
+    if [[ "$should_update" == true ]]; then
+        $create_function "$function_arg"
+        print_success "Command updated/created: $command_file"
+    fi
 }
 
 # Function to create basic commands if source not available
@@ -181,7 +198,7 @@ create_basic_10x_commands() {
 - **websearch**: Research industry benchmarks and best practices for this project type
 - **github**: Analyze similar successful projects and their patterns
 - **fetch**: Gather documentation and methodologies from tech leaders
-- **auto-coach**: Access organizational knowledge and past successes
+- **memory**: Access organizational knowledge and past successes
 
 ### ⚡ Analysis Phase (use "ultrathink")
 - **Market Intelligence**: Competitive analysis and positioning
@@ -212,7 +229,7 @@ EOF
 - **websearch**: Market research and competitive landscape analysis
 - **github**: Proven architecture patterns and successful implementations
 - **fetch**: Industry best practices and development methodologies
-- **auto-coach**: Organizational capabilities and past project successes
+- **memory**: Organizational capabilities and past project successes
 
 ### ⚡ Acceleration Strategy
 - **Proven Pattern Reuse**: No reinventing wheels using github research
@@ -237,7 +254,7 @@ EOF
 - **websearch**: Research how market leaders implement similar features
 - **github**: Analyze proven implementation patterns and approaches
 - **fetch**: Gather technical documentation and best practices
-- **auto-coach**: Access organizational patterns and coding standards
+- **memory**: Access organizational patterns and coding standards
 
 ### ⚡ Implementation Strategy
 - **Competitive Analysis**: How top companies solve this problem
@@ -421,6 +438,88 @@ Execute commands using **Multi-Agent Communication Paradigms**:
 ✅ **MEASURABLE IMPACT**: Quantified improvements in velocity, quality, and outcomes
 
 **EXECUTE IMMEDIATELY**: Begin comprehensive project analysis and dynamic command orchestration based on the most advanced 2025 agentic engineering paradigms.
+EOF
+}
+
+create_smart_research_and_document_10x() {
+    local commands_dir="$1"
+    
+    cat > "$commands_dir/smart_research_and_document_10x.md" << 'EOF'
+## 🚀 10X SMART RESEARCH & DOCUMENTATION ORCHESTRATOR
+*Ultimate Multi-MCP Research Intelligence with Persistent Memory & Parallel Processing*
+
+**Claude, execute ADVANCED RESEARCH with PERSISTENT MEMORY, PARALLEL AGENT ORCHESTRATION, and COMPREHENSIVE DOCUMENTATION using our complete MCP ecosystem.**
+
+### 🧠 **CORE RESEARCH PARAMETERS** (Auto-Detect from Context)
+**BEFORE starting, analyze the conversation/project to identify:**
+- **[research_topic]**: Primary research subject (e.g., "React performance optimization")
+- **[research_depth]**: Level of analysis needed (e.g., "comprehensive", "focused", "quick-scan")
+- **[research_scope]**: Breadth of research (e.g., "competitive", "technical", "market", "implementation")
+- **[target_use_case]**: Intended application (e.g., "feature implementation", "technology selection", "optimization")
+
+### ⚡ **PHASE 1: PARALLEL MULTI-MCP INTELLIGENCE GATHERING** (use "ultrathink")
+
+**1.1 Advanced Web Research & Caching**
+- **cached_websearch_10x**: Execute smart web search with automatic caching and redundancy elimination
+- **websearch**: Conduct targeted research queries with market intelligence focus
+- **gpt-researcher**: Comprehensive deep research on [research_topic] with filtering and validation
+- **fetch**: Analyze top 3-5 authoritative sources and competitor implementations
+
+**1.2 Vector-Enhanced Knowledge Retrieval**
+- **qdrant**: Semantic vector search for similar research patterns and successful approaches
+- **meilisearch**: Lightning-fast full-text search through organizational knowledge base
+- **memory**: Retrieve previous research patterns, successful methodologies, and organizational insights
+- **sqlite**: Query historical research effectiveness and pattern success rates
+
+**1.3 Technical Documentation Intelligence (Optional)**
+- **context7**: Access latest technical documentation and API references (if applicable to research scope)
+- **github**: Research proven patterns from highest-starred relevant repositories
+- **filesystem**: Analyze local project context for research relevance and application
+
+### 🔄 **PHASE 2: INTELLIGENT RESEARCH SYNTHESIS & VALIDATION** (use "ultrathink")
+
+**2.1 Multi-Source Intelligence Fusion**
+Execute parallel research validation using concurrent MCP orchestration:
+- **Cross-reference findings** from gpt-researcher with websearch results
+- **Validate patterns** found in github research against market intelligence
+- **Semantic similarity analysis** using qdrant for pattern matching and consistency
+- **Full-text correlation** using meilisearch for knowledge base alignment
+
+**2.2 Memory-Enhanced Pattern Recognition**
+- **memory**: Store successful research synthesis patterns for future optimization
+- **qdrant**: Create semantic embeddings of research insights for intelligent retrieval
+- **sqlite**: Track research effectiveness metrics and validation success rates
+- **meilisearch**: Index research outcomes for instant organizational knowledge access
+
+### 📊 **PHASE 3: PERSISTENT KNOWLEDGE DOCUMENTATION** (use "ultrathink")
+
+**3.1 Dynamic Timestamped Documentation Creation**
+Create comprehensive documentation with dynamic timestamps:
+- `Knowledge/intelligence/[research_topic]_research_$(date +%Y-%m-%d_%H-%M-%S).md` - Primary research findings
+- `Knowledge/intelligence/competitive_analysis_$(date +%Y-%m-%d_%H-%M-%S).md` - Market positioning insights
+- `Knowledge/intelligence/technical_analysis_$(date +%Y-%m-%d_%H-%M-%S).md` - Technical implementation insights
+- `Knowledge/patterns/[research_scope]_patterns_$(date +%Y-%m-%d_%H-%M-%S).md` - Extracted successful patterns
+
+**3.2 Actionable Implementation Documentation**
+- `Instructions/development/[research_topic]_implementation_$(date +%Y-%m-%d_%H-%M-%S).md` - Step-by-step implementation guide
+- `Instructions/development/next_steps_$(date +%Y-%m-%d_%H-%M-%S).md` - Prioritized action items
+- `Instructions/testing/[research_topic]_validation_$(date +%Y-%m-%d_%H-%M-%S).md` - Testing and validation strategies
+- `Instructions/deployment/[research_topic]_deployment_$(date +%Y-%m-%d_%H-%M-%S).md` - Deployment considerations
+
+### 🚀 **PHASE 4: AUTOMATED DOCUMENTATION GENERATION** (use "ultrathink")
+
+**4.1 Comprehensive Documentation Synthesis**
+**AUTOMATICALLY execute**: `/docs:generate_docs_10x` for comprehensive documentation generation
+
+**4.2 Knowledge Base Integration**
+- **meilisearch**: Index all generated documentation for instant organizational search
+- **qdrant**: Create semantic embeddings for intelligent document similarity and retrieval
+- **memory**: Store documentation patterns and generation strategies for improvement
+- **sqlite**: Track documentation quality metrics and usage analytics
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+
+Co-Authored-By: Claude <noreply@anthropic.com>
 EOF
 }
 
@@ -619,17 +718,17 @@ create_deep_analysis_10x() {
 
 ### 📊 **ENHANCED OUTPUT REQUIREMENTS:**
 
-**Intelligence Reports:**
-- `Knowledge/documentation/market_analysis_YYYY-MM-DD.md` - Market positioning & trends
-- `Knowledge/documentation/competitive_analysis_YYYY-MM-DD.md` - Competitor insights
-- `Knowledge/documentation/technical_analysis_YYYY-MM-DD.md` - Benchmarked technical review
-- `Instructions/strategic_plan_YYYY-MM-DD.md` - Intelligence-driven roadmap
+**Intelligence Reports (Dynamic Timestamps):**
+- `Knowledge/intelligence/market_analysis_$(date +%Y-%m-%d_%H-%M-%S).md` - Market positioning & trends
+- `Knowledge/intelligence/competitive_analysis_$(date +%Y-%m-%d_%H-%M-%S).md` - Competitor insights
+- `Knowledge/intelligence/technical_analysis_$(date +%Y-%m-%d_%H-%M-%S).md` - Benchmarked technical review
+- `Instructions/development/strategic_plan_$(date +%Y-%m-%d_%H-%M-%S).md` - Intelligence-driven roadmap
 
-**Cross-Referenced Resources:**
-- `Knowledge/patterns/industry_best_practices.md` - Researched patterns
-- `Knowledge/patterns/competitive_advantages.md` - Unique positioning insights
-- `Knowledge/context/benchmark_data.md` - Performance baselines
-- `Instructions/priority_implementations.md` - Quick wins with examples
+**Cross-Referenced Resources (Dynamic Timestamps):**
+- `Knowledge/patterns/industry_best_practices_$(date +%Y-%m-%d_%H-%M-%S).md` - Researched patterns
+- `Knowledge/patterns/competitive_advantages_$(date +%Y-%m-%d_%H-%M-%S).md` - Unique positioning insights
+- `Knowledge/context/benchmark_data_$(date +%Y-%m-%d_%H-%M-%S).md` - Performance baselines
+- `Instructions/development/priority_implementations_$(date +%Y-%m-%d_%H-%M-%S).md` - Quick wins with examples
 
 ### 🔥 **10X SUCCESS CRITERIA:**
 
@@ -742,34 +841,20 @@ create_feature_spec_10x() {
 ### 🔥 **PHASE 1: MARKET & TECHNICAL INTELLIGENCE GATHERING** (use "think hard")
 
 **1.1 Enhanced Competitive Feature Analysis**
-- **websearch**: "how [top_competitors] implement [feature_type] specification"
-- **websearch**: "[feature_name] requirements specification best practices"
-- **gpt-researcher**: Comprehensive research on feature specification best practices and industry standards
-- **fetch**: Analyze feature specifications from leading tech companies
-- **github**: Research specification patterns from high-starred projects
-- **memory**: Review specification templates and patterns
-- **qdrant**: Vector search for similar feature specification patterns and successful approaches
-- **meilisearch**: Full-text search through organizational specification knowledge and templates
+- **smart_research_and_document_10x**: Execute comprehensive research on [feature_type] specification patterns with persistent memory
+- **context7**: Access latest technical documentation for [framework] feature implementation (optional)
+- **cached_websearch_10x**: Smart search with caching for "[top_competitors] [feature_type] implementation patterns"
+- **Additional targeted research**: Supplement smart research with specific competitive analysis queries
 
 **1.2 Enhanced Technical Specification Research**
-- **websearch**: "[tech_stack] [feature_type] technical requirements"
-- **websearch**: "API specification patterns [framework] best practices"
-- **gpt-researcher**: Deep research on technical specification methodologies and proven patterns
-- **github**: Find proven specification formats and documentation
-- **fetch**: Download specification templates from successful projects
-- **memory**: Review previous successful specification patterns
-- **qdrant**: Semantic search for technical specification patterns and architectural approaches
-- **meilisearch**: Search technical documentation and specification libraries
+- **smart_research_and_document_10x**: Execute deep research on [tech_stack] [feature_type] technical specifications with memory integration
+- **context7**: Access latest API documentation and technical standards for [framework] (optional)
+- **cached_websearch_10x**: Smart cached search for "technical specification methodologies [tech_stack]"
 
 **1.3 Enhanced User Experience & Requirements Intelligence**
-- **websearch**: "[feature_type] user stories acceptance criteria patterns"
-- **websearch**: "UX specification requirements accessibility patterns"
-- **gpt-researcher**: Research-backed UX specification and requirements analysis
-- **fetch**: UX specification guidelines from design systems
-- **github**: Research user story patterns from agile projects
-- **websearch**: "[domain] business requirements specification templates"
-- **qdrant**: Vector search for successful UX specification patterns and user story templates
-- **meilisearch**: Search organizational UX knowledge and business requirements documentation
+- **smart_research_and_document_10x**: Execute comprehensive UX and requirements research for [feature_type] with organizational memory
+- **cached_websearch_10x**: Smart cached search for "[domain] business requirements specification templates"
+- **context7**: Access latest UX design system documentation and accessibility standards (optional)
 
 ### ⚡ **PHASE 2: INTELLIGENT SPECIFICATION CREATION** (use "ultrathink")
 
@@ -790,17 +875,17 @@ Create comprehensive requirements based on competitive analysis:
 
 ### 📊 **ENHANCED OUTPUT REQUIREMENTS**
 
-**Comprehensive Specification Documents:**
-- `Instructions/features/[feature]_specification.md` - Complete feature specification
-- `Instructions/features/[feature]_technical_requirements.md` - Technical specifications
-- `Instructions/features/[feature]_user_stories.md` - User requirements and acceptance criteria
-- `Instructions/features/[feature]_api_specification.md` - API design and documentation
-- `Instructions/features/[feature]_implementation_guide.md` - Step-by-step development
+**Comprehensive Specification Documents (Dynamic Timestamps):**
+- `Instructions/features/[feature]_specification_$(date +%Y-%m-%d_%H-%M-%S).md` - Complete feature specification
+- `Instructions/development/[feature]_technical_requirements_$(date +%Y-%m-%d_%H-%M-%S).md` - Technical specifications
+- `Instructions/testing/[feature]_user_stories_$(date +%Y-%m-%d_%H-%M-%S).md` - User requirements and acceptance criteria
+- `Instructions/development/[feature]_api_specification_$(date +%Y-%m-%d_%H-%M-%S).md` - API design and documentation
+- `Instructions/development/[feature]_implementation_guide_$(date +%Y-%m-%d_%H-%M-%S).md` - Step-by-step development
 
-**Knowledge Base Integration:**
-- `Knowledge/patterns/[feature_type]_specification_patterns.md` - Extracted best practices
-- `Knowledge/intelligence/[feature]_competitive_analysis.md` - Market positioning
-- `Knowledge/documentation/[feature]_requirements_research.md` - Research findings
+**Knowledge Base Integration (Dynamic Timestamps):**
+- `Knowledge/patterns/[feature_type]_specification_patterns_$(date +%Y-%m-%d_%H-%M-%S).md` - Extracted best practices
+- `Knowledge/intelligence/[feature]_competitive_analysis_$(date +%Y-%m-%d_%H-%M-%S).md` - Market positioning
+- `Knowledge/intelligence/[feature]_requirements_research_$(date +%Y-%m-%d_%H-%M-%S).md` - Research findings
 
 ### 🔥 **10X SPECIFICATION SUCCESS CRITERIA**
 
@@ -1148,23 +1233,23 @@ Each command orchestrates multiple MCPs for maximum intelligence:
 ## 📊 Success Indicators
 
 ### Development Velocity
-- ✅ **3-5x faster development** through proven pattern reuse
-- ✅ **Market-validated decisions** backed by competitive intelligence
-- ✅ **Zero reinvention** using global knowledge access
+- ✅ **Faster development** through proven pattern reuse
+- ✅ **Better-informed decisions** backed by research and intelligence
+- ✅ **Reduced repetitive work** using knowledge base access
 
-### Quality Excellence  
-- ✅ **Industry-leading quality** exceeding Fortune 500 standards
-- ✅ **Proactive issue prevention** using global intelligence
-- ✅ **Performance excellence** benchmarked against market leaders
+### Quality Improvement  
+- ✅ **Higher code quality** through systematic analysis and proven patterns
+- ✅ **Earlier issue detection** using intelligence-driven analysis
+- ✅ **Performance optimization** benchmarked against industry standards
 
-### Innovation Leadership
-- ✅ **Market differentiation** through competitive intelligence
-- ✅ **Technology leadership** using emerging pattern adoption
-- ✅ **Exponential improvement** through compound learning
+### Knowledge Enhancement
+- ✅ **Better market understanding** through competitive intelligence
+- ✅ **Technology adoption** using researched patterns and best practices
+- ✅ **Continuous improvement** through systematic learning and documentation
 
 ---
 
-**This environment transforms traditional development into GLOBAL INTELLIGENCE-POWERED 10X AGENTIC CODING for maximum velocity, quality, and market success.**
+**This environment enhances traditional development with intelligence-powered agentic tools for improved development velocity, quality, and market awareness.**
 EOF
 
     print_success "Enhanced CLAUDE.md created with comprehensive 10X documentation"

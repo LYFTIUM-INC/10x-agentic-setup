@@ -18,7 +18,7 @@ Transform your development workflow with the most advanced 2025 agentic engineer
 ### Enhance Existing Project
 ```bash
 # Add 10X agentic capabilities to current project
-./10x-agentic-local.sh
+./10x-agentic-setup.sh
 ```
 
 ## 🧠 Master Command Orchestrator
@@ -39,17 +39,23 @@ The revolutionary **analyze_and_execute** command implements a Central Coordinat
 
 ### 🤖 **Master Orchestration**
 - `/analyze_and_execute` - Ultimate agentic command orchestrator
+- `/smart_research_and_document_10x` - **NEW** - Advanced multi-MCP research with persistent memory
 
 ### 🔍 **Analysis & Intelligence**
+- `/layered_agentic_analysis` - **NEW** - Ultimate 5-layer MCP intelligence orchestration
 - `/deep_analysis_10x` - Global intelligence analysis
 - `/project_accelerator_10x` - Ultimate project acceleration
 - `/qa:analyze_quality_10x` - World-class quality analysis
+- `/cached_websearch_10x` - Smart web search with automatic caching
 
 ### ⚡ **Development**
 - `/create_feature_spec_10x` - Market-informed feature specification
 - `/dev:implement_feature_10x` - **NEW: AUTO-DOCS + SMART-COMMIT** - Competitive intelligence-driven implementation with automatic documentation generation and intelligent git workflow
 - `/dev:optimize_performance_10x` - Enterprise-grade performance optimization
 - `/local_command_generator_10x` - **NEW: PROJECT-SPECIFIC AUTOMATION** - Generate custom commands tailored to your exact project architecture
+
+### 🔍 **Enhanced Intelligence & Search**
+- `/cached_websearch_10x` - Smart web search with automatic caching and memory integration
 
 ### 🛡️ **Quality & Security**
 - `/qa:debug_smart_10x` - Sequential thinking debugging
@@ -112,13 +118,13 @@ Based on IndyDevDan's Agentic Engineering principles and latest 2025 research:
 
 ## 📊 Success Metrics
 
-- **10X Development Velocity** - Proven acceleration patterns
-- **50% Better Market Fit** - Competitive intelligence integration
-- **90% Implementation Success** - Research-backed examples
-- **Enterprise-Grade Quality** - Industry-leading standards
-- **🆕 100% Documentation Coverage** - Auto-generated comprehensive documentation for all features
-- **🆕 Intelligent Git History** - Smart commits with performance metrics and documentation references
-- **🆕 Organizational Knowledge Compound** - Memory-based pattern storage for continuous improvement
+- **Improved Development Velocity** - Acceleration through proven patterns and automation
+- **Better Market Understanding** - Competitive intelligence integration and research
+- **Higher Implementation Success** - Research-backed examples and proven methodologies
+- **Enhanced Code Quality** - Systematic analysis and industry-standard practices
+- **🆕 Comprehensive Documentation** - Auto-generated documentation for features and processes
+- **🆕 Intelligent Git Workflow** - Smart commits with context and documentation references
+- **🆕 Organizational Knowledge Growth** - Memory-based pattern storage for continuous learning
 
 ## 🚀 Advanced Usage
 
