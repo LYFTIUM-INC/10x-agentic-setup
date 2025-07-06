@@ -85,6 +85,7 @@ Where:
 - `/qa:test_strategy_10x` - Industry-leading testing strategies
 - `/docs:generate_docs_10x` - Global documentation standards
 - `/git:smart_commit_10x` - Intelligent collaboration
+- `/git:smart_push_10x` - Secure git push with comprehensive security validation
 - `/learn_and_adapt_10x` - Continuous intelligence evolution
 
 **INTELLIGENCE COMMANDS:**
