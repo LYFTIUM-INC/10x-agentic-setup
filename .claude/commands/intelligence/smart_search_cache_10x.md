@@ -22,7 +22,7 @@ SEARCH_HASH=$(echo "$KEYWORDS" | sha256sum | cut -d' ' -f1)
 **1.2 Cache Check Sequence:**
 - **sqlite**: Query search cache database for similar searches
 - **filesystem**: Check `Knowledge/intelligence/search_cache/` for existing results
-- **memory**: Retrieve previous search patterns and successful queries
+- **smart_memory_unified**: Retrieve previous search patterns and successful queries with intelligent classification and cross-system access
 
 ### 📊 **PHASE 2: SIMILARITY MATCHING**
 
@@ -224,4 +224,53 @@ sqlite Knowledge/intelligence/search_cache/index/cache.db < cache_schema.sql
 }
 ```
 
-**EXECUTE IMMEDIATELY:** Implement intelligent search caching system to eliminate redundant web searches and build cumulative intelligence repository.
+### 📊 **STRUCTURED DATA OUTPUT WITH ML TRAINING PREPARATION**
+
+**Multi-System Storage Architecture:**
+```yaml
+# Search Cache Operation Report
+filename: Knowledge/intelligence/search_cache_operation_$(date +%Y-%m-%d_%H-%M-%S).md
+frontmatter:
+  type: search_cache_operation
+  timestamp: $(date -Iseconds)
+  classification: cache_intelligence
+  ml_labels: [cache_efficiency, search_optimization, intelligence_acceleration]
+  success_metrics: [cache_hit_rate, response_time, intelligence_building]
+  cross_references: [search_patterns, cache_strategies, intelligence_systems]
+```
+
+**Redundant Storage with Intelligent Classification:**
+- **Primary**: `smart_memory_unified` - Unified orchestration with automatic content classification
+- **Secondary**: `chroma-rag` - Vector embeddings for search pattern matching and cache optimization
+- **Tertiary**: `sqlite` - Structured metrics with ML training labels and effectiveness scoring
+- **Quaternary**: `Knowledge/` files - Persistent markdown with consistent frontmatter metadata
+
+**ML Training Data Structure:**
+```json
+{
+  "search_cache_session": {
+    "timestamp": "$(date -Iseconds)",
+    "features": {
+      "cache_hit_rate": 0.82,
+      "search_optimization_effectiveness": 0.88,
+      "intelligence_acceleration": 0.85,
+      "cache_efficiency_score": 0.90
+    },
+    "outcomes": {
+      "search_speed_improvement": 0.87,
+      "api_cost_reduction": 0.75,
+      "intelligence_building_rate": 0.83
+    },
+    "classification_labels": ["efficient_cache", "optimized_search", "intelligent_acceleration"],
+    "success_probability": 0.88
+  }
+}
+```
+
+**Cross-System Synchronization:**
+- **chroma-rag**: Create semantic embeddings for search cache patterns and optimization strategies
+- **smart_memory_unified**: Store cache methodologies with automatic classification routing
+- **sqlite**: Track cache metrics and search correlations for ML model training
+- **Knowledge/patterns/**: Archive successful cache patterns with effectiveness scoring
+
+**EXECUTE IMMEDIATELY:** Implement intelligent search caching system to eliminate redundant web searches, build cumulative intelligence repository, and prepare ML training data for predictive search optimization.

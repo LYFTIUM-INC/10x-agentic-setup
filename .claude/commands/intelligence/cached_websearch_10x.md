@@ -203,4 +203,53 @@ The system automatically:
 - **Pre-caches** likely follow-up queries
 - **Optimizes** search terms based on successful results
 
-**EXECUTE FOR ANY SEARCH:** Use `/cached_websearch_10x` instead of `websearch` in ALL 10X commands for intelligent caching and dramatically improved performance.
+### 📊 **STRUCTURED DATA OUTPUT WITH ML TRAINING PREPARATION**
+
+**Multi-System Storage Architecture:**
+```yaml
+# Cached Search Report
+filename: Knowledge/intelligence/cached_search_$(date +%Y-%m-%d_%H-%M-%S).md
+frontmatter:
+  type: cached_search
+  timestamp: $(date -Iseconds)
+  classification: search_intelligence
+  ml_labels: [cache_efficiency, search_optimization, knowledge_reuse]
+  success_metrics: [cache_hit_rate, response_time, api_savings]
+  cross_references: [search_patterns, cache_strategies, intelligence_systems]
+```
+
+**Redundant Storage with Intelligent Classification:**
+- **Primary**: `smart_memory_unified` - Unified orchestration with automatic content classification
+- **Secondary**: `chroma-rag` - Vector embeddings for search pattern matching and query similarity
+- **Tertiary**: `sqlite` - Structured metrics with ML training labels and effectiveness scoring
+- **Quaternary**: `Knowledge/` files - Persistent markdown with consistent frontmatter metadata
+
+**ML Training Data Structure:**
+```json
+{
+  "cached_search_session": {
+    "timestamp": "$(date -Iseconds)",
+    "features": {
+      "cache_hit_rate": 0.78,
+      "search_optimization_score": 0.85,
+      "query_complexity": 0.72,
+      "knowledge_reuse_effectiveness": 0.88
+    },
+    "outcomes": {
+      "search_efficiency": 0.87,
+      "api_call_reduction": 0.80,
+      "response_time_improvement": 0.75
+    },
+    "classification_labels": ["efficient_cache", "optimized_search", "intelligent_reuse"],
+    "success_probability": 0.85
+  }
+}
+```
+
+**Cross-System Synchronization:**
+- **chroma-rag**: Create semantic embeddings for search patterns and query optimization
+- **smart_memory_unified**: Store search methodologies with automatic classification routing
+- **sqlite**: Track search metrics and cache correlations for ML model training
+- **Knowledge/patterns/**: Archive successful search patterns with effectiveness scoring
+
+**EXECUTE FOR ANY SEARCH:** Use `/cached_websearch_10x` instead of `websearch` in ALL 10X commands for intelligent caching, dramatically improved performance, and ML training preparation.

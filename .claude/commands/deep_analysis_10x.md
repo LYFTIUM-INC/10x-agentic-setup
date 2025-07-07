@@ -19,12 +19,12 @@
 - **fetch**: Download latest framework documentation for gap analysis
 - **context7**: Access real-time framework documentation (add "use context7" for current API references)
 - **github**: Research issues and solutions for similar tech stacks
-- **memory**: Review previous analysis patterns and learnings
+- **smart_memory_unified**: Review previous analysis patterns and learnings with intelligent classification and cross-system access
 
 **1.3 Internal Discovery**
 - **filesystem**: Comprehensive codebase structure analysis
 - **sqlite**: Query any existing metrics/performance data
-- **memory**: Review previous analysis patterns and learnings
+- **smart_memory_unified**: Review previous analysis patterns and learnings with intelligent classification and cross-system access
 
 ### ⚡ **PHASE 2: MULTI-LAYERED ANALYSIS** (use "think harder")
 
@@ -41,8 +41,9 @@
 - **Testing coverage** vs industry best practices (github examples)
 
 **2.3 Intelligence Synthesis**
-- **memory**: Store analysis patterns for future improvement
-- **sqlite**: Store benchmark data for trend analysis
+- **smart_memory_unified**: Store analysis patterns with automatic classification and cross-system synchronization
+- **chroma-rag**: Create semantic embeddings for pattern matching and similarity search
+- **sqlite**: Store structured benchmark data with ML training labels for trend analysis
 
 ### 🎯 **PHASE 3: STRATEGIC INTELLIGENCE PLANNING** (use "ultrathink")
 
@@ -60,17 +61,30 @@
 
 ### 📊 **ENHANCED OUTPUT REQUIREMENTS:**
 
-**Intelligence Reports:**
-- `Knowledge/documentation/market_analysis_YYYY-MM-DD.md` - Market positioning & trends
-- `Knowledge/documentation/competitive_analysis_YYYY-MM-DD.md` - Competitor insights
-- `Knowledge/documentation/technical_analysis_YYYY-MM-DD.md` - Benchmarked technical review
-- `Instructions/strategic_plan_YYYY-MM-DD.md` - Intelligence-driven roadmap
+**Structured Intelligence Reports with ML Training Data:**
+```yaml
+# Market Analysis Report
+filename: Knowledge/documentation/market_analysis_$(date +%Y-%m-%d_%H-%M-%S).md
+frontmatter:
+  type: market_analysis
+  timestamp: $(date -Iseconds)
+  classification: competitive_intelligence
+  ml_labels: [market_trends, competitive_positioning, opportunity_scoring]
+  success_metrics: [market_share_potential, competitive_advantage_score]
+  cross_references: [competitive_analysis, technical_benchmarks]
+```
 
-**Cross-Referenced Resources:**
-- `Knowledge/patterns/industry_best_practices.md` - Researched patterns
-- `Knowledge/patterns/competitive_advantages.md` - Unique positioning insights
-- `Knowledge/context/benchmark_data.md` - Performance baselines
-- `Instructions/priority_implementations.md` - Quick wins with examples
+**Multi-System Storage with Redundancy:**
+- **Primary**: `smart_memory_unified` - Unified orchestration with automatic classification
+- **Secondary**: `chroma-rag` - Vector embeddings for semantic search and pattern matching
+- **Tertiary**: `sqlite` - Structured metrics with ML training labels and effectiveness scoring
+- **Quaternary**: `Knowledge/` files - Persistent markdown with consistent frontmatter metadata
+
+**Cross-Referenced Resources with Semantic Linking:**
+- `Knowledge/patterns/industry_best_practices_$(date +%Y-%m-%d_%H-%M-%S).md` - Researched patterns with ML feature extraction
+- `Knowledge/patterns/competitive_advantages_$(date +%Y-%m-%d_%H-%M-%S).md` - Unique positioning insights with success classification
+- `Knowledge/context/benchmark_data_$(date +%Y-%m-%d_%H-%M-%S).md` - Performance baselines with effectiveness scoring
+- `Instructions/priority_implementations_$(date +%Y-%m-%d_%H-%M-%S).md` - Quick wins with success/failure labels for reinforcement learning
 
 ### 🔥 **10X SUCCESS CRITERIA:**
 

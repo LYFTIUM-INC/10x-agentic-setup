@@ -15,7 +15,9 @@
 
 ### ⚡ **PHASE 1: COMPREHENSIVE PROJECT ANALYSIS** (use "think harder")
 
-**1.1 Memory-Enhanced Project Intelligence Gathering with New MCP Integration**
+**1.1 Enhanced Memory Architecture with Integrated RAG Vector Intelligence**
+- **chroma-rag**: Complement existing memory with persistent vector embeddings for organizational knowledge similarity search
+- **chroma-rag**: Augment smart_memory_10x retrieval with semantic context matching for deeper pattern recognition
 - **filesystem**: Deep project structure analysis - identify all file types, patterns, and technologies
 - **filesystem**: Analyze existing documentation, README files, and project configuration
 - **smart_memory_10x**: Retrieve previous successful project analysis patterns for similar tech stacks
@@ -58,7 +60,9 @@ Where:
 - COMPLEXITY: Resource requirements (1-10 divisor)
 ```
 
-**Memory-Driven Priority Enhancements with New MCP Integration:**
+**Enhanced Memory-Driven Priority with Integrated RAG Intelligence:**
+- **chroma-rag**: Enhance smart_memory_10x with vector-based similarity scoring for command effectiveness patterns
+- **chroma-rag**: Cross-reference smart_memory_10x patterns with semantic embeddings for improved accuracy
 - **smart_memory_10x**: Load historical command effectiveness scores for this project type
 - **smart_memory_10x**: Access organizational success patterns and preferred command sequences
 - **smart_memory_10x**: Retrieve similar project outcomes and optimal command prioritization
@@ -104,7 +108,9 @@ Where:
 
 Apply **Enhanced Orchestrator-Worker Pattern** with memory-driven dependency resolution:
 
-**Memory-Enhanced Sequencing with New MCP Integration:**
+**Enhanced Memory Sequencing with Integrated RAG Intelligence:**
+- **chroma-rag**: Complement smart_memory_10x with vector similarity for command sequence optimization
+- **chroma-rag**: Store and retrieve command sequence embeddings for pattern-based workflow enhancement
 - **smart_memory_10x**: Retrieve successful command sequences for similar project patterns
 - **smart_memory_10x**: Load organizational preferred workflow patterns and timings
 - **smart_memory_10x**: Access historical bottleneck analysis and prevention strategies
@@ -164,11 +170,13 @@ Execute commands using **Multi-Agent Communication Paradigms**:
 - **Progressive Loading**: Load command details and MCP resources only when needed
 - **Resource Monitoring**: Track CPU/memory usage per command for continuous optimization
 
-**Comprehensive Organizational Learning & Persistence:**
+**Enhanced Organizational Learning with Integrated RAG Intelligence:**
+- **chroma-rag**: Store execution patterns as persistent vector embeddings for semantic similarity matching across sessions
+- **chroma-rag**: Create organizational knowledge embeddings that complement and enhance smart_memory_10x retrieval
 - **smart_memory_10x**: Store execution patterns, success metrics, and command orchestration strategies with intelligent routing
 - **smart_memory_10x**: Cache frequently accessed patterns for instant retrieval and predictive pre-loading
 - **smart_memory_10x**: Implement cross-session learning with organizational pattern evolution
-- **memory**: Store command sequence effectiveness, timing patterns, and resource optimization strategies
+- **smart_memory_unified**: Store command sequence effectiveness, timing patterns, and resource optimization strategies with automatic classification and cross-system synchronization
 - **sqlite**: Track comprehensive command effectiveness metrics, resource usage patterns, and success correlations
 - **qdrant**: Store and retrieve semantic embeddings of successful command sequences for intelligent pattern matching
 - **meilisearch**: Index all command outcomes, execution patterns, and organizational knowledge for instant full-text search

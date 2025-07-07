@@ -21,7 +21,7 @@
 **1.2 Vector-Enhanced Knowledge Retrieval**
 - **qdrant**: Semantic vector search for similar research patterns and successful approaches
 - **meilisearch**: Lightning-fast full-text search through organizational knowledge base
-- **memory**: Retrieve previous research patterns, successful methodologies, and organizational insights
+- **smart_memory_unified**: Retrieve previous research patterns, successful methodologies, and organizational insights with intelligent classification
 - **sqlite**: Query historical research effectiveness and pattern success rates
 
 **1.3 Technical Documentation Intelligence (Optional)**
@@ -39,7 +39,7 @@ Execute parallel research validation using concurrent MCP orchestration:
 - **Full-text correlation** using meilisearch for knowledge base alignment
 
 **2.2 Memory-Enhanced Pattern Recognition**
-- **memory**: Store successful research synthesis patterns for future optimization
+- **smart_memory_unified**: Store successful research synthesis patterns for future optimization with automatic classification
 - **qdrant**: Create semantic embeddings of research insights for intelligent retrieval
 - **sqlite**: Track research effectiveness metrics and validation success rates
 - **meilisearch**: Index research outcomes for instant organizational knowledge access
@@ -60,9 +60,9 @@ Create comprehensive documentation with dynamic timestamps:
 - `Instructions/deployment/[research_topic]_deployment_$(date +%Y-%m-%d_%H-%M-%S).md` - Deployment considerations
 
 **3.3 Memory Integration & Organizational Learning**
-- **memory**: Store research methodologies and successful pattern combinations
-- **memory**: Save cross-MCP orchestration strategies that proved effective
-- **memory**: Record research-to-implementation success correlations
+- **smart_memory_unified**: Store research methodologies and successful pattern combinations with automatic classification routing
+- **smart_memory_unified**: Save cross-MCP orchestration strategies that proved effective with cross-system synchronization
+- **smart_memory_unified**: Record research-to-implementation success correlations with ML training labels
 - **sqlite**: Track documentation usage patterns and effectiveness metrics
 - **qdrant**: Create searchable vector embeddings of all generated documentation
 - **meilisearch**: Index all documentation for instant full-text retrieval
@@ -80,7 +80,7 @@ Create comprehensive documentation with dynamic timestamps:
 **4.2 Knowledge Base Integration**
 - **meilisearch**: Index all generated documentation for instant organizational search
 - **qdrant**: Create semantic embeddings for intelligent document similarity and retrieval
-- **memory**: Store documentation patterns and generation strategies for improvement
+- **smart_memory_unified**: Store documentation patterns and generation strategies for improvement with automatic classification
 - **sqlite**: Track documentation quality metrics and usage analytics
 
 ### 🔗 **PHASE 5: CONCURRENT AGENT OPTIMIZATION & LEARNING** (use "ultrathink")
@@ -92,8 +92,9 @@ Create comprehensive documentation with dynamic timestamps:
 - **Resource Monitoring**: Track CPU/memory usage per MCP for optimization
 
 **5.2 Continuous Learning & Pattern Evolution**
-- **memory**: Store research orchestration patterns and effectiveness metrics
-- **memory**: Record successful MCP combination strategies for future optimization
+- **smart_memory_unified**: Store research orchestration patterns and effectiveness metrics with automatic classification routing
+- **chroma-rag**: Create semantic embeddings for research patterns and MCP combination strategies
+- **sqlite**: Track research effectiveness metrics with ML training labels for optimization
 - **sqlite**: Track research-to-outcome success rates for predictive optimization
 - **qdrant**: Evolve semantic search patterns based on successful research outcomes
 

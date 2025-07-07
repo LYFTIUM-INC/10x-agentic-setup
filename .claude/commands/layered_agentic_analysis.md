@@ -12,7 +12,7 @@
 - **fetch**: Analyze relevant external documentation and examples
 
 **1.2 Enhanced Memory & Pattern Retrieval**
-- **memory**: Cross-session learning and pattern storage for organizational intelligence
+- **smart_memory_unified**: Cross-session learning and pattern storage for organizational intelligence with automatic classification
 - **smart_memory_10x**: Retrieve previous successful project analysis patterns for similar tech stacks
 - **qdrant**: Vector-based semantic search for similar project patterns and successful architectures
 - **sqlite**: Query historical project success patterns and performance metrics
@@ -46,7 +46,7 @@
 ### 🚀 **PHASE 4: LAYER 4 - CROSS-PROJECT KNOWLEDGE SYNTHESIS** (use "ultrathink")
 
 **4.1 Organizational Pattern Evolution**
-- **memory**: Store and evolve organizational patterns with new project insights
+- **smart_memory_unified**: Store and evolve organizational patterns with new project insights and cross-system synchronization
 - **qdrant**: Create semantic embeddings of successful patterns for intelligent matching
 - **meilisearch**: Index all analysis outcomes for instant organizational knowledge access
 - **sqlite**: Track pattern evolution and success metrics across projects

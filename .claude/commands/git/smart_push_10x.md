@@ -13,12 +13,12 @@
 - **filesystem**: Scan entire codebase for security vulnerabilities and sensitive data
 - **virustotal**: Security analysis of all modified files and dependencies
 - **shodan**: Infrastructure security assessment if deployment configs are present
-- **memory**: Check against known security vulnerability patterns from organizational history
+- **smart_memory_unified**: Check against known security vulnerability patterns from organizational history with intelligent classification
 - **sqlite**: Query historical security issues and prevention patterns
 
 **1.2 Sensitive Data Detection**
 - **filesystem**: Deep scan for hardcoded secrets, API keys, passwords, tokens
-- **memory**: Cross-reference against organizational security policies and known patterns
+- **smart_memory_unified**: Cross-reference against organizational security policies and known patterns with intelligent classification
 - **qdrant**: Vector-based similarity search for potential sensitive data patterns
 - **meilisearch**: Full-text search through codebase for security-related keywords
 
@@ -54,7 +54,7 @@
 **2.2 Remote Repository Intelligence**
 - **github**: Analyze target repository for security policies and contribution guidelines
 - **fetch**: Verify repository access policies and security requirements
-- **memory**: Check organizational push policies and security requirements
+- **smart_memory_unified**: Check organizational push policies and security requirements with intelligent classification
 - **sqlite**: Track push success patterns and security compliance history
 
 **2.3 Advanced Conflict and Safety Detection**
@@ -103,8 +103,8 @@ Create comprehensive security documentation with dynamic timestamps:
 - `Instructions/security/security_compliance_report_$(date +%Y-%m-%d_%H-%M-%S).md` - Compliance validation
 
 **4.2 Organizational Security Learning**
-- **memory**: Store successful security validation patterns for future pushes
-- **memory**: Record any security issues found and remediation strategies
+- **smart_memory_unified**: Store successful security validation patterns for future pushes with automatic classification routing
+- **smart_memory_unified**: Record any security issues found and remediation strategies with cross-system synchronization
 - **sqlite**: Track security compliance metrics and improvement patterns
 - **qdrant**: Create semantic embeddings of security patterns for intelligent matching
 - **meilisearch**: Index security findings for instant organizational security knowledge access
@@ -168,7 +168,56 @@ AUTOMATIC ACTIONS TAKEN:
 4. **CREDENTIAL ROTATION**: Invalidate any exposed credentials immediately
 5. **INCIDENT DOCUMENTATION**: Complete incident report with lessons learned
 
-**EXECUTE IMMEDIATELY**: Begin comprehensive security validation and secure push protocol with complete audit trail and organizational security learning.
+### 📊 **STRUCTURED DATA OUTPUT WITH ML TRAINING PREPARATION**
+
+**Multi-System Storage Architecture:**
+```yaml
+# Security Push Report
+filename: Knowledge/security/security_push_$(date +%Y-%m-%d_%H-%M-%S).md
+frontmatter:
+  type: security_push
+  timestamp: $(date -Iseconds)
+  classification: security_intelligence
+  ml_labels: [security_compliance, vulnerability_detection, push_safety]
+  success_metrics: [security_score, threat_prevention, compliance_rate]
+  cross_references: [security_patterns, vulnerability_databases, push_policies]
+```
+
+**Redundant Storage with Intelligent Classification:**
+- **Primary**: `smart_memory_unified` - Unified orchestration with automatic content classification
+- **Secondary**: `chroma-rag` - Vector embeddings for security pattern matching and threat similarity
+- **Tertiary**: `sqlite` - Structured metrics with ML training labels and effectiveness scoring
+- **Quaternary**: `Knowledge/` files - Persistent markdown with consistent frontmatter metadata
+
+**ML Training Data Structure:**
+```json
+{
+  "security_push_session": {
+    "timestamp": "$(date -Iseconds)",
+    "features": {
+      "security_scan_depth": 0.95,
+      "vulnerability_detection_rate": 0.88,
+      "policy_compliance_score": 0.92,
+      "threat_prevention_effectiveness": 0.89
+    },
+    "outcomes": {
+      "push_security_success": true,
+      "zero_sensitive_data_exposure": true,
+      "security_learning_enhancement": 0.87
+    },
+    "classification_labels": ["secure_push", "threat_protected", "compliant"],
+    "success_probability": 0.93
+  }
+}
+```
+
+**Cross-System Synchronization:**
+- **chroma-rag**: Create semantic embeddings for security patterns and threat intelligence
+- **smart_memory_unified**: Store security methodologies with automatic classification routing
+- **sqlite**: Track security metrics and threat correlations for ML model training
+- **Knowledge/patterns/**: Archive successful security patterns with effectiveness scoring
+
+**EXECUTE IMMEDIATELY**: Begin comprehensive security validation and secure push protocol with complete audit trail, organizational security learning, and ML training preparation.
 
 🤖 Generated with [Claude Code](https://claude.ai/code)
 
