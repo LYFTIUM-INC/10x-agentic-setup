@@ -1,0 +1,34 @@
+# ML-Powered Code Intelligence MCP Server Dependencies
+
+# Core MCP dependencies
+mcp[cli]>=1.10.0
+httpx>=0.28.0
+pydantic>=2.11.0
+fastapi>=0.116.0
+uvicorn>=0.35.0
+
+# ML and AI dependencies
+torch>=2.7.0
+transformers>=4.53.0
+sentence-transformers>=5.0.0
+scikit-learn>=1.7.0
+numpy>=2.2.0
+
+# Vector database dependencies
+faiss-cpu>=1.11.0
+qdrant-client>=1.14.0
+chromadb>=1.0.15
+
+# Code analysis dependencies
+tree-sitter>=0.20.4
+
+# Utility dependencies
+pyyaml>=6.0.0
+python-dotenv>=1.1.0
+
+# Development dependencies (optional)
+pytest>=8.4.0
+pytest-asyncio>=1.0.0
+black>=25.1.0
+ruff>=0.12.0
+mypy>=1.16.0

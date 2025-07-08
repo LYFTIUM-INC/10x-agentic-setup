@@ -1,0 +1,56 @@
+# ML-Powered Code Intelligence MCP Server Configuration
+
+server_name: "ml-code-intelligence"
+server_version: "1.0.0"
+debug: false
+log_level: "INFO"
+max_workers: 4
+
+# Performance settings
+cache_enabled: true
+cache_ttl: 3600  # 1 hour
+rate_limit: 1000  # requests per minute
+
+# Security settings
+enable_security: true
+allowed_origins: ["*"]
+
+# Storage paths
+data_dir: "./data/ml_code_intelligence"
+cache_dir: "./cache/ml_code_intelligence"
+model_cache_dir: "./models"
+
+# ML Configuration
+ml_device: "auto"  # auto, cpu, cuda
+embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+max_embedding_length: 512
+
+# Vector Database
+vector_db_type: "faiss"  # faiss, qdrant, chroma
+vector_dimension: 384
+
+# Code Intelligence specific settings
+supported_languages:
+  - python
+  - javascript
+  - typescript
+  - java
+  - cpp
+  - rust
+  - go
+
+# Analysis settings
+quality_thresholds:
+  complexity_warning: 10
+  complexity_error: 20
+  maintainability_warning: 60
+  maintainability_error: 40
+
+# Search settings
+default_search_results: 10
+max_search_results: 100
+similarity_threshold: 0.5
+
+# Indexing settings
+batch_size: 32
+max_code_length: 10000  # Maximum code snippet length to index
