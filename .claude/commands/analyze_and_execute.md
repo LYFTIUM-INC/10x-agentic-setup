@@ -60,10 +60,16 @@ Where:
 - `/dev:optimize_performance_10x` - Enterprise-grade performance optimization
 
 **ANALYSIS COMMANDS:**
-- `/deep_analysis_10x` - Comprehensive multi-source analysis
-- `/project_accelerator_10x` - Ultimate project acceleration
-- `/qa:analyze_quality_10x` - World-class quality analysis
+- `/deep_analysis_10x` - Comprehensive multi-source analysis with ML enhancement
+- `/project_accelerator_10x` - Ultimate project acceleration with ML optimization
+- `/qa:analyze_quality_10x` - World-class quality analysis with ML code intelligence
 - `/qa:security_audit_10x` - Threat intelligence security audit
+
+**ML-ENHANCED COMMANDS:**
+- `/ml_powered_development_10x` - Comprehensive ML orchestration with all 5 MCP servers
+- `/intelligence:smart_memory_unified_10x` - ML-enhanced memory orchestration
+- `/rag_intelligence_orchestrator_10x` - Vector-enhanced RAG with semantic search
+- `/qa:intelligent_debug_analyzer_10x` - ML-powered debugging with pattern matching
 
 **DEVELOPMENT COMMANDS:**
 - `/qa:test_strategy_10x` - Industry-leading testing strategies
