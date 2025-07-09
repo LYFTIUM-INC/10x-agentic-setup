@@ -1,0 +1,34 @@
+{
+  "memory_id": "1999f392-0bfc-4e62-b4d8-21e15ee0e37b",
+  "content": "Database schema for user management",
+  "content_hash": "3af3803df12bd38fac59cccfb1d4c474",
+  "memory_type": "document",
+  "context": {
+    "project": "user_service",
+    "session": null,
+    "user": "alice",
+    "application": null,
+    "timestamp": "2025-07-08T08:49:42.877676",
+    "location": null,
+    "environment": null,
+    "metadata": {}
+  },
+  "tags": [
+    "database",
+    "schema",
+    "user"
+  ],
+  "importance": 0.8,
+  "confidence": 1.0,
+  "access_level": "public",
+  "created_at": "2025-07-08T08:49:42.877706",
+  "updated_at": "2025-07-08T08:49:42.877708",
+  "expires_at": null,
+  "last_accessed": null,
+  "access_count": 0,
+  "embedding": null,
+  "similarity_score": 0.0,
+  "related_memories": [],
+  "parent_memory": null,
+  "child_memories": []
+}

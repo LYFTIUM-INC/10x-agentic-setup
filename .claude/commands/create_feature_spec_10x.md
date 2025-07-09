@@ -1,7 +1,7 @@
 ## 🚀 10X FEATURE SPECIFICATION & INSTRUCTION CREATOR
-*Powered by competitive intelligence and proven specification patterns*
+*Powered by competitive intelligence, vector search, and proven specification patterns*
 
-**Claude, create COMPREHENSIVE feature specifications using GLOBAL INTELLIGENCE and PROVEN PATTERNS.**
+**Claude, create COMPREHENSIVE feature specifications using GLOBAL INTELLIGENCE, VECTOR SEARCH, and PROVEN PATTERNS.**
 
 ### 📋 **REQUIRED PARAMETERS - IDENTIFY FROM CONTEXT**
 **BEFORE starting, analyze the project/conversation to identify:**
@@ -19,26 +19,21 @@
 
 ### 🔥 **PHASE 1: MARKET & TECHNICAL INTELLIGENCE GATHERING** (use "think hard")
 
-**1.1 Competitive Feature Analysis**
-- **websearch**: "how [top_competitors] implement [feature_type] specification"
-- **websearch**: "[feature_name] requirements specification best practices"
-- **fetch**: Analyze feature specifications from leading tech companies
-- **github**: Research specification patterns from high-starred projects
-- **smart_memory_unified**: Review specification templates and patterns with intelligent classification and cross-system access
+**1.1 Enhanced Competitive Feature Analysis**
+- **smart_research_and_document_10x**: Execute comprehensive research on [feature_type] specification patterns with persistent memory
+- **context7**: Access latest technical documentation for [framework] feature implementation (optional)
+- **cached_websearch_10x**: Smart search with caching for "[top_competitors] [feature_type] implementation patterns"
+- **Additional targeted research**: Supplement smart research with specific competitive analysis queries
 
-**1.2 Technical Specification Research**
-- **websearch**: "[tech_stack] [feature_type] technical requirements"
-- **websearch**: "API specification patterns [framework] best practices"
-- **github**: Find proven specification formats and documentation
-- **fetch**: Download specification templates from successful projects
-- **smart_memory_unified**: Review previous successful specification patterns with intelligent classification and cross-system access
+**1.2 Enhanced Technical Specification Research**
+- **smart_research_and_document_10x**: Execute deep research on [tech_stack] [feature_type] technical specifications with memory integration
+- **context7**: Access latest API documentation and technical standards for [framework] (optional)
+- **cached_websearch_10x**: Smart cached search for "technical specification methodologies [tech_stack]"
 
-**1.3 User Experience & Requirements Intelligence**
-- **websearch**: "[feature_type] user stories acceptance criteria patterns"
-- **websearch**: "UX specification requirements accessibility patterns"
-- **fetch**: UX specification guidelines from design systems
-- **github**: Research user story patterns from agile projects
-- **websearch**: "[domain] business requirements specification templates"
+**1.3 Enhanced User Experience & Requirements Intelligence**
+- **smart_research_and_document_10x**: Execute comprehensive UX and requirements research for [feature_type] with organizational memory
+- **cached_websearch_10x**: Smart cached search for "[domain] business requirements specification templates"
+- **context7**: Access latest UX design system documentation and accessibility standards (optional)
 
 ### ⚡ **PHASE 2: INTELLIGENT SPECIFICATION CREATION** (use "ultrathink")
 
@@ -59,66 +54,17 @@ Create comprehensive requirements based on competitive analysis:
 
 ### 📊 **ENHANCED OUTPUT REQUIREMENTS**
 
-**Comprehensive Specification Documents:**
-- `Instructions/features/[feature]_specification.md` - Complete feature specification
-- `Instructions/features/[feature]_technical_requirements.md` - Technical specifications
-- `Instructions/features/[feature]_user_stories.md` - User requirements and acceptance criteria
-- `Instructions/features/[feature]_api_specification.md` - API design and documentation
-- `Instructions/features/[feature]_implementation_guide.md` - Step-by-step development
+**Comprehensive Specification Documents (Dynamic Timestamps):**
+- `Instructions/features/[feature]_specification_$(date +%Y-%m-%d_%H-%M-%S).md` - Complete feature specification
+- `Instructions/development/[feature]_technical_requirements_$(date +%Y-%m-%d_%H-%M-%S).md` - Technical specifications
+- `Instructions/testing/[feature]_user_stories_$(date +%Y-%m-%d_%H-%M-%S).md` - User requirements and acceptance criteria
+- `Instructions/development/[feature]_api_specification_$(date +%Y-%m-%d_%H-%M-%S).md` - API design and documentation
+- `Instructions/development/[feature]_implementation_guide_$(date +%Y-%m-%d_%H-%M-%S).md` - Step-by-step development
 
-**Knowledge Base Integration:**
-- `Knowledge/patterns/[feature_type]_specification_patterns.md` - Extracted best practices
-- `Knowledge/intelligence/[feature]_competitive_analysis.md` - Market positioning
-- `Knowledge/documentation/[feature]_requirements_research.md` - Research findings
-
-### 📊 **STRUCTURED DATA OUTPUT WITH ML TRAINING PREPARATION**
-
-**Multi-System Storage Architecture:**
-```yaml
-# Feature Specification Report
-filename: Knowledge/specifications/feature_spec_$(date +%Y-%m-%d_%H-%M-%S).md
-frontmatter:
-  type: feature_specification
-  timestamp: $(date -Iseconds)
-  classification: specification_intelligence
-  ml_labels: [spec_completeness, market_validation, technical_accuracy]
-  success_metrics: [requirements_coverage, implementation_readiness, user_satisfaction]
-  cross_references: [competitive_analysis, technical_patterns, user_research]
-```
-
-**Redundant Storage with Intelligent Classification:**
-- **Primary**: `smart_memory_unified` - Unified orchestration with automatic content classification
-- **Secondary**: `chroma-rag` - Vector embeddings for specification pattern matching and requirement similarity
-- **Tertiary**: `sqlite` - Structured metrics with ML training labels and effectiveness scoring
-- **Quaternary**: `Knowledge/` files - Persistent markdown with consistent frontmatter metadata
-
-**ML Training Data Structure:**
-```json
-{
-  "feature_specification_session": {
-    "timestamp": "$(date -Iseconds)",
-    "features": {
-      "specification_completeness": 0.92,
-      "market_research_depth": 0.88,
-      "technical_accuracy": 0.90,
-      "implementation_readiness": 0.85
-    },
-    "outcomes": {
-      "development_efficiency": 0.87,
-      "user_satisfaction_score": 0.89,
-      "market_competitiveness": 0.91
-    },
-    "classification_labels": ["complete_specification", "market_validated", "implementation_ready"],
-    "success_probability": 0.89
-  }
-}
-```
-
-**Cross-System Synchronization:**
-- **chroma-rag**: Create semantic embeddings for specification patterns and requirement relationships
-- **smart_memory_unified**: Store specification methodologies with automatic classification routing
-- **sqlite**: Track specification metrics and success correlations for ML model training
-- **Knowledge/patterns/**: Archive successful specification patterns with effectiveness scoring
+**Knowledge Base Integration (Dynamic Timestamps):**
+- `Knowledge/patterns/[feature_type]_specification_patterns_$(date +%Y-%m-%d_%H-%M-%S).md` - Extracted best practices
+- `Knowledge/intelligence/[feature]_competitive_analysis_$(date +%Y-%m-%d_%H-%M-%S).md` - Market positioning
+- `Knowledge/intelligence/[feature]_requirements_research_$(date +%Y-%m-%d_%H-%M-%S).md` - Research findings
 
 ### 🔥 **10X SPECIFICATION SUCCESS CRITERIA**
 
@@ -128,5 +74,3 @@ frontmatter:
 ✅ **Implementation-Ready**: Detailed instructions for all development phases
 ✅ **Quality-Assured**: Built-in testing and validation procedures
 ✅ **Deployment-Ready**: Complete deployment and monitoring specifications
-✅ **ML Training Data**: Structured data for specification quality prediction
-✅ **Cross-System Memory**: Unified memory synchronization for specification knowledge

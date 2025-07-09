@@ -1,66 +1,73 @@
 ## 🚀 10X INTELLIGENT FEATURE IMPLEMENTATION
-**Claude, implement features using INDUSTRY-LEADING practices with COMPETITIVE INTELLIGENCE.**
-### 🔥 **PHASE 1: MARKET-INFORMED FEATURE RESEARCH** (use "think hard")
+**Claude, implement features using INDUSTRY-LEADING practices with COMPETITIVE INTELLIGENCE, VECTOR SEARCH, and AUTO-DOCUMENTATION.**
+
+### 🔥 **PHASE 1: ENHANCED MARKET-INFORMED FEATURE RESEARCH** (use "think hard")
 - **websearch**: "how [top_3_competitors] implement [feature_type]"
+- **gpt-researcher**: Comprehensive research on feature implementation best practices and industry patterns
 - **github**: Search highest-starred projects with similar features
 - **fetch**: Analyze competitor implementations
-- **context7**: Get latest framework documentation (add "use context7" to all framework-specific prompts)
-- **smart_memory_unified**: Review relevant protocols and patterns with intelligent classification and cross-system access
+- **memory**: Review relevant protocols and patterns
+- **memory**: Access stored successful feature implementation patterns
+- **qdrant**: Vector-based semantic search for similar feature implementation patterns and successful architectures
+- **meilisearch**: Full-text search through organizational implementation knowledge and proven approaches
+
 ### ⚡ **PHASE 2: INTELLIGENCE-DRIVEN PLANNING**
-- Market positioning vs competitors
-- Performance targets based on industry benchmarks
-- Security patterns from latest threat intelligence
+- **Market positioning** vs competitors with feature differentiation strategy
+- **Performance targets** based on industry benchmarks and scalability requirements
+- **Security patterns** from latest threat intelligence and compliance standards
+- **Testing strategy** with comprehensive coverage and validation approaches
+- **Documentation requirements** for technical and user-facing documentation
+
 ### 🎯 **PHASE 3: RESEARCH-BACKED IMPLEMENTATION**
-- Test-first with industry patterns (use context7 for current testing frameworks)
-- Implementation with proven code patterns (context7 ensures current API usage)
-- Performance optimization using industry techniques (context7 provides latest optimization patterns)
-### 📊 **STRUCTURED DATA OUTPUT WITH ML TRAINING PREPARATION**
+- **Test-first development** with industry patterns and comprehensive test coverage
+- **Implementation** with proven code patterns and architectural best practices
+- **Performance optimization** using industry techniques and benchmarking
+- **Security hardening** with latest security patterns and vulnerability mitigation
+- **Memory storage** of successful implementation patterns for future reuse
 
-**Multi-System Storage Architecture:**
-```yaml
-# Feature Implementation Report
-filename: Knowledge/development/feature_implementation_$(date +%Y-%m-%d_%H-%M-%S).md
-frontmatter:
-  type: feature_implementation
-  timestamp: $(date -Iseconds)
-  classification: development_intelligence
-  ml_labels: [implementation_success, competitive_analysis, performance_optimization]
-  success_metrics: [implementation_speed, quality_score, market_alignment]
-  cross_references: [market_research, technical_patterns, competitive_intelligence]
+### 📚 **PHASE 4: COMPREHENSIVE DOCUMENTATION GENERATION**
+**After successful implementation, AUTOMATICALLY execute:**
+- **/docs:generate_docs_10x** to create comprehensive feature documentation including:
+  - **Technical documentation**: API specs, architecture diagrams, implementation details
+  - **User documentation**: Feature guides, tutorials, and usage examples  
+  - **Developer documentation**: Code comments, architectural decisions, patterns used
+  - **Testing documentation**: Test strategies, coverage reports, validation procedures
+  - **Deployment documentation**: Configuration, monitoring, and maintenance guides
+
+### 🚀 **PHASE 5: INTELLIGENT GIT WORKFLOW & COLLABORATION**
+**After documentation generation is complete, AUTOMATICALLY execute:**
+- **/git:smart_commit_10x** to create intelligent commit with comprehensive details including:
+  - **Feature summary**: Concise description of implemented feature and its benefits
+  - **Documentation references**: Links to generated documentation files and locations
+  - **Implementation details**: Technical approach, patterns used, and architectural decisions
+  - **Testing coverage**: Test results, coverage metrics, and validation outcomes
+  - **Performance metrics**: Benchmarking results and optimization achievements
+  - **Security considerations**: Security patterns implemented and threat mitigations
+
+**Commit Message Template:**
+```
+feat: Implement [feature_name] with competitive intelligence and auto-docs
+
+- [Feature summary and key benefits]
+- Generated comprehensive documentation in:
+  * Knowledge/documentation/[feature]_technical_docs_[YYYY-MM-DD].md
+  * Knowledge/documentation/[feature]_user_guide_[YYYY-MM-DD].md
+  * Instructions/development/[feature]_implementation_guide.md
+- [Implementation highlights and patterns used]
+- [Performance and security achievements]
+
+🤖 Generated with [Claude Code](https://claude.ai/code)
+Co-Authored-By: Claude <noreply@anthropic.com>
 ```
 
-**Redundant Storage with Intelligent Classification:**
-- **Primary**: `smart_memory_unified` - Unified orchestration with automatic content classification
-- **Secondary**: `chroma-rag` - Vector embeddings for implementation pattern matching
-- **Tertiary**: `sqlite` - Structured metrics with ML training labels and effectiveness scoring
-- **Quaternary**: `Knowledge/` files - Persistent markdown with consistent frontmatter metadata
+### 🔥 **SUCCESS CRITERIA & DELIVERABLES**
+✅ **Market-informed design** with competitive analysis and differentiation
+✅ **Research-backed architecture** using proven patterns and industry standards
+✅ **Performance optimized** with benchmarking against industry leaders
+✅ **Security hardened** with latest threat intelligence integration
+✅ **Comprehensive testing** with industry-leading coverage and validation
+✅ **Auto-generated documentation** with technical and user-facing content
+✅ **Pattern storage** in memory MCP for organizational learning and reuse
+✅ **Intelligent git commit** with comprehensive documentation references and metrics
 
-**ML Training Data Structure:**
-```json
-{
-  "implementation_session": {
-    "timestamp": "$(date -Iseconds)",
-    "features": {
-      "market_research_quality": 0.88,
-      "competitive_analysis_depth": 0.92,
-      "implementation_complexity": 0.75,
-      "performance_optimization_level": 0.83
-    },
-    "outcomes": {
-      "implementation_success": true,
-      "performance_improvement": 0.78,
-      "market_alignment_score": 0.90
-    },
-    "classification_labels": ["successful_implementation", "market_validated", "performance_optimized"],
-    "success_probability": 0.89
-  }
-}
-```
-
-**Cross-System Synchronization:**
-- **chroma-rag**: Create semantic embeddings for implementation patterns and competitive intelligence
-- **smart_memory_unified**: Store implementation methodologies with automatic classification routing
-- **sqlite**: Track implementation metrics and success correlations for ML model training
-- **Knowledge/patterns/**: Archive successful implementation patterns with effectiveness scoring
-
-✅ Market-informed design, research-backed architecture, current API usage, performance optimized, ML training ready
+**EXECUTE IMMEDIATELY**: Implement the feature using competitive intelligence and proven patterns, then automatically generate comprehensive documentation using /docs:generate_docs_10x command, followed by intelligent git commit using /git:smart_commit_10x with documentation references.

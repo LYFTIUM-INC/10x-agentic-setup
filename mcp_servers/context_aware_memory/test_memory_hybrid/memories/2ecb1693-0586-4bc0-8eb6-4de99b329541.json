@@ -1,0 +1,34 @@
+{
+  "memory_id": "2ecb1693-0586-4bc0-8eb6-4de99b329541",
+  "content": "SQL queries for analytics dashboard",
+  "content_hash": "e081ebb3c3a1858cc246ea99dafe50f5",
+  "memory_type": "code",
+  "context": {
+    "project": "analytics",
+    "session": null,
+    "user": "charlie",
+    "application": null,
+    "timestamp": "2025-07-08T08:49:42.879910",
+    "location": null,
+    "environment": null,
+    "metadata": {}
+  },
+  "tags": [
+    "sql",
+    "analytics",
+    "queries"
+  ],
+  "importance": 0.7,
+  "confidence": 1.0,
+  "access_level": "public",
+  "created_at": "2025-07-08T08:49:42.879919",
+  "updated_at": "2025-07-08T08:49:42.879920",
+  "expires_at": null,
+  "last_accessed": null,
+  "access_count": 0,
+  "embedding": null,
+  "similarity_score": 0.0,
+  "related_memories": [],
+  "parent_memory": null,
+  "child_memories": []
+}

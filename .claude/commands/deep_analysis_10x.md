@@ -1,30 +1,35 @@
 ## 🚀 10X DEEP ANALYSIS & STRATEGIC INTELLIGENCE
-*Enhanced with full MCP ecosystem orchestration*
+*Enhanced with full MCP ecosystem orchestration including vector search and deep research*
 
 **Claude, perform COMPREHENSIVE MULTI-SOURCE analysis and create INTELLIGENCE-DRIVEN strategic plan.**
 
 ### 🔥 **PHASE 1: MARKET & COMPETITIVE INTELLIGENCE** (use "think hard")
 
-**1.1 External Intelligence Gathering**
+**1.1 External Intelligence Gathering with New MCP Integration**
 - **websearch**: Research latest trends in project domain/technology stack
 - **websearch**: "best practices [detected_tech_stack] 2024 enterprise"
 - **websearch**: "performance benchmarks [primary_language] applications"
+- **gpt-researcher**: Comprehensive deep research on latest best practices for detected technology stack
 - **fetch**: Analyze 2-3 top competitor implementations or similar projects
 - **github**: Search for highest-starred projects in similar domain
 - **github**: Identify trending patterns and architectures
+- **meilisearch**: Full-text search through organizational documentation and industry knowledge
 
-**1.2 Technology Intelligence**
+**1.2 Enhanced Technology Intelligence**
 - **websearch**: "[detected_frameworks] latest updates security patches"
 - **websearch**: "migration guide [current_version] to [latest_version]"
+- **gpt-researcher**: Research-backed technology assessment and validation
 - **fetch**: Download latest framework documentation for gap analysis
-- **context7**: Access real-time framework documentation (add "use context7" for current API references)
 - **github**: Research issues and solutions for similar tech stacks
-- **smart_memory_unified**: Review previous analysis patterns and learnings with intelligent classification and cross-system access
+- **memory**: Review previous analysis patterns and learnings
+- **qdrant**: Vector-based semantic search for similar project patterns and successful architectures
 
-**1.3 Internal Discovery**
+**1.3 Intelligent Internal Discovery**
 - **filesystem**: Comprehensive codebase structure analysis
 - **sqlite**: Query any existing metrics/performance data
-- **smart_memory_unified**: Review previous analysis patterns and learnings with intelligent classification and cross-system access
+- **memory**: Review previous analysis patterns and learnings
+- **qdrant**: Store and retrieve semantic embeddings of project patterns for intelligent matching
+- **meilisearch**: Index project documentation and organizational knowledge for instant search
 
 ### ⚡ **PHASE 2: MULTI-LAYERED ANALYSIS** (use "think harder")
 
@@ -41,9 +46,8 @@
 - **Testing coverage** vs industry best practices (github examples)
 
 **2.3 Intelligence Synthesis**
-- **smart_memory_unified**: Store analysis patterns with automatic classification and cross-system synchronization
-- **chroma-rag**: Create semantic embeddings for pattern matching and similarity search
-- **sqlite**: Store structured benchmark data with ML training labels for trend analysis
+- **memory**: Store analysis patterns for future improvement
+- **sqlite**: Store benchmark data for trend analysis
 
 ### 🎯 **PHASE 3: STRATEGIC INTELLIGENCE PLANNING** (use "ultrathink")
 
@@ -61,30 +65,17 @@
 
 ### 📊 **ENHANCED OUTPUT REQUIREMENTS:**
 
-**Structured Intelligence Reports with ML Training Data:**
-```yaml
-# Market Analysis Report
-filename: Knowledge/documentation/market_analysis_$(date +%Y-%m-%d_%H-%M-%S).md
-frontmatter:
-  type: market_analysis
-  timestamp: $(date -Iseconds)
-  classification: competitive_intelligence
-  ml_labels: [market_trends, competitive_positioning, opportunity_scoring]
-  success_metrics: [market_share_potential, competitive_advantage_score]
-  cross_references: [competitive_analysis, technical_benchmarks]
-```
+**Intelligence Reports (Dynamic Timestamps):**
+- `Knowledge/intelligence/market_analysis_$(date +%Y-%m-%d_%H-%M-%S).md` - Market positioning & trends
+- `Knowledge/intelligence/competitive_analysis_$(date +%Y-%m-%d_%H-%M-%S).md` - Competitor insights
+- `Knowledge/intelligence/technical_analysis_$(date +%Y-%m-%d_%H-%M-%S).md` - Benchmarked technical review
+- `Instructions/development/strategic_plan_$(date +%Y-%m-%d_%H-%M-%S).md` - Intelligence-driven roadmap
 
-**Multi-System Storage with Redundancy:**
-- **Primary**: `smart_memory_unified` - Unified orchestration with automatic classification
-- **Secondary**: `chroma-rag` - Vector embeddings for semantic search and pattern matching
-- **Tertiary**: `sqlite` - Structured metrics with ML training labels and effectiveness scoring
-- **Quaternary**: `Knowledge/` files - Persistent markdown with consistent frontmatter metadata
-
-**Cross-Referenced Resources with Semantic Linking:**
-- `Knowledge/patterns/industry_best_practices_$(date +%Y-%m-%d_%H-%M-%S).md` - Researched patterns with ML feature extraction
-- `Knowledge/patterns/competitive_advantages_$(date +%Y-%m-%d_%H-%M-%S).md` - Unique positioning insights with success classification
-- `Knowledge/context/benchmark_data_$(date +%Y-%m-%d_%H-%M-%S).md` - Performance baselines with effectiveness scoring
-- `Instructions/priority_implementations_$(date +%Y-%m-%d_%H-%M-%S).md` - Quick wins with success/failure labels for reinforcement learning
+**Cross-Referenced Resources (Dynamic Timestamps):**
+- `Knowledge/patterns/industry_best_practices_$(date +%Y-%m-%d_%H-%M-%S).md` - Researched patterns
+- `Knowledge/patterns/competitive_advantages_$(date +%Y-%m-%d_%H-%M-%S).md` - Unique positioning insights
+- `Knowledge/context/benchmark_data_$(date +%Y-%m-%d_%H-%M-%S).md` - Performance baselines
+- `Instructions/development/priority_implementations_$(date +%Y-%m-%d_%H-%M-%S).md` - Quick wins with examples
 
 ### 🔥 **10X SUCCESS CRITERIA:**
 

@@ -1,0 +1,34 @@
+{
+  "memory_id": "4f7719ab-16ad-4338-9d8d-1dfde1a6241a",
+  "content": "JavaScript async/await patterns",
+  "content_hash": "0482d71e84513c37302a42f709cd32c3",
+  "memory_type": "code",
+  "context": {
+    "project": "frontend",
+    "session": null,
+    "user": "charlie",
+    "application": null,
+    "timestamp": "2025-07-08T08:49:42.875742",
+    "location": null,
+    "environment": null,
+    "metadata": {}
+  },
+  "tags": [
+    "javascript",
+    "async",
+    "patterns"
+  ],
+  "importance": 0.6,
+  "confidence": 1.0,
+  "access_level": "public",
+  "created_at": "2025-07-08T08:49:42.875752",
+  "updated_at": "2025-07-08T08:49:42.875753",
+  "expires_at": null,
+  "last_accessed": null,
+  "access_count": 0,
+  "embedding": null,
+  "similarity_score": 0.0,
+  "related_memories": [],
+  "parent_memory": null,
+  "child_memories": []
+}

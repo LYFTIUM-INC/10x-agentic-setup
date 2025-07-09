@@ -19,6 +19,7 @@ from utils.ml_utils import EmbeddingManager, EmbeddingConfig, VectorDatabase
 from utils.code_utils import GeneralCodeAnalyzer, LanguageDetector, get_code_summary, CodeMetrics, CodeIssue
 from utils.config_utils import MCPServerSettings, ConfigManager
 from tools.advanced_analysis import enhance_code_analysis, AdvancedPythonAnalyzer
+from tools.quality_assessment import assess_code_quality, CodeQualityAnalyzer
 
 from pydantic import BaseModel, Field
 import numpy as np
@@ -167,6 +168,37 @@ class MLCodeIntelligenceServer(BaseMCPServer):
             """Detect code patterns"""
             result = await self._advanced_analysis(code, language)
             return result.get('advanced_analysis', {}).get('detected_patterns', [])
+        
+        @self.register_tool(
+            name="assess_code_quality",
+            description="Comprehensive code quality assessment with scores and improvement recommendations"
+        )
+        async def assess_code_quality_tool(code: str, language: Optional[str] = None, include_trends: bool = False) -> Dict[str, Any]:
+            """Assess comprehensive code quality"""
+            return await self._assess_quality(code, language, include_trends)
+        
+        @self.register_tool(
+            name="get_quality_metrics",
+            description="Get detailed quality metrics for code assessment"
+        )
+        async def get_quality_metrics(code: str, language: Optional[str] = None) -> Dict[str, Any]:
+            """Get quality metrics"""
+            result = await self._assess_quality(code, language, False)
+            return {
+                'overall_score': result.get('overall_score', 0),
+                'category_scores': result.get('category_scores', {}),
+                'technical_debt_ratio': result.get('technical_debt_ratio', 0),
+                'maintainability_index': result.get('maintainability_index', 0)
+            }
+        
+        @self.register_tool(
+            name="get_improvement_priorities",
+            description="Get prioritized list of code improvements"
+        )
+        async def get_improvement_priorities(code: str, language: Optional[str] = None) -> List[Dict[str, Any]]:
+            """Get improvement priorities"""
+            result = await self._assess_quality(code, language, False)
+            return result.get('improvement_priorities', [])
     
     async def _startup(self):
         """Initialize ML components on startup"""
@@ -416,6 +448,27 @@ class MLCodeIntelligenceServer(BaseMCPServer):
             logger.error(f"Advanced analysis failed: {e}")
             return {
                 'error': f"Advanced analysis failed: {e}",
+                'language': language or 'unknown'
+            }
+    
+    async def _assess_quality(self, code: str, language: Optional[str] = None, include_trends: bool = False) -> Dict[str, Any]:
+        """Perform comprehensive code quality assessment"""
+        try:
+            # Detect language if not provided
+            detected_language = language or LanguageDetector.detect(code)
+            
+            # Use the quality assessment from our quality analyzer
+            result = assess_code_quality(code, detected_language, include_trends)
+            
+            logger.info(f"Quality assessment completed for {detected_language} code with score {result.get('overall_score', 0):.1f}")
+            return result
+            
+        except Exception as e:
+            logger.error(f"Quality assessment failed: {e}")
+            return {
+                'status': 'error',
+                'error': f"Quality assessment failed: {e}",
+                'overall_score': 0.0,
                 'language': language or 'unknown'
             }
 
