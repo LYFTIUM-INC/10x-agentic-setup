@@ -13,6 +13,16 @@
 **4. CONTINUOUS LEARNING**: Every interaction improves system-wide intelligence
 **5. ZERO DATA LOSS**: Perfect session persistence and knowledge preservation
 
+### 🧠 **NEW: ML-ENHANCED MEMORY INTELLIGENCE** (use "ultrathink")
+
+**MASTER ML MEMORY ORCHESTRATOR** - Leverage 5 ML-enhanced MCP servers for maximum intelligence:
+
+**🧠 Context-Aware Memory MCP**: Predictive memory loading, semantic storage, adaptive learning
+**🕸️ 10X Knowledge Graph MCP**: Concept extraction, relationship mapping, knowledge evolution
+**📊 10X Command Analytics MCP**: Usage patterns, success prediction, workflow optimization  
+**⚡ 10X Workflow Optimizer MCP**: ML sequence optimization, pattern learning, efficiency prediction
+**🤖 ML Code Intelligence MCP**: Semantic code search, quality assessment, refactoring suggestions
+
 ### ⚡ **PHASE 1: INTELLIGENT CONTENT CLASSIFICATION** (use "ultrathink")
 
 **1.1 Content Analysis & Automatic Routing**
@@ -48,7 +58,9 @@ Semantic Indexed (ChromaDB vectors):
   - Historical success pattern vectors
 ```
 
-**1.2 Routing Decision Engine**
+**1.2 ML-Enhanced Routing Decision Engine**
+- **context-aware-memory MCP**: Use predictive memory loading to anticipate storage needs and optimal classification
+- **10x-knowledge-graph MCP**: Analyze content for concept extraction and semantic relationships before storage routing
 - **chroma-rag**: Check for similar existing content to avoid duplication and ensure consistency
 - **smart_memory_10x**: Access organizational memory patterns for classification guidance
 - **cached_websearch_10x**: Verify if content should be stored as research intelligence
@@ -63,7 +75,9 @@ Execute comprehensive synchronization across all memory systems:
 - **Search Cache → Knowledge/ Pipeline**: Migrate valuable research to permanent organizational knowledge
 - **ChromaDB → All Systems Pipeline**: Provide similarity-based recommendations across all memory systems
 
-**2.2 Automatic Cross-Reference Generation**
+**2.2 ML-Enhanced Cross-Reference Generation**
+- **10x-knowledge-graph MCP**: Create intelligent concept relationship maps showing connections between implementations, decisions, and patterns
+- **context-aware-memory MCP**: Store contextual relationships and predictive associations for adaptive retrieval
 - **chroma-rag**: Create semantic embeddings that link related content across all memory systems
 - **chroma-rag**: Build knowledge graphs showing relationships between concepts and implementations
 - **smart_memory_unified**: Store cross-reference mappings for rapid access to related organizational knowledge with automatic classification

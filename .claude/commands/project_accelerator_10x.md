@@ -3,9 +3,12 @@
 
 **Claude, accelerate project development using FULL MCP ECOSYSTEM orchestration for MAXIMUM velocity.**
 
-### ⚡ **MEGA-INTELLIGENCE GATHERING** (use "ultrathink")
+### ⚡ **ML-ENHANCED MEGA-INTELLIGENCE GATHERING** (use "ultrathink")
 
-**Market & Competitive Intelligence with Enhanced Research**
+**Market & Competitive Intelligence with ML Enhancement**
+- **10x-knowledge-graph MCP**: Extract concepts and relationships from existing organizational knowledge about similar projects
+- **context-aware-memory MCP**: Store intelligence context with predictive loading for accelerated decision-making
+- **10x-workflow-optimizer MCP**: Optimize the intelligence gathering workflow sequence for maximum efficiency
 - **websearch**: "[project_domain] market size trends 2024"
 - **websearch**: "top 10 [project_type] companies technology stack"
 - **gpt-researcher**: Comprehensive market research and competitive landscape analysis
@@ -14,7 +17,9 @@
 - **websearch**: "[target_market] pain points user research"
 - **meilisearch**: Search organizational competitive intelligence and market research
 
-**Enhanced Technology Intelligence**
+**ML-Enhanced Technology Intelligence**
+- **ml-code-intelligence MCP**: Analyze existing codebase patterns and quality standards for technology alignment
+- **10x-command-analytics MCP**: Review command usage patterns to understand optimal technology workflows
 - **websearch**: "[tech_stack] performance benchmarks scalability"
 - **github**: Find proven architectures for similar scale/requirements
 - **gpt-researcher**: Deep technology assessment and validation research

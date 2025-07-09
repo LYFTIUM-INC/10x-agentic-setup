@@ -21,7 +21,10 @@
 - **filesystem**: Analyze related modules, dependencies, and integration points for broader context understanding
 - **filesystem**: Review existing error handling patterns and debugging infrastructure in the codebase
 
-**1.2 Organizational Debugging Intelligence Retrieval**
+**1.2 ML-Enhanced Organizational Debugging Intelligence**
+- **ml-code-intelligence MCP**: Analyze code around error for quality issues and refactoring suggestions
+- **context-aware-memory MCP**: Retrieve debugging context with predictive loading for faster resolution
+- **10x-knowledge-graph MCP**: Map error concepts to related organizational knowledge and patterns
 - **smart_memory_unified**: Retrieve similar debugging sessions and successful resolution strategies from organizational history
 - **chroma-rag**: Semantic search for error patterns that match current issue across all organizational projects
 - **chroma-rag**: Find proven debugging approaches and solution patterns from organizational knowledge base

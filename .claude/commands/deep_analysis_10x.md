@@ -5,7 +5,9 @@
 
 ### 🔥 **PHASE 1: MARKET & COMPETITIVE INTELLIGENCE** (use "think hard")
 
-**1.1 External Intelligence Gathering with New MCP Integration**
+**1.1 ML-Enhanced External Intelligence Gathering**
+- **10x-knowledge-graph MCP**: Analyze existing organizational knowledge for related concepts and successful patterns
+- **context-aware-memory MCP**: Store and retrieve analysis context with predictive loading for faster insights
 - **websearch**: Research latest trends in project domain/technology stack
 - **websearch**: "best practices [detected_tech_stack] 2024 enterprise"
 - **websearch**: "performance benchmarks [primary_language] applications"
@@ -24,7 +26,9 @@
 - **memory**: Review previous analysis patterns and learnings
 - **qdrant**: Vector-based semantic search for similar project patterns and successful architectures
 
-**1.3 Intelligent Internal Discovery**
+**1.3 ML-Enhanced Internal Discovery**
+- **ml-code-intelligence MCP**: Perform semantic code search and quality assessment across entire codebase
+- **10x-command-analytics MCP**: Analyze historical command usage patterns for optimization insights
 - **filesystem**: Comprehensive codebase structure analysis
 - **sqlite**: Query any existing metrics/performance data
 - **memory**: Review previous analysis patterns and learnings
