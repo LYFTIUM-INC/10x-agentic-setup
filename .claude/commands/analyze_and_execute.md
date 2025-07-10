@@ -71,12 +71,11 @@ Where:
 - `/intelligence:capture_session_history_10x` - Comprehensive session capture with ML analysis
 - `/intelligence:retrieve_conversation_context_10x` - Intelligent context retrieval with predictions
 - `/rag_intelligence_orchestrator_10x` - Vector-enhanced RAG with semantic search
-- `/qa:intelligent_debug_analyzer_10x` - ML-powered debugging with pattern matching
+- `/qa:debug_smart_10x` - Multi-mode intelligent debugging with ML pattern matching
 
 **PROJECT-SPECIFIC AUTOMATION COMMANDS:**
 - `/orchestration:mcp_health_monitor_10x` - Intelligent MCP server health monitoring with auto-recovery
 - `/testing:ml_pipeline_test_10x` - Comprehensive ML pipeline testing with regression detection
-- `/automation:auto_documentation_10x` - Intelligent documentation generation from code and usage
 - `/deployment:smart_backup_restore_10x` - Smart backup strategy for vector stores and ML models
 - `/automation:project_template_generator_10x` - Intelligent project scaffolding with best practices
 - `/monitoring:performance_dashboard_10x` - Real-time performance monitoring with ML analytics

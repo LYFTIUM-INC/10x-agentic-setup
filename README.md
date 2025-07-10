@@ -62,8 +62,7 @@ The revolutionary **analyze_and_execute** command implements a Central Coordinat
 - `/cached_websearch_10x` - Smart web search with automatic caching and memory integration
 
 ### 🛡️ **Quality & Security**
-- `/qa:debug_smart_10x` - Sequential thinking debugging
-- `/qa:intelligent_debug_analyzer_10x` - **NEW** - AI-powered debugging with pattern matching
+- `/qa:debug_smart_10x` - **ENHANCED** - Multi-mode intelligent debugging with ML pattern matching
 - `/qa:test_strategy_10x` - Industry-leading testing strategies
 - `/qa:smart_test_generator_10x` - **NEW** - Intelligent test generation with coverage optimization
 - `/qa:smart_logging_orchestrator_10x` - **NEW** - Dynamic logging injection with performance optimization
@@ -84,7 +83,6 @@ The revolutionary **analyze_and_execute** command implements a Central Coordinat
 ### 🏗️ **Project-Specific Automation**
 - `/orchestration:mcp_health_monitor_10x` - **NEW** - Intelligent MCP server health monitoring with auto-recovery
 - `/testing:ml_pipeline_test_10x` - **NEW** - Comprehensive ML pipeline testing with regression detection  
-- `/automation:auto_documentation_10x` - **NEW** - Intelligent documentation generation from code and usage
 - `/deployment:smart_backup_restore_10x` - **NEW** - Smart backup strategy for vector stores and ML models
 - `/automation:project_template_generator_10x` - **NEW** - Intelligent project scaffolding with best practices
 - `/monitoring:performance_dashboard_10x` - **NEW** - Real-time performance monitoring with ML analytics

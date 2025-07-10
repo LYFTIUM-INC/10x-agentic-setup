@@ -77,7 +77,6 @@ This project has been enhanced with **10X MCP-Integrated Commands** that leverag
 # Project-Specific Automation (NEW)
 /orchestration:mcp_health_monitor_10x
 /testing:ml_pipeline_test_10x
-/automation:auto_documentation_10x
 /deployment:smart_backup_restore_10x
 /automation:project_template_generator_10x
 /monitoring:performance_dashboard_10x
