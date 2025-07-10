@@ -5,6 +5,9 @@
 
 ### ⚡ **ML-ENHANCED MEGA-INTELLIGENCE GATHERING** (use "ultrathink")
 
+**Historical Context Loading**
+- **FIRST: /intelligence:retrieve_conversation_context_10x --deep --timeframe "project lifetime"** - Load all relevant project history and patterns
+
 **Market & Competitive Intelligence with ML Enhancement**
 - **10x-knowledge-graph MCP**: Extract concepts and relationships from existing organizational knowledge about similar projects
 - **context-aware-memory MCP**: Store intelligence context with predictive loading for accelerated decision-making
@@ -70,3 +73,10 @@
 3. **Performance Excellence**: Optimization using proven techniques
 4. **User Experience**: Validated against leading design patterns
 5. **Documentation Excellence**: Following successful project templates
+
+### 📸 **PROJECT INTELLIGENCE CAPTURE**
+**After acceleration planning is complete:**
+- **/intelligence:capture_session_history_10x** - Capture all research, decisions, and patterns for organizational learning
+- Store market intelligence, technology decisions, and architectural patterns for future projects
+
+✅ **EXECUTE IMMEDIATELY**: Begin project acceleration with historical context loading, comprehensive intelligence gathering, and session capture for continuous improvement.

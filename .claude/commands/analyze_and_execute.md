@@ -68,6 +68,8 @@ Where:
 **ML-ENHANCED COMMANDS:**
 - `/ml_powered_development_10x` - Comprehensive ML orchestration with all 5 MCP servers
 - `/intelligence:smart_memory_unified_10x` - ML-enhanced memory orchestration
+- `/intelligence:capture_session_history_10x` - Comprehensive session capture with ML analysis
+- `/intelligence:retrieve_conversation_context_10x` - Intelligent context retrieval with predictions
 - `/rag_intelligence_orchestrator_10x` - Vector-enhanced RAG with semantic search
 - `/qa:intelligent_debug_analyzer_10x` - ML-powered debugging with pattern matching
 

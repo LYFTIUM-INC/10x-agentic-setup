@@ -41,6 +41,8 @@ The revolutionary **analyze_and_execute** command implements a Central Coordinat
 - `/analyze_and_execute` - Ultimate agentic command orchestrator
 - `/rag_intelligence_orchestrator_10x` - **NEW** - Vector-enhanced RAG with semantic search and persistent embeddings
 - `/intelligence:smart_memory_unified_10x` - **NEW** - Unified memory orchestration with cross-system synchronization
+- `/intelligence:capture_session_history_10x` - **NEW** - Comprehensive session capture with ML analysis
+- `/intelligence:retrieve_conversation_context_10x` - **NEW** - Intelligent context retrieval with predictive loading
 - `/smart_research_and_document_10x` - Advanced multi-MCP research with persistent memory
 
 ### 🔍 **Analysis & Intelligence**
@@ -105,6 +107,8 @@ The revolutionary **analyze_and_execute** command implements a Central Coordinat
 - **Knowledge Graph**: Automatic concept extraction and relationship mapping
 - **Workflow Optimization**: ML models that learn and optimize your workflows
 - **Command Analytics**: Usage pattern analysis with success prediction
+- **Session History Capture**: Comprehensive session analysis with git, logs, and ML integration
+- **Conversation Context Retrieval**: Intelligent historical context with pattern recognition
 
 ### **🆕 NEW: Project-Specific Command Generation**
 - **Filesystem Analysis**: Deep project structure analysis for custom automation opportunities

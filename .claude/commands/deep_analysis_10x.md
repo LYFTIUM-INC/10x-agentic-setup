@@ -5,6 +5,9 @@
 
 ### 🔥 **PHASE 1: MARKET & COMPETITIVE INTELLIGENCE** (use "think hard")
 
+**1.0 Historical Context Loading**
+- **FIRST: /intelligence:retrieve_conversation_context_10x --deep --topic "project analysis"** - Load all relevant past analyses and insights
+
 **1.1 ML-Enhanced External Intelligence Gathering**
 - **10x-knowledge-graph MCP**: Analyze existing organizational knowledge for related concepts and successful patterns
 - **context-aware-memory MCP**: Store and retrieve analysis context with predictive loading for faster insights
@@ -89,3 +92,13 @@
 ✅ **Continuous Learning**: Analysis patterns stored for future enhancement
 ✅ **Actionable Intelligence**: Specific steps with competitive context
 ✅ **Performance Tracking**: Benchmarks established for measuring progress
+
+### 📸 **PHASE 4: INTELLIGENCE CAPTURE & EVOLUTION**
+
+**After analysis completion:**
+- **/intelligence:capture_session_history_10x** - Capture comprehensive analysis session
+- Store market intelligence, technical insights, and strategic decisions
+- Extract patterns for future analysis improvements
+- Update organizational intelligence knowledge base
+
+**EXECUTE IMMEDIATELY**: Begin deep analysis with historical context, comprehensive intelligence gathering, and complete session capture for continuous improvement.

@@ -69,6 +69,10 @@ This project has been enhanced with **10X MCP-Integrated Commands** that leverag
 
 # ML-Powered Development Orchestrator (NEW)
 /ml_powered_development_10x
+
+# Conversation History Management (NEW)
+/intelligence:capture_session_history_10x
+/intelligence:retrieve_conversation_context_10x
 ```
 
 ## 🔥 10X Enhancement Features

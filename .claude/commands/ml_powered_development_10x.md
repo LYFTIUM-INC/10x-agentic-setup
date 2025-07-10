@@ -15,6 +15,9 @@
 
 ### ⚡ **PHASE 1: ML-ENHANCED PROJECT ANALYSIS** (use "ultrathink")
 
+**1.0 Historical Context Loading**
+- **FIRST: /intelligence:retrieve_conversation_context_10x --deep --patterns** - Load all relevant ML development patterns and past sessions
+
 **1.1 Comprehensive ML Code Intelligence**
 - **ml-code-intelligence MCP**: Perform semantic code search across entire codebase for patterns and quality assessment
 - **ml-code-intelligence MCP**: Generate quality assessment report with ML-powered improvement suggestions
@@ -146,7 +149,15 @@ Expected Continuous Improvement:
 ✅ **Knowledge Evolution**: Semantic knowledge graph grows and improves organizational intelligence
 ✅ **Compound Intelligence**: ML capabilities compound across all development workflows
 
-**EXECUTE IMMEDIATELY**: Begin ML-powered development orchestration using all 5 ML-enhanced MCP servers for maximum intelligence, efficiency, and continuous learning improvement.
+### 📸 **PHASE 7: ML SESSION CAPTURE & EVOLUTION**
+
+**7.1 Comprehensive Session Analysis**
+- **AFTER COMPLETION: /intelligence:capture_session_history_10x** - Capture entire ML development session
+- Store ML patterns, model improvements, and workflow optimizations
+- Extract insights for continuous ML system improvement
+- Update organizational ML knowledge base
+
+**EXECUTE IMMEDIATELY**: Begin ML-powered development orchestration using all 5 ML-enhanced MCP servers for maximum intelligence, efficiency, and continuous learning improvement. Complete with session capture for ML evolution.
 
 🤖 Generated with [Claude Code](https://claude.ai/code)
 

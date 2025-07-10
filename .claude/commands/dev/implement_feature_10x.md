@@ -2,6 +2,7 @@
 **Claude, implement features using INDUSTRY-LEADING practices with COMPETITIVE INTELLIGENCE, VECTOR SEARCH, and AUTO-DOCUMENTATION.**
 
 ### 🔥 **PHASE 1: ML-ENHANCED MARKET-INFORMED FEATURE RESEARCH** (use "think hard")
+- **FIRST: /intelligence:retrieve_conversation_context_10x --patterns --topic "feature development"** - Load relevant historical patterns and past implementations
 - **10x-knowledge-graph MCP**: Scan organizational knowledge for related feature concepts and implementation patterns
 - **context-aware-memory MCP**: Store feature research context with predictive loading for implementation phase
 - **ml-code-intelligence MCP**: Analyze existing codebase for similar feature patterns and quality benchmarks
@@ -76,4 +77,12 @@ Co-Authored-By: Claude <noreply@anthropic.com>
 ✅ **Pattern storage** in memory MCP for organizational learning and reuse
 ✅ **Intelligent git commit** with comprehensive documentation references and metrics
 
-**EXECUTE IMMEDIATELY**: Implement the feature using competitive intelligence and proven patterns, then automatically generate comprehensive documentation using /docs:generate_docs_10x command, followed by intelligent git commit using /git:smart_commit_10x with documentation references.
+### 📸 **PHASE 6: SESSION KNOWLEDGE CAPTURE**
+**After git commit is complete, AUTOMATICALLY execute:**
+- **/intelligence:capture_session_history_10x** to capture and analyze the entire implementation session including:
+  - **Implementation patterns**: Store successful approaches for future reuse
+  - **Technical decisions**: Document architectural choices and rationale
+  - **Performance metrics**: Capture benchmarking results and optimizations
+  - **Learning insights**: Extract patterns for organizational knowledge
+
+**EXECUTE IMMEDIATELY**: Implement the feature using competitive intelligence and proven patterns, then automatically generate comprehensive documentation using /docs:generate_docs_10x command, followed by intelligent git commit using /git:smart_commit_10x with documentation references, and finally capture session insights with /intelligence:capture_session_history_10x.
