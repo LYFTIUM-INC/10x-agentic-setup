@@ -81,6 +81,14 @@ The revolutionary **analyze_and_execute** command implements a Central Coordinat
 ### 🤖 **ML-Enhanced Development**
 - `/ml_powered_development_10x` - **NEW** - Comprehensive ML orchestration using all 5 ML-enhanced MCP servers
 
+### 🏗️ **Project-Specific Automation**
+- `/orchestration:mcp_health_monitor_10x` - **NEW** - Intelligent MCP server health monitoring with auto-recovery
+- `/testing:ml_pipeline_test_10x` - **NEW** - Comprehensive ML pipeline testing with regression detection  
+- `/automation:auto_documentation_10x` - **NEW** - Intelligent documentation generation from code and usage
+- `/deployment:smart_backup_restore_10x` - **NEW** - Smart backup strategy for vector stores and ML models
+- `/automation:project_template_generator_10x` - **NEW** - Intelligent project scaffolding with best practices
+- `/monitoring:performance_dashboard_10x` - **NEW** - Real-time performance monitoring with ML analytics
+
 ## 🔥 Core Features
 
 ### **Central Coordination Agent (CCA)**

@@ -73,6 +73,14 @@ Where:
 - `/rag_intelligence_orchestrator_10x` - Vector-enhanced RAG with semantic search
 - `/qa:intelligent_debug_analyzer_10x` - ML-powered debugging with pattern matching
 
+**PROJECT-SPECIFIC AUTOMATION COMMANDS:**
+- `/orchestration:mcp_health_monitor_10x` - Intelligent MCP server health monitoring with auto-recovery
+- `/testing:ml_pipeline_test_10x` - Comprehensive ML pipeline testing with regression detection
+- `/automation:auto_documentation_10x` - Intelligent documentation generation from code and usage
+- `/deployment:smart_backup_restore_10x` - Smart backup strategy for vector stores and ML models
+- `/automation:project_template_generator_10x` - Intelligent project scaffolding with best practices
+- `/monitoring:performance_dashboard_10x` - Real-time performance monitoring with ML analytics
+
 **DEVELOPMENT COMMANDS:**
 - `/qa:test_strategy_10x` - Industry-leading testing strategies
 - `/docs:generate_docs_10x` - Global documentation standards
