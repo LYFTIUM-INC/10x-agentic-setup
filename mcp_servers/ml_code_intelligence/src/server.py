@@ -92,6 +92,9 @@ class MLCodeIntelligenceServer(BaseMCPServer):
         
         # Register tools
         self._register_tools()
+        
+        # Register prompts
+        self._register_prompts()
     
     def _register_tools(self):
         """Register all MCP tools"""
@@ -199,6 +202,144 @@ class MLCodeIntelligenceServer(BaseMCPServer):
             """Get improvement priorities"""
             result = await self._assess_quality(code, language, False)
             return result.get('improvement_priorities', [])
+    
+    def _register_prompts(self):
+        """Register prompt templates for common workflows"""
+        
+        @self.register_prompt(
+            name="analyze_codebase",
+            description="Comprehensive codebase analysis with customizable focus areas",
+            arguments=[
+                {
+                    "name": "focus",
+                    "description": "Analysis focus: security, performance, quality, or patterns",
+                    "required": False
+                },
+                {
+                    "name": "depth",
+                    "description": "Analysis depth: quick, standard, or deep",
+                    "required": False
+                }
+            ]
+        )
+        async def analyze_codebase_prompt(focus: str = "quality", depth: str = "standard") -> List[Dict[str, Any]]:
+            """Prompt template for comprehensive codebase analysis"""
+            return [
+                {
+                    "role": "system",
+                    "content": f"You are a senior code analyst specializing in {focus} analysis. Perform a {depth} analysis of the codebase."
+                },
+                {
+                    "role": "user",
+                    "content": "Analyze the codebase focusing on the specified area. Use the semantic_code_search and analyze_code tools to examine relevant files. Provide actionable insights and prioritized recommendations."
+                }
+            ]
+        
+        @self.register_prompt(
+            name="refactor_for_pattern",
+            description="Generate refactoring suggestions to implement a specific design pattern",
+            arguments=[
+                {
+                    "name": "pattern",
+                    "description": "Design pattern to apply: SOLID, DRY, KISS, Factory, Singleton, etc.",
+                    "required": True
+                },
+                {
+                    "name": "file_path",
+                    "description": "Path to the file to refactor",
+                    "required": True
+                }
+            ]
+        )
+        async def refactor_for_pattern_prompt(pattern: str, file_path: str) -> List[Dict[str, Any]]:
+            """Prompt template for pattern-based refactoring"""
+            return [
+                {
+                    "role": "system",
+                    "content": f"You are an expert in software design patterns. Help refactor code to implement the {pattern} pattern."
+                },
+                {
+                    "role": "user",
+                    "content": f"Analyze the code in {file_path} and provide specific refactoring suggestions to implement the {pattern} pattern. Use the advanced_code_analysis and get_refactoring_suggestions tools."
+                }
+            ]
+        
+        @self.register_prompt(
+            name="security_audit",
+            description="Perform a security-focused code audit",
+            arguments=[
+                {
+                    "name": "severity_threshold",
+                    "description": "Minimum severity to report: low, medium, high, critical",
+                    "required": False
+                }
+            ]
+        )
+        async def security_audit_prompt(severity_threshold: str = "medium") -> List[Dict[str, Any]]:
+            """Prompt template for security auditing"""
+            return [
+                {
+                    "role": "system",
+                    "content": "You are a security expert. Identify potential vulnerabilities and security issues in code."
+                },
+                {
+                    "role": "user",
+                    "content": f"Perform a comprehensive security audit. Focus on issues with severity {severity_threshold} or higher. Use analyze_code and detect_code_patterns tools to identify security vulnerabilities, injection risks, and other security concerns."
+                }
+            ]
+        
+        @self.register_prompt(
+            name="performance_optimization",
+            description="Identify and fix performance bottlenecks",
+            arguments=[
+                {
+                    "name": "target_metric",
+                    "description": "Performance metric to optimize: speed, memory, scalability",
+                    "required": False
+                }
+            ]
+        )
+        async def performance_optimization_prompt(target_metric: str = "speed") -> List[Dict[str, Any]]:
+            """Prompt template for performance optimization"""
+            return [
+                {
+                    "role": "system",
+                    "content": f"You are a performance optimization expert focusing on {target_metric} improvements."
+                },
+                {
+                    "role": "user", 
+                    "content": "Identify performance bottlenecks and provide optimization suggestions. Use assess_code_quality and advanced_code_analysis tools to find inefficient patterns and suggest improvements."
+                }
+            ]
+        
+        @self.register_prompt(
+            name="code_review",
+            description="Comprehensive code review with actionable feedback",
+            arguments=[
+                {
+                    "name": "review_type",
+                    "description": "Type of review: general, feature, bugfix, refactoring",
+                    "required": False
+                },
+                {
+                    "name": "strictness",
+                    "description": "Review strictness level: lenient, balanced, strict",
+                    "required": False
+                }
+            ]
+        )
+        async def code_review_prompt(review_type: str = "general", strictness: str = "balanced") -> List[Dict[str, Any]]:
+            """Prompt template for code reviews"""
+            return [
+                {
+                    "role": "system",
+                    "content": f"You are a senior developer performing a {strictness} {review_type} code review."
+                },
+                {
+                    "role": "user",
+                    "content": "Review the code comprehensively. Use analyze_code, assess_code_quality, and detect_code_patterns tools. Provide feedback on code quality, potential bugs, style issues, and improvement suggestions."
+                }
+            ]
     
     async def _startup(self):
         """Initialize ML components on startup"""
@@ -368,7 +509,7 @@ class MLCodeIntelligenceServer(BaseMCPServer):
             logger.error(f"Code analysis failed: {e}")
             raise ValueError(f"Code analysis failed: {e}")
     
-    async def _index_code_snippets(self, request: CodeIndexRequest) -> Dict[str, Any]:
+    async def _index_code_snippets(self, request: CodeIndexRequest, progress_token: Optional[str] = None) -> Dict[str, Any]:
         """Index code snippets for semantic search"""
         if not self.embedding_manager:
             raise ValueError("Embedding manager not initialized")
@@ -376,10 +517,25 @@ class MLCodeIntelligenceServer(BaseMCPServer):
         try:
             indexed_count = 0
             failed_count = 0
+            total_snippets = len(request.code_snippets)
+            
+            # Start progress tracking if token provided
+            operation_id = f"index_{int(time.time())}"
+            if progress_token:
+                await self.progress_manager.start_operation(
+                    operation_id, progress_token, total_snippets
+                )
             
             # Process in batches
-            for i in range(0, len(request.code_snippets), request.batch_size):
+            for i in range(0, total_snippets, request.batch_size):
                 batch = request.code_snippets[i:i + request.batch_size]
+                
+                # Update progress
+                if progress_token:
+                    await self.progress_manager.update_progress(
+                        operation_id, i, total_snippets,
+                        f"Processing batch {i//request.batch_size + 1}"
+                    )
                 
                 # Prepare code for embedding
                 code_texts = []
@@ -419,18 +575,33 @@ class MLCodeIntelligenceServer(BaseMCPServer):
             
             self.indexed_code_count = self.vector_db.index.ntotal
             
+            # Complete progress tracking
+            if progress_token:
+                await self.progress_manager.complete_operation(
+                    operation_id, 
+                    f"Successfully indexed {indexed_count} code snippets"
+                )
+            
             logger.info(f"Indexed {indexed_count} code snippets, {failed_count} failed")
             
-            return {
+            return self.response_formatter.success({
                 'indexed_count': indexed_count,
                 'failed_count': failed_count,
                 'total_indexed': self.indexed_code_count,
                 'batch_size': request.batch_size
-            }
+            }, metadata={
+                'operation_id': operation_id,
+                'duration': time.time() - (self.progress_manager.active_operations.get(operation_id, {}).get('start_time', time.time()))
+            })
             
         except Exception as e:
             logger.error(f"Code indexing failed: {e}")
-            raise ValueError(f"Code indexing failed: {e}")
+            
+            # Fail progress tracking
+            if progress_token:
+                await self.progress_manager.fail_operation(operation_id, str(e))
+            
+            return self.response_formatter.error(f"Code indexing failed: {e}", "INDEX_ERROR")
     
     async def _advanced_analysis(self, code: str, language: Optional[str] = None) -> Dict[str, Any]:
         """Perform advanced code analysis with patterns and suggestions"""

@@ -1,0 +1,123 @@
+version: '3.8'
+
+services:
+  # ML Code Intelligence MCP Server
+  ml-code-intelligence:
+    build:
+      context: .
+      dockerfile: ml_code_intelligence/Dockerfile
+    image: ml-code-intelligence:latest
+    container_name: ml-code-intelligence
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./data/ml_code_intelligence:/data/ml_code_intelligence
+      - ${PROJECT_ROOT:-..}:/workspace:ro  # Mount project for analysis (read-only)
+    environment:
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8001/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Context-Aware Memory MCP Server
+  context-aware-memory:
+    build:
+      context: .
+      dockerfile: context_aware_memory/Dockerfile
+    image: context-aware-memory:latest
+    container_name: context-aware-memory
+    ports:
+      - "8002:8002"
+    volumes:
+      - ./data/context_aware_memory:/data/context_aware_memory
+    environment:
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8002/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # 10X Knowledge Graph MCP Server
+  knowledge-graph:
+    build:
+      context: .
+      dockerfile: knowledge_graph/Dockerfile
+    image: 10x-knowledge-graph:latest
+    container_name: 10x-knowledge-graph
+    ports:
+      - "8003:8003"
+    volumes:
+      - ./data/knowledge_graph:/data/knowledge_graph
+      - ${PROJECT_ROOT:-..}/Knowledge:/Knowledge:ro  # Mount Knowledge folder
+      - ${PROJECT_ROOT:-..}/Intelligence:/Intelligence:ro  # Mount Intelligence folder
+    environment:
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8003/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # 10X Command Analytics MCP Server
+  command-analytics:
+    build:
+      context: .
+      dockerfile: command_analytics/Dockerfile
+    image: 10x-command-analytics:latest
+    container_name: 10x-command-analytics
+    ports:
+      - "8004:8004"
+    volumes:
+      - ./data/command_analytics:/data/command_analytics
+      - ${PROJECT_ROOT:-..}/.claude/commands:/.claude/commands:ro  # Mount commands folder
+    environment:
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8004/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # 10X Workflow Optimizer MCP Server
+  workflow-optimizer:
+    build:
+      context: .
+      dockerfile: workflow_optimizer/Dockerfile
+    image: 10x-workflow-optimizer:latest
+    container_name: 10x-workflow-optimizer
+    ports:
+      - "8005:8005"
+    volumes:
+      - ./data/workflow_optimizer:/data/workflow_optimizer
+    environment:
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8005/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  default:
+    name: ml-mcp-network
+    driver: bridge
+
+volumes:
+  ml_code_intelligence_data:
+  context_aware_memory_data:
+  knowledge_graph_data:
+  command_analytics_data:
+  workflow_optimizer_data:

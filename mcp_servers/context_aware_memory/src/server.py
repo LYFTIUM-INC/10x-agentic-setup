@@ -78,6 +78,9 @@ class ContextAwareMemoryServer(BaseMCPServer):
         
         # Register tools
         self._register_tools()
+        
+        # Register prompts
+        self._register_prompts()
     
     def _register_tools(self):
         """Register all MCP tools for memory management"""
@@ -343,6 +346,134 @@ class ContextAwareMemoryServer(BaseMCPServer):
                 'status': 'error',
                 'error': str(e)
             }
+    
+    def _register_prompts(self):
+        """Register prompt templates for memory workflows"""
+        
+        @self.register_prompt(
+            name="memory_recap",
+            description="Summarize recent memories with context",
+            arguments=[
+                {
+                    "name": "timeframe",
+                    "description": "Time period: today, week, month",
+                    "required": False
+                },
+                {
+                    "name": "category",
+                    "description": "Memory category to focus on",
+                    "required": False
+                }
+            ]
+        )
+        async def memory_recap_prompt(timeframe: str = "today", category: Optional[str] = None) -> List[Dict[str, Any]]:
+            """Prompt template for memory recap"""
+            return [
+                {
+                    "role": "system",
+                    "content": f"You are a memory assistant summarizing {timeframe}'s memories" + (f" in the {category} category" if category else "")
+                },
+                {
+                    "role": "user",
+                    "content": "Retrieve and summarize relevant memories using the retrieve_memories tool. Group by context and highlight important insights."
+                }
+            ]
+        
+        @self.register_prompt(
+            name="predict_workflow",
+            description="Predict next steps based on memory patterns",
+            arguments=[
+                {
+                    "name": "confidence_threshold",
+                    "description": "Minimum confidence for predictions (0.0-1.0)",
+                    "required": False
+                }
+            ]
+        )
+        async def predict_workflow_prompt(confidence_threshold: float = 0.7) -> List[Dict[str, Any]]:
+            """Prompt template for workflow prediction"""
+            return [
+                {
+                    "role": "system",
+                    "content": f"You are a workflow prediction assistant. Only suggest actions with confidence >= {confidence_threshold}."
+                },
+                {
+                    "role": "user",
+                    "content": "Use predict_next_memories to analyze patterns and suggest the most likely next actions. Explain the reasoning based on historical patterns."
+                }
+            ]
+        
+        @self.register_prompt(
+            name="context_analysis",
+            description="Analyze current context and retrieve relevant memories",
+            arguments=[
+                {
+                    "name": "depth",
+                    "description": "Analysis depth: shallow, medium, deep",
+                    "required": False
+                }
+            ]
+        )
+        async def context_analysis_prompt(depth: str = "medium") -> List[Dict[str, Any]]:
+            """Prompt template for context analysis"""
+            return [
+                {
+                    "role": "system",
+                    "content": f"You are a context analyst performing {depth} analysis of the current situation."
+                },
+                {
+                    "role": "user",
+                    "content": "Analyze the current context using analyze_context, then retrieve relevant memories with different strategies. Identify patterns and connections."
+                }
+            ]
+        
+        @self.register_prompt(
+            name="memory_optimization",
+            description="Optimize memory storage by identifying redundancies and patterns",
+            arguments=[
+                {
+                    "name": "action",
+                    "description": "Optimization action: analyze, consolidate, archive",
+                    "required": True
+                }
+            ]
+        )
+        async def memory_optimization_prompt(action: str) -> List[Dict[str, Any]]:
+            """Prompt template for memory optimization"""
+            return [
+                {
+                    "role": "system",
+                    "content": f"You are a memory optimization specialist tasked with {action} operations."
+                },
+                {
+                    "role": "user",
+                    "content": f"Use get_memory_stats and retrieve_memories to {action} the memory store. Identify redundant memories, extract patterns, and suggest optimizations."
+                }
+            ]
+        
+        @self.register_prompt(
+            name="knowledge_extraction",
+            description="Extract structured knowledge from unstructured memories",
+            arguments=[
+                {
+                    "name": "format",
+                    "description": "Output format: summary, bullets, graph, timeline",
+                    "required": False
+                }
+            ]
+        )
+        async def knowledge_extraction_prompt(format: str = "summary") -> List[Dict[str, Any]]:
+            """Prompt template for knowledge extraction"""
+            return [
+                {
+                    "role": "system",
+                    "content": f"You are a knowledge extraction expert. Present findings in {format} format."
+                },
+                {
+                    "role": "user",
+                    "content": "Retrieve memories across different contexts and time periods. Extract key insights, patterns, and learnings. Present structured knowledge from the unstructured memory data."
+                }
+            ]
     
     async def _load_existing_memories(self):
         """Load existing memories from storage"""

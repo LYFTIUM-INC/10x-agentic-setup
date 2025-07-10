@@ -14,6 +14,11 @@ from functools import wraps
 from pydantic import BaseModel, Field, validator
 from mcp.server.fastmcp import Context, FastMCP
 
+# Import new utilities
+from .utils.response_formatter import ResponseFormatter
+from .utils.progress_manager import ProgressManager, ProgressContext
+from .utils.health_checker import HealthChecker
+
 # Configure structured logging
 logging.basicConfig(
     level=logging.INFO,
@@ -169,8 +174,16 @@ class BaseMCPServer:
         self.security = SecurityManager(rate_limit=config.rate_limit)
         self.resources = ResourceManager()
         
+        # Initialize new components
+        self.response_formatter = ResponseFormatter(config.name, config.version)
+        self.progress_manager = ProgressManager(config.name)
+        self.health_checker = HealthChecker(config.name, config.version)
+        
         # Set up lifecycle management
         self.mcp.lifespan = self._lifespan
+        
+        # Register built-in health resources
+        self._register_health_resources()
         
         logger.info(f"Initialized {config.name} MCP Server v{config.version}")
     
@@ -187,11 +200,34 @@ class BaseMCPServer:
     
     async def _startup(self) -> None:
         """Server startup logic - override in subclasses"""
-        pass
+        # Start health check monitoring
+        await self.health_checker.start_periodic_checks()
     
     async def _shutdown(self) -> None:
         """Server shutdown logic - override in subclasses"""
+        # Stop health checks
+        await self.health_checker.stop_periodic_checks()
         self.cache.clear()
+    
+    def _register_health_resources(self) -> None:
+        """Register built-in health check resources"""
+        @self.mcp.resource("health://status")
+        async def get_health_status() -> Dict[str, Any]:
+            """Get server health status"""
+            status = await self.health_checker.get_health_status()
+            return self.response_formatter.success(status)
+        
+        @self.mcp.resource("health://metrics")
+        async def get_health_metrics() -> Dict[str, Any]:
+            """Get server performance metrics"""
+            metrics = await self.health_checker.get_metrics()
+            return self.response_formatter.success(metrics)
+        
+        @self.mcp.resource("health://system")
+        async def get_system_info() -> Dict[str, Any]:
+            """Get system information"""
+            system_info = await self.health_checker._get_system_metrics()
+            return self.response_formatter.success(system_info)
     
     def with_caching(self, cache_key_func=None):
         """Decorator for adding caching to tools"""
@@ -276,14 +312,29 @@ class BaseMCPServer:
             return self.mcp.resource(uri=uri, name=name, description=description)(enhanced_func)
         return decorator
     
+    def register_prompt(self, name: str, description: str = None, arguments: List[Dict[str, Any]] = None):
+        """Register a prompt template with the MCP server"""
+        def decorator(func):
+            # Create prompt configuration
+            prompt_config = {
+                "name": name,
+                "description": description or f"Prompt template: {name}",
+                "arguments": arguments or []
+            }
+            
+            # Register with MCP
+            return self.mcp.prompt(**prompt_config)(func)
+        return decorator
+    
     async def get_server_stats(self) -> Dict[str, Any]:
         """Get comprehensive server statistics"""
-        return {
+        stats = {
             "server_name": self.config.name,
             "version": self.config.version,
-            "uptime": time.time(),
+            "uptime": time.time() - self.health_checker.start_time,
             "cache_size": len(self.cache.cache),
             "resource_stats": self.resources.get_stats(),
+            "active_operations": len(self.progress_manager.active_operations),
             "config": {
                 "debug": self.config.debug,
                 "max_workers": self.config.max_workers,
@@ -291,6 +342,7 @@ class BaseMCPServer:
                 "rate_limit": self.config.rate_limit
             }
         }
+        return self.response_formatter.success(stats)
     
     def run(self, transport="stdio"):
         """Run the MCP server"""

@@ -1,0 +1,43 @@
+version: '3.8'
+
+# Development overrides for hot reload
+services:
+  ml-code-intelligence:
+    volumes:
+      - ./ml_code_intelligence/src:/app/ml_code_intelligence/src
+      - ./shared/src:/app/shared/src
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+      - LOG_LEVEL=DEBUG
+
+  context-aware-memory:
+    volumes:
+      - ./context_aware_memory/src:/app/context_aware_memory/src
+      - ./shared/src:/app/shared/src
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+      - LOG_LEVEL=DEBUG
+
+  knowledge-graph:
+    volumes:
+      - ./knowledge_graph/src:/app/knowledge_graph/src
+      - ./shared/src:/app/shared/src
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+      - LOG_LEVEL=DEBUG
+
+  command-analytics:
+    volumes:
+      - ./command_analytics/src:/app/command_analytics/src
+      - ./shared/src:/app/shared/src
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+      - LOG_LEVEL=DEBUG
+
+  workflow-optimizer:
+    volumes:
+      - ./workflow_optimizer/src:/app/workflow_optimizer/src
+      - ./shared/src:/app/shared/src
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+      - LOG_LEVEL=DEBUG

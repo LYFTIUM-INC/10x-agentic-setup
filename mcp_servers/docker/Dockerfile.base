@@ -1,0 +1,59 @@
+# Base image for all ML-Enhanced MCP servers
+FROM python:3.10-slim
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    git \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create app user for security
+RUN useradd -m -u 1000 mcp && \
+    mkdir -p /app /data && \
+    chown -R mcp:mcp /app /data
+
+# Set working directory
+WORKDIR /app
+
+# Install UV package manager
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh && \
+    mv /root/.cargo/bin/uv /usr/local/bin/
+
+# Copy shared requirements
+COPY --chown=mcp:mcp shared/requirements.txt /app/shared/
+
+# Install base Python dependencies
+RUN uv pip install --system -r /app/shared/requirements.txt
+
+# Install ML dependencies (cached for all MCPs)
+RUN uv pip install --system \
+    torch==2.1.0 --index-url https://download.pytorch.org/whl/cpu \
+    transformers==4.36.0 \
+    sentence-transformers==2.2.2 \
+    scikit-learn==1.3.2 \
+    numpy==1.24.3 \
+    chromadb==0.4.18 \
+    faiss-cpu==1.7.4
+
+# Install MCP dependencies
+RUN uv pip install --system \
+    mcp==1.0.0 \
+    httpx==0.25.2 \
+    pydantic==2.5.2 \
+    pydantic-settings==2.1.0 \
+    fastapi==0.104.1 \
+    uvicorn==0.24.0
+
+# Copy shared source code
+COPY --chown=mcp:mcp shared/src /app/shared/src
+
+# Switch to non-root user
+USER mcp
+
+# Set Python path
+ENV PYTHONPATH=/app/shared/src:/app
+ENV PYTHONUNBUFFERED=1
+
+# Default command (overridden by specific MCPs)
+CMD ["python", "--version"]

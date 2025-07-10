@@ -1,0 +1,218 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.python-version
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.bak
+desktop.ini
+
+# Testing
+.coverage
+.coverage.*
+.pytest_cache/
+.tox/
+.nox/
+coverage.xml
+*.cover
+*.log
+.hypothesis/
+htmlcov/
+
+# ML Models and Data
+*.h5
+*.pkl
+*.pickle
+*.npy
+*.npz
+*.pth
+*.pt
+*.onnx
+*.pb
+*.tflite
+*.safetensors
+*.bin
+
+# Model cache (but keep structure)
+models/
+!models/.gitkeep
+model_cache/
+!model_cache/.gitkeep
+
+# Vector Databases
+*.db
+*.sqlite
+*.sqlite3
+chroma.sqlite3
+faiss_index/
+*.faiss
+
+# Memory and Cache
+cache/
+*.cache
+test_memory*/
+memories/
+!test_memory*/.gitkeep
+!memories/.gitkeep
+
+# Data directories
+data/
+!data/.gitkeep
+*/data/
+!*/data/.gitkeep
+
+# Logs
+logs/
+*.log
+*.out
+*.err
+log/
+
+# Environment files
+.env
+.env.*
+!.env.example
+.envrc
+
+# Docker
+docker-compose.override.yml
+.dockerignore.local
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+*.swp
+.~*
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre
+.pyre/
+
+# Ruff
+.ruff_cache/
+
+# Security - API keys and secrets
+*.pem
+*.key
+*.crt
+*.p12
+secrets/
+credentials/
+*_secret*
+*_private*
+api_keys.json
+credentials.json
+
+# Project specific
+search_cache/
+!search_cache/cache_schema.sql
+!search_cache/cache_config.json
+vector_store/
+!vector_store/.gitkeep
+
+# Keep directory structure
+!*/
+!**/.gitkeep
+
+# Local configuration overrides
+*.local
+*.local.*
+local_config/
+
+# Backup files
+*.backup
+*.bkp
+*.orig
+
+# Archives
+*.zip
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# Performance profiling
+*.prof
+*.lprof
+.profile
+
+# Documentation build
+docs/_build/
+docs/.doctrees/
+site/
+
+# Package lock files (controversial - uncomment if needed)
+# poetry.lock
+# Pipfile.lock
+# package-lock.json
+# yarn.lock
+
+# Claude Desktop specific
+claude_desktop_config.json.backup
+
+# MCP specific runtime files
+mcp_runtime/
+.mcp_cache/
+
+# Sensitive project information
+private/
+confidential/
+.secrets/
