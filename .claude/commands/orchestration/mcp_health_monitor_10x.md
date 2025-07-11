@@ -15,24 +15,29 @@
 
 ### ⚡ **PHASE 1: COMPREHENSIVE HEALTH CHECK**
 
-**1.1 MCP Server Status Assessment**
-```bash
-# Check all MCP servers
-for server in ml-code-intelligence context-aware-memory 10x-knowledge-graph 10x-command-analytics 10x-workflow-optimizer; do
-    echo "Checking $server..."
-    curl -s "http://localhost:3000/$server/health" | jq '.'
-done
+**1.1 Initialize Monitoring Foundation**
+- **EXECUTE: /monitoring:metrics_foundation_10x --collect "mcp" --alerts "mcp_health"**
+  - Automatically collects all MCP server metrics
+  - Sets up health-specific alert rules
+  - Establishes performance baselines
+  - Provides unified metrics storage
 
-# Docker container health
-docker-compose ps
-docker stats --no-stream
+**1.2 MCP-Specific Health Assessment**
+```bash
+# Additional MCP-specific checks beyond foundation
+for server in ml-code-intelligence context-aware-memory 10x-knowledge-graph 10x-command-analytics 10x-workflow-optimizer; do
+    echo "Deep health check for $server..."
+    # Check response times
+    response_time=$(curl -w "%{time_total}" -s -o /dev/null "http://localhost:3000/$server/health")
+    # Check specific endpoints
+    curl -s "http://localhost:3000/$server/status" | jq '.'
+done
 ```
 
-**1.2 Performance Metrics Collection**
-- **10x-command-analytics MCP**: Get server usage statistics
-- **context-aware-memory MCP**: Check memory usage and optimization
-- **sqlite**: Query performance metrics database
-- **filesystem**: Check log files for errors
+**1.3 Enhanced Metrics Analysis**
+- **10x-command-analytics MCP**: Analyze command-specific performance patterns
+- **context-aware-memory MCP**: Memory prediction accuracy metrics
+- **ml-code-intelligence MCP**: Code analysis performance benchmarks
 
 ### 🧠 **PHASE 2: INTELLIGENT ANALYSIS**
 

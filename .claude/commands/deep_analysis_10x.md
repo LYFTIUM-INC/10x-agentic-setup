@@ -3,40 +3,23 @@
 
 **Claude, perform COMPREHENSIVE MULTI-SOURCE analysis and create INTELLIGENCE-DRIVEN strategic plan.**
 
-### 🔥 **PHASE 1: MARKET & COMPETITIVE INTELLIGENCE** (use "think hard")
+### 🔥 **PHASE 1: UNIFIED INTELLIGENCE GATHERING** (use "think hard")
 
 **1.0 Historical Context Loading**
 - **FIRST: /intelligence:retrieve_conversation_context_10x --deep --topic "project analysis"** - Load all relevant past analyses and insights
 
-**1.1 ML-Enhanced External Intelligence Gathering**
-- **10x-knowledge-graph MCP**: Analyze existing organizational knowledge for related concepts and successful patterns
-- **context-aware-memory MCP**: Store and retrieve analysis context with predictive loading for faster insights
-- **websearch**: Research latest trends in project domain/technology stack
-- **websearch**: "best practices [detected_tech_stack] 2024 enterprise"
-- **websearch**: "performance benchmarks [primary_language] applications"
-- **gpt-researcher**: Comprehensive deep research on latest best practices for detected technology stack
-- **fetch**: Analyze 2-3 top competitor implementations or similar projects
-- **github**: Search for highest-starred projects in similar domain
-- **github**: Identify trending patterns and architectures
-- **meilisearch**: Full-text search through organizational documentation and industry knowledge
+**1.1 Comprehensive Intelligence Collection**
+- **EXECUTE: /intelligence:gather_insights_10x --full "[project_context]"**
+  - Automatically performs market & competitive intelligence
+  - Gathers technical intelligence and benchmarks
+  - Retrieves organizational patterns and insights
+  - Delivers structured intelligence report
 
-**1.2 Enhanced Technology Intelligence**
-- **websearch**: "[detected_frameworks] latest updates security patches"
-- **websearch**: "migration guide [current_version] to [latest_version]"
-- **gpt-researcher**: Research-backed technology assessment and validation
-- **fetch**: Download latest framework documentation for gap analysis
-- **github**: Research issues and solutions for similar tech stacks
-- **memory**: Review previous analysis patterns and learnings
-- **qdrant**: Vector-based semantic search for similar project patterns and successful architectures
-
-**1.3 ML-Enhanced Internal Discovery**
-- **ml-code-intelligence MCP**: Perform semantic code search and quality assessment across entire codebase
-- **10x-command-analytics MCP**: Analyze historical command usage patterns for optimization insights
-- **filesystem**: Comprehensive codebase structure analysis
-- **sqlite**: Query any existing metrics/performance data
-- **memory**: Review previous analysis patterns and learnings
-- **qdrant**: Store and retrieve semantic embeddings of project patterns for intelligent matching
-- **meilisearch**: Index project documentation and organizational knowledge for instant search
+**1.2 Additional Deep Analysis Intelligence** (Beyond Foundation)
+- **ml-code-intelligence MCP**: Deep semantic analysis of code architecture and design patterns
+- **10x-command-analytics MCP**: Command effectiveness metrics and workflow optimization opportunities
+- **sqlite**: Query project-specific metrics and performance data
+- **filesystem**: Detailed structural analysis for architecture insights
 
 ### ⚡ **PHASE 2: MULTI-LAYERED ANALYSIS** (use "think harder")
 

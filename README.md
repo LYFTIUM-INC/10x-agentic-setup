@@ -45,6 +45,11 @@ The revolutionary **analyze_and_execute** command implements a Central Coordinat
 - `/intelligence:retrieve_conversation_context_10x` - **NEW** - Intelligent context retrieval with predictive loading
 - `/smart_research_and_document_10x` - Advanced multi-MCP research with persistent memory
 
+### 🏗️ **Foundation Commands** (NEW)
+- `/intelligence:gather_insights_10x` - **NEW** - Unified intelligence gathering for all analysis commands
+- `/qa:test_foundation_10x` - **NEW** - Shared testing infrastructure and patterns
+- `/monitoring:metrics_foundation_10x` - **NEW** - Core monitoring and metrics collection
+
 ### 🔍 **Analysis & Intelligence**
 - `/layered_agentic_analysis` - **NEW** - Ultimate 5-layer MCP intelligence orchestration
 - `/deep_analysis_10x` - Global intelligence analysis

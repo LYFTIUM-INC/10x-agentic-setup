@@ -54,9 +54,12 @@ Where:
 **2.2 Available 10X Agentic Commands Inventory**
 
 **FOUNDATIONAL COMMANDS:**
+- `/intelligence:gather_insights_10x` - Unified intelligence gathering foundation
+- `/qa:test_foundation_10x` - Shared testing infrastructure
+- `/monitoring:metrics_foundation_10x` - Core monitoring and metrics
 - `/create_feature_spec_10x` - Market-informed feature specification
 - `/dev:implement_feature_10x` - Competitive intelligence-driven implementation
-- `/qa:debug_smart_10x` - Sequential thinking debugging
+- `/qa:debug_smart_10x` - Multi-mode intelligent debugging
 - `/dev:optimize_performance_10x` - Enterprise-grade performance optimization
 
 **ANALYSIS COMMANDS:**

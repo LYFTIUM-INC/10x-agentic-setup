@@ -64,6 +64,11 @@ This project has been enhanced with **10X MCP-Integrated Commands** that leverag
 # Project-Specific Command Generation
 /local_command_generator_10x
 
+# Foundation Commands (NEW)
+/intelligence:gather_insights_10x
+/qa:test_foundation_10x
+/monitoring:metrics_foundation_10x
+
 # Memory System Validation & Backup (NEW)
 /maintenance:validate_memory_architecture_10x
 

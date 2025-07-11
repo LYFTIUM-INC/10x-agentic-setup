@@ -8,35 +8,19 @@
 **Historical Context Loading**
 - **FIRST: /intelligence:retrieve_conversation_context_10x --deep --timeframe "project lifetime"** - Load all relevant project history and patterns
 
-**Market & Competitive Intelligence with ML Enhancement**
-- **10x-knowledge-graph MCP**: Extract concepts and relationships from existing organizational knowledge about similar projects
-- **context-aware-memory MCP**: Store intelligence context with predictive loading for accelerated decision-making
-- **10x-workflow-optimizer MCP**: Optimize the intelligence gathering workflow sequence for maximum efficiency
-- **websearch**: "[project_domain] market size trends 2024"
-- **websearch**: "top 10 [project_type] companies technology stack"
-- **gpt-researcher**: Comprehensive market research and competitive landscape analysis
-- **fetch**: Analyze 5 leading competitor architectures and features
-- **github**: Research 10 highest-starred similar projects
-- **websearch**: "[target_market] pain points user research"
-- **meilisearch**: Search organizational competitive intelligence and market research
+**Unified Intelligence Gathering**
+- **EXECUTE: /intelligence:gather_insights_10x --market "[domain]" --technical "[tech_stack]"**
+  - Comprehensive market and competitive analysis
+  - Technology stack assessment and benchmarks
+  - Organizational pattern retrieval
+  - Resource and timeline intelligence
 
-**ML-Enhanced Technology Intelligence**
-- **ml-code-intelligence MCP**: Analyze existing codebase patterns and quality standards for technology alignment
-- **10x-command-analytics MCP**: Review command usage patterns to understand optimal technology workflows
-- **websearch**: "[tech_stack] performance benchmarks scalability"
-- **github**: Find proven architectures for similar scale/requirements
-- **gpt-researcher**: Deep technology assessment and validation research
-- **fetch**: Download latest framework documentation and best practices
-- **websearch**: "[chosen_technologies] security vulnerabilities updates"
-- **memory**: Review relevant organizational patterns
-- **qdrant**: Vector search for similar technology stack successful patterns
-- **meilisearch**: Full-text search through technology documentation and best practices
-
-**Resource Intelligence**
-- **github**: Find reusable components and libraries
-- **websearch**: "[project_type] development timeline estimation"
-- **fetch**: Development methodology guides and templates
-- **websearch**: "deployment [project_type] cloud infrastructure costs"
+**Project Acceleration Specific Intelligence** (Beyond Foundation)
+- **10x-workflow-optimizer MCP**: Analyze and optimize acceleration workflow sequences
+- **10x-command-analytics MCP**: Identify high-impact automation opportunities
+- **ml-code-intelligence MCP**: Assess codebase readiness for acceleration
+- **gpt-researcher**: Deep dive into rapid development methodologies
+- **github**: Find acceleration tools and frameworks specific to project type
 
 ### 🔥 **HYPER-ACCELERATED PLANNING** (use "ultrathink")
 
