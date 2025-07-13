@@ -762,6 +762,8 @@ main() {
     echo -e "  ${GREEN}/ssh_git_diff_analyzer_10x${NC} - ML-enhanced diff analysis & code review"
     echo -e "  ${GREEN}/ssh_git_branch_manager_10x${NC} - Intelligent branch management"
     echo -e "  ${GREEN}/ssh_git_worktree_master_10x${NC} - Advanced worktree orchestration"
+    echo -e "  ${GREEN}/ssh_git_repo_optimizer_10x${NC} - Repository performance optimization"
+    echo -e "  ${GREEN}/ssh_git_interactive_intelligence_10x${NC} - AI-powered interactive operations"
     echo ""
     print_status "Quick start: /ssh_webdev_master_10x --mode=quick"
     print_status "Git workflow: /ssh_smart_git_10x commit --smart --analyze --auto-docs"
