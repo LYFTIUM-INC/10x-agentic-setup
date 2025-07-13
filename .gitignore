@@ -42,8 +42,55 @@ coverage/
 # Local development
 local_test_*
 debug_*
-# 10X Agentic Coding
+
+# 10X Agentic Coding - Session and temporary files
 Knowledge/context/memory/session_*.md
 Knowledge/context/memory/temp_*.md
 .claude/temp/
 Instructions/temp/
+
+# Sensitive Project Knowledge and Intelligence (DO NOT COMMIT TO PUBLIC REPO)
+Knowledge/
+Instructions/
+.claude/config.json
+.claude/commands/intelligence/
+.claude/commands/rag_intelligence_orchestrator_10x.md*
+
+# MCP Server configurations and models
+mcp_servers/.env
+mcp_servers/**/.env
+mcp_servers/*/models/
+mcp_servers/*/data/
+mcp_servers/*/test_memory_*/
+mcp_dev_env/
+
+# Cached data and generated files
+cache/
+data/
+models/
+*.db
+*.sqlite
+*.sqlite3
+
+# Intelligence and search cache
+Knowledge/intelligence/search_cache/
+Knowledge/intelligence/vector_store/
+
+# Memory files and test data
+**/test_memory_*/
+**/memories/
+**/*memory*/memories/
+
+# API keys and credentials
+**/api_key*
+**/credential*
+**/secret*
+**/*.pem
+**/*.key
+**/*.p12
+
+# Large model files and artifacts
+**/*.safetensors
+**/models--*/
+**/snapshots/
+**/blobs/
