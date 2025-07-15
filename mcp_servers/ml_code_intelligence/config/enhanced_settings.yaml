@@ -1,0 +1,163 @@
+# Enhanced ML Code Intelligence MCP Server Configuration
+# Enterprise-grade configuration for advanced AI capabilities
+
+enhanced_ml_intelligence:
+  # Core Configuration
+  server_name: "enhanced-ml-code-intelligence"
+  server_version: "2.0.0"
+  debug: false
+  
+  # DSPy Configuration
+  dspy:
+    model: "gpt-4-turbo-preview"
+    max_tokens: 2048
+    temperature: 0.1
+    optimization_rounds: 5
+    
+  # PromptBreeder Configuration
+  prompt_breeder:
+    population_size: 20
+    elite_size: 5
+    mutation_rate: 0.7
+    crossover_rate: 0.3
+    max_generations: 10
+    performance_threshold: 0.85
+    
+  # Multi-Modal Configuration
+  multimodal:
+    code_embedder: "microsoft/codebert-base"
+    doc_embedder: "all-MiniLM-L6-v2"
+    test_embedder: "sentence-transformers/all-MiniLM-L6-v2"
+    unified_dimension: 1408
+    similarity_threshold: 0.7
+    consistency_threshold: 0.8
+    
+  # Performance Configuration
+  performance:
+    target_response_time: 2.0  # seconds
+    quality_threshold: 0.95
+    context_accuracy_target: 0.98
+    learning_efficiency_target: 0.8
+    
+    # Performance thresholds for monitoring
+    thresholds:
+      code_generation:
+        warning: 5.0
+        critical: 10.0
+      analysis:
+        warning: 3.0
+        critical: 8.0
+      search:
+        warning: 1.0
+        critical: 3.0
+      multimodal_analysis:
+        warning: 8.0
+        critical: 15.0
+    
+  # Caching Configuration
+  caching:
+    enabled: true
+    max_size: 1000
+    default_ttl: 3600  # 1 hour
+    max_memory_mb: 100
+    cleanup_interval: 300  # 5 minutes
+    
+    # Cache TTL by operation type
+    operation_ttl:
+      code_analysis: 1800    # 30 minutes
+      semantic_search: 3600  # 1 hour
+      quality_assessment: 1800
+      context_analysis: 900  # 15 minutes
+      prompt_optimization: 7200  # 2 hours
+    
+  # Storage Configuration
+  storage:
+    vector_db_type: "faiss"
+    embedding_cache_size: 10000
+    template_store_path: "./data/templates"
+    performance_log_path: "./data/performance"
+    memory_store_path: "./data/memory"
+    
+  # Monitoring Configuration
+  monitoring:
+    enable_prometheus: false
+    metrics_retention_days: 30
+    alert_thresholds:
+      error_rate: 0.05  # 5% error rate threshold
+      response_time_p95: 10.0  # 95th percentile response time
+      cache_hit_rate: 0.7  # 70% cache hit rate threshold
+    
+  # Model Configuration
+  models:
+    embedding_model: "all-MiniLM-L6-v2"
+    ml_device: "cpu"  # or "cuda" for GPU
+    max_embedding_length: 512
+    model_cache_dir: "./models"
+    vector_dimension: 384
+    
+  # Enhanced AI Features
+  features:
+    context_aware_generation: true
+    multimodal_analysis: true
+    prompt_optimization: true
+    performance_monitoring: true
+    smart_caching: true
+    
+  # Security Configuration
+  security:
+    enable_rate_limiting: true
+    max_requests_per_minute: 100
+    max_concurrent_operations: 10
+    enable_input_validation: true
+    sanitize_outputs: true
+    
+  # Development Configuration
+  development:
+    enable_debug_logging: false
+    save_intermediate_results: false
+    enable_profiling: false
+    mock_external_apis: false
+    
+  # Optimization Settings
+  optimization:
+    batch_size: 32
+    max_workers: 4
+    enable_async_processing: true
+    memory_limit_mb: 2048
+    
+    # Auto-tuning parameters
+    auto_tune_cache_size: true
+    auto_tune_batch_size: true
+    auto_optimize_prompts: true
+    learning_rate: 0.1
+
+# Backward Compatibility Settings
+# (These maintain compatibility with the base ML Code Intelligence server)
+server_name: "enhanced-ml-code-intelligence"
+server_version: "2.0.0"
+debug: false
+max_workers: 4
+cache_ttl: 3600
+
+# ML Model Settings
+embedding_model: "all-MiniLM-L6-v2"
+ml_device: "cpu"
+max_embedding_length: 512
+model_cache_dir: "./models"
+vector_dimension: 384
+
+# Data Storage
+data_dir: "./data"
+
+# DSPy Integration
+dspy_model: "gpt-4-turbo-preview"
+max_tokens: 2048
+temperature: 0.1
+
+# PromptBreeder Settings
+population_size: 20
+max_generations: 10
+
+# Performance Monitoring
+enable_performance_monitoring: true
+enable_caching: true
