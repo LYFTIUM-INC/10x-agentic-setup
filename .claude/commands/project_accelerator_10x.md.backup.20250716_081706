@@ -3,32 +3,24 @@
 
 **Claude, accelerate project development using FULL MCP ECOSYSTEM orchestration for MAXIMUM velocity.**
 
-### ⚡ **MEGA-INTELLIGENCE GATHERING** (use "ultrathink")
+### ⚡ **ML-ENHANCED MEGA-INTELLIGENCE GATHERING** (use "ultrathink")
 
-**Market & Competitive Intelligence with Enhanced Research**
-- **cached_websearch_10x**: "[project_domain] market size trends 2024"
-- **cached_websearch_10x**: "top 10 [project_type] companies technology stack"
-- **gpt-researcher**: Comprehensive market research and competitive landscape analysis
-- **fetch**: Analyze 5 leading competitor architectures and features
-- **github**: Research 10 highest-starred similar projects
-- **cached_websearch_10x**: "[target_market] pain points user research"
-- **meilisearch**: Search organizational competitive intelligence and market research
+**Historical Context Loading**
+- **FIRST: /intelligence:retrieve_conversation_context_10x --deep --timeframe "project lifetime"** - Load all relevant project history and patterns
 
-**Enhanced Technology Intelligence**
-- **cached_websearch_10x**: "[tech_stack] performance benchmarks scalability"
-- **github**: Find proven architectures for similar scale/requirements
-- **gpt-researcher**: Deep technology assessment and validation research
-- **fetch**: Download latest framework documentation and best practices
-- **cached_websearch_10x**: "[chosen_technologies] security vulnerabilities updates"
-- **memory**: Review relevant organizational patterns
-- **qdrant**: Vector search for similar technology stack successful patterns
-- **meilisearch**: Full-text search through technology documentation and best practices
+**Unified Intelligence Gathering**
+- **EXECUTE: /intelligence:gather_insights_10x --market "[domain]" --technical "[tech_stack]"**
+  - Comprehensive market and competitive analysis
+  - Technology stack assessment and benchmarks
+  - Organizational pattern retrieval
+  - Resource and timeline intelligence
 
-**Resource Intelligence**
-- **github**: Find reusable components and libraries
-- **cached_websearch_10x**: "[project_type] development timeline estimation"
-- **fetch**: Development methodology guides and templates
-- **cached_websearch_10x**: "deployment [project_type] cloud infrastructure costs"
+**Project Acceleration Specific Intelligence** (Beyond Foundation)
+- **10x-workflow-optimizer MCP**: Analyze and optimize acceleration workflow sequences
+- **10x-command-analytics MCP**: Identify high-impact automation opportunities
+- **ml-code-intelligence MCP**: Assess codebase readiness for acceleration
+- **gpt-researcher**: Deep dive into rapid development methodologies
+- **github**: Find acceleration tools and frameworks specific to project type
 
 ### 🔥 **HYPER-ACCELERATED PLANNING** (use "ultrathink")
 
@@ -65,3 +57,10 @@
 3. **Performance Excellence**: Optimization using proven techniques
 4. **User Experience**: Validated against leading design patterns
 5. **Documentation Excellence**: Following successful project templates
+
+### 📸 **PROJECT INTELLIGENCE CAPTURE**
+**After acceleration planning is complete:**
+- **/intelligence:capture_session_history_10x** - Capture all research, decisions, and patterns for organizational learning
+- Store market intelligence, technology decisions, and architectural patterns for future projects
+
+✅ **EXECUTE IMMEDIATELY**: Begin project acceleration with historical context loading, comprehensive intelligence gathering, and session capture for continuous improvement.

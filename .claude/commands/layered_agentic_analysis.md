@@ -20,7 +20,7 @@
 ### 🔍 **PHASE 2: LAYER 2 - INTELLIGENT ANALYSIS & RESEARCH** (use "think hard")
 
 **2.1 Market & Competitive Intelligence**
-- **websearch**: Real-time market research and competitive analysis for project domain
+- **cached_websearch_10x**: Real-time market research and competitive analysis for project domain
 - **gpt-researcher**: Comprehensive deep research on latest best practices for detected technology stack
 - **cached_websearch_10x**: Smart web search with automatic caching for efficiency
 - **meilisearch**: Full-text intelligent search through organizational documentation and knowledge base
@@ -105,7 +105,7 @@ Intelligence Metrics:
 **Execute this layered agentic analysis by:**
 
 1. **PHASE 1**: Gather comprehensive data using filesystem, github, context7, memory, and qdrant
-2. **PHASE 2**: Conduct intelligent analysis using websearch, gpt-researcher, meilisearch, and security MCPs
+2. **PHASE 2**: Conduct intelligent analysis using cached_websearch_10x, gpt-researcher, meilisearch, and security MCPs
 3. **PHASE 3**: Perform specialized domain analysis using communication, infrastructure, and thinking MCPs
 4. **PHASE 4**: Synthesize cross-project knowledge using memory, vector, and analytics MCPs  
 5. **PHASE 5**: Generate intelligent recommendations and optimal command sequences

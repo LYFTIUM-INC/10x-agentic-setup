@@ -14,7 +14,7 @@
 
 **1.1 Advanced Web Research & Caching**
 - **cached_websearch_10x**: Execute smart web search with automatic caching and redundancy elimination
-- **websearch**: Conduct targeted research queries with market intelligence focus
+- **cached_websearch_10x**: Conduct targeted research queries with market intelligence focus
 - **gpt-researcher**: Comprehensive deep research on [research_topic] with filtering and validation
 - **fetch**: Analyze top 3-5 authoritative sources and competitor implementations
 
@@ -33,7 +33,7 @@
 
 **2.1 Multi-Source Intelligence Fusion**
 Execute parallel research validation using concurrent MCP orchestration:
-- **Cross-reference findings** from gpt-researcher with websearch results
+- **Cross-reference findings** from gpt-researcher with cached_websearch_10x results
 - **Validate patterns** found in github research against market intelligence
 - **Semantic similarity analysis** using qdrant for pattern matching and consistency
 - **Full-text correlation** using meilisearch for knowledge base alignment
@@ -120,7 +120,7 @@ Expected Research Excellence:
 
 **Execute this advanced research orchestration by:**
 
-1. **PARALLEL INTELLIGENCE GATHERING**: Simultaneously execute websearch, gpt-researcher, qdrant, and meilisearch
+1. **PARALLEL INTELLIGENCE GATHERING**: Simultaneously execute cached_websearch_10x, gpt-researcher, qdrant, and meilisearch
 2. **CONCURRENT VALIDATION**: Cross-reference findings using memory, github, and context7 in parallel
 3. **DYNAMIC DOCUMENTATION**: Generate timestamped documentation with comprehensive coverage
 4. **MEMORY INTEGRATION**: Store all patterns, methodologies, and outcomes for organizational learning

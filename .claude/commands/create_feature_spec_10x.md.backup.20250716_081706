@@ -19,6 +19,9 @@
 
 ### 🔥 **PHASE 1: MARKET & TECHNICAL INTELLIGENCE GATHERING** (use "think hard")
 
+**1.0 Historical Context Loading**
+- **FIRST: /intelligence:retrieve_conversation_context_10x --patterns --topic "feature specifications"** - Load past feature specs and patterns
+
 **1.1 Enhanced Competitive Feature Analysis**
 - **smart_research_and_document_10x**: Execute comprehensive research on [feature_type] specification patterns with persistent memory
 - **context7**: Access latest technical documentation for [framework] feature implementation (optional)
@@ -74,3 +77,13 @@ Create comprehensive requirements based on competitive analysis:
 ✅ **Implementation-Ready**: Detailed instructions for all development phases
 ✅ **Quality-Assured**: Built-in testing and validation procedures
 ✅ **Deployment-Ready**: Complete deployment and monitoring specifications
+
+### 📸 **PHASE 4: SPECIFICATION INTELLIGENCE CAPTURE**
+
+**After specification completion:**
+- **/intelligence:capture_session_history_10x** - Capture entire specification process
+- Store market research, technical decisions, and requirements patterns
+- Extract specification templates for future reuse
+- Update organizational specification knowledge base
+
+**EXECUTE IMMEDIATELY**: Create comprehensive feature specifications with historical context, competitive intelligence, and complete session capture for continuous improvement.

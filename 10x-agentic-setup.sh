@@ -136,6 +136,8 @@ create_all_10x_commands() {
     create_command_if_not_exists "local_command_generator_10x.md" "$commands_dir" create_local_command_generator_10x
     create_command_if_not_exists "rag_intelligence_orchestrator_10x.md" "$commands_dir" create_rag_intelligence_orchestrator_10x
     create_command_if_not_exists "intelligence/smart_memory_unified_10x.md" "$commands_dir" create_smart_memory_unified_10x "$commands_dir/intelligence"
+    create_command_if_not_exists "intelligence/gather_insights_10x.md" "$commands_dir" create_gather_insights_10x "$commands_dir/intelligence"
+    create_command_if_not_exists "intelligence/cached_websearch_10x.md" "$commands_dir" create_cached_websearch_10x "$commands_dir/intelligence"
     create_command_if_not_exists "qa/smart_test_generator_10x.md" "$commands_dir" create_smart_test_generator_10x "$commands_dir/qa"
     create_command_if_not_exists "qa/smart_logging_orchestrator_10x.md" "$commands_dir" create_smart_logging_orchestrator_10x "$commands_dir/qa"
     create_command_if_not_exists "qa/intelligent_debug_analyzer_10x.md" "$commands_dir" create_intelligent_debug_analyzer_10x "$commands_dir/qa"
@@ -202,7 +204,7 @@ create_basic_10x_commands() {
 **Claude, perform comprehensive project analysis using GLOBAL INTELLIGENCE and PROVEN PATTERNS.**
 
 ### 🔥 Research Phase (use "think harder")
-- **websearch**: Research industry benchmarks and best practices for this project type
+- **cached_websearch_10x**: Research industry benchmarks and best practices for this project type
 - **github**: Analyze similar successful projects and their patterns
 - **fetch**: Gather documentation and methodologies from tech leaders
 - **memory**: Access organizational knowledge and past successes
@@ -233,7 +235,7 @@ EOF
 **Claude, accelerate development using GLOBAL INTELLIGENCE and PROVEN PATTERNS.**
 
 ### 🔥 Intelligence Gathering Phase
-- **websearch**: Market research and competitive landscape analysis
+- **cached_websearch_10x**: Market research and competitive landscape analysis
 - **github**: Proven architecture patterns and successful implementations
 - **fetch**: Industry best practices and development methodologies
 - **memory**: Organizational capabilities and past project successes
@@ -355,7 +357,12 @@ Where:
 - `/workflows/feature_workflow_10x "[feature]" --complete` - Complete feature development lifecycle
 
 **FOUNDATION COMMANDS:**
-- `/intelligence:gather_insights_10x` - Unified intelligence gathering (3 parallel modes)
+- `/intelligence:gather_insights_10x --market "[domain]"` - Market intelligence & competitive analysis
+- `/intelligence:gather_insights_10x --technical "[stack]"` - Technical stack analysis & benchmarks
+- `/intelligence:gather_insights_10x --patterns "[topic]"` - Organizational patterns & best practices
+- `/intelligence:gather_insights_10x --full "[context]"` - Comprehensive intelligence (all modes)
+- `/intelligence:cached_websearch_10x "[query]"` - Smart web search with 70% cache hit rate
+- `/smart_research_and_document_10x` - Advanced multi-MCP research orchestrator
 - `/intelligence:capture_session_history_10x` - Session capture with ML analysis
 - `/intelligence:retrieve_conversation_context_10x` - Context retrieval with predictive loading
 - `/qa:test_foundation_10x` - Shared testing infrastructure
@@ -1259,7 +1266,7 @@ This project has been enhanced with **10X MCP-Integrated Commands** that leverag
 
 ### 🤖 **MCP Orchestration**
 Each command orchestrates multiple MCPs for maximum intelligence:
-- **websearch**: Global research and competitive intelligence
+- **cached_websearch_10x**: Global research and competitive intelligence
 - **fetch**: Documentation and methodology acquisition  
 - **github**: Open-source pattern mining and community wisdom
 - **filesystem**: Enhanced file system operations
@@ -1363,7 +1370,7 @@ create_claude_config() {
     "mcpOrchestration": true
   },
   "mcps": [
-    "websearch",
+    "cached_websearch_10x",
     "fetch", 
     "github",
     "memory",
@@ -1413,7 +1420,7 @@ display_completion_summary() {
     echo "  📁 Directory: $current_dir"
     echo "  🏷️  Name: $project_name"
     echo "  🔧 Type: $project_type"
-    echo "  🤖 MCPs: websearch, fetch, github, memory, sqlite, filesystem"
+    echo "  🤖 MCPs: cached_websearch_10x, fetch, github, memory, sqlite, filesystem"
     echo ""
     echo -e "${CYAN}10X Enhanced Commands Available:${NC}"
     echo "  🚀🤖 /analyze_and_execute - Ultimate agentic command orchestrator"
@@ -1799,6 +1806,16 @@ create_intelligent_debug_analyzer_10x() {
 create_validate_memory_architecture_10x() {
     local commands_dir="$1"
     cp "/home/dell/coding/bash/10x-agentic-setup/.claude/commands/maintenance/validate_memory_architecture_10x.md" "$commands_dir/validate_memory_architecture_10x.md"
+}
+
+create_gather_insights_10x() {
+    local commands_dir="$1"
+    cp "/home/dell/coding/bash/10x-agentic-setup/.claude/commands/intelligence/gather_insights_10x.md" "$commands_dir/gather_insights_10x.md"
+}
+
+create_cached_websearch_10x() {
+    local commands_dir="$1"
+    cp "/home/dell/coding/bash/10x-agentic-setup/.claude/commands/intelligence/cached_websearch_10x.md" "$commands_dir/cached_websearch_10x.md"
 }
 
 # Run main function

@@ -40,7 +40,7 @@
 **1.3 Code Quality Security Gates**
 - **filesystem**: Analyze code for security anti-patterns and vulnerabilities
 - **github**: Compare against security best practices from similar projects
-- **websearch**: Verify latest security standards for detected technology stack
+- **cached_websearch_10x**: Verify latest security standards for detected technology stack
 - **gpt-researcher**: Research current security vulnerabilities for project dependencies
 
 ### 🔍 **PHASE 2: INTELLIGENT PUSH VALIDATION** (use "ultrathink")

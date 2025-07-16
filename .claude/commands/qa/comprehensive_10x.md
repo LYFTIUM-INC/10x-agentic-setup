@@ -71,22 +71,22 @@ ALL MODES INCLUDE:
 PARALLEL INTELLIGENCE GATHERING - Launch 4 Quality Sub-Agents:
 
 Standards Research Agent:
-  - websearch: "[tech_stack] code quality standards enterprise 2024"
+  - cached_websearch_10x: "[tech_stack] code quality standards enterprise 2024"
   - fetch: Enterprise quality frameworks and methodologies
   - memory: Previous quality assessments and patterns
 
 Pattern Analysis Agent:
   - github: Quality patterns from top-rated projects
   - github: Code quality tools and configurations
-  - websearch: "best [tech_stack] code quality tools 2024"
+  - cached_websearch_10x: "best [tech_stack] code quality tools 2024"
 
 Benchmarking Agent:
-  - websearch: "[tech_stack] quality benchmarks industry leaders"
+  - cached_websearch_10x: "[tech_stack] quality benchmarks industry leaders"
   - fetch: Quality metrics and KPI frameworks
-  - websearch: "technical debt measurement methodologies"
+  - cached_websearch_10x: "technical debt measurement methodologies"
 
 Assessment Tools Agent:
-  - websearch: "automated code quality assessment tools"
+  - cached_websearch_10x: "automated code quality assessment tools"
   - github: Quality analysis tool configurations
   - fetch: Quality assessment automation guides
 
@@ -117,27 +117,27 @@ Quality Outputs:
 PARALLEL TESTING INTELLIGENCE - Launch 5 Testing Sub-Agents:
 
 Best Practices Agent:
-  - websearch: "[tech_stack] testing best practices 2024 industry leaders"
-  - websearch: "testing pyramid 2024 proportions recommendations"
+  - cached_websearch_10x: "[tech_stack] testing best practices 2024 industry leaders"
+  - cached_websearch_10x: "testing pyramid 2024 proportions recommendations"
   - fetch: Testing methodology guides from FAANG companies
 
 Framework Research Agent:
   - github: Top 20 projects testing patterns and frameworks
   - github: Testing tool configurations and setups
-  - websearch: "best [tech_stack] testing frameworks 2024"
+  - cached_websearch_10x: "best [tech_stack] testing frameworks 2024"
 
 Automation Strategy Agent:
-  - websearch: "test automation architecture patterns"
+  - cached_websearch_10x: "test automation architecture patterns"
   - fetch: CI/CD testing integration guides
   - github: Test automation pipeline examples
 
 Performance Testing Agent:
-  - websearch: "performance testing frameworks [tech_stack]"
+  - cached_websearch_10x: "performance testing frameworks [tech_stack]"
   - fetch: Load testing and benchmarking guides
   - github: Performance testing implementations
 
 Security Testing Agent:
-  - websearch: "security testing integration patterns"
+  - cached_websearch_10x: "security testing integration patterns"
   - fetch: Security testing methodologies
   - memory: Historical test strategies and security patterns
 
@@ -167,34 +167,34 @@ Testing Outputs:
 PARALLEL THREAT INTELLIGENCE - Launch 6 Security Sub-Agents:
 
 Vulnerability Research Agent:
-  - websearch: "[tech_stack] security vulnerabilities 2024 OWASP"
-  - websearch: "latest CVE [tech_stack] critical vulnerabilities"
+  - cached_websearch_10x: "[tech_stack] security vulnerabilities 2024 OWASP"
+  - cached_websearch_10x: "latest CVE [tech_stack] critical vulnerabilities"
   - fetch: OWASP Top 10 latest updates and guidelines
 
 Pattern Analysis Agent:
   - github: Security patterns from high-security projects
   - github: Security tool configurations and implementations
-  - websearch: "enterprise security architecture patterns"
+  - cached_websearch_10x: "enterprise security architecture patterns"
 
 Compliance Research Agent:
   - fetch: Security frameworks and compliance guides
-  - websearch: "GDPR SOC2 compliance [tech_stack] requirements"
+  - cached_websearch_10x: "GDPR SOC2 compliance [tech_stack] requirements"
   - fetch: Industry-specific security standards
 
 Threat Intelligence Agent:
-  - websearch: "2024 threat landscape [domain] industry"
+  - cached_websearch_10x: "2024 threat landscape [domain] industry"
   - fetch: Threat modeling methodologies
   - memory: Previous security assessments and patterns
 
 Tools & Scanning Agent:
-  - websearch: "automated security scanning tools [tech_stack]"
+  - cached_websearch_10x: "automated security scanning tools [tech_stack]"
   - github: Security testing and vulnerability scanning setups
   - fetch: Security automation frameworks
 
 Infrastructure Security Agent:
-  - websearch: "cloud security best practices [cloud_provider]"
+  - cached_websearch_10x: "cloud security best practices [cloud_provider]"
   - fetch: Infrastructure security hardening guides
-  - websearch: "container security [tech_stack] best practices"
+  - cached_websearch_10x: "container security [tech_stack] best practices"
 
 SYNCHRONIZATION: Aggregate all threat intelligence
 

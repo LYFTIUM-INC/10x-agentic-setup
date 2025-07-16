@@ -60,24 +60,24 @@ Historical Context Agent:
 
 Competitive Analysis Agent:
   - smart_research_and_document_10x: Feature specification patterns
-  - cached_websearch_10x: Competitor implementation patterns
-  - websearch: "[top_competitors] [feature_type] implementation 2024"
+  - cached_cached_websearch_10x_10x: Competitor implementation patterns
+  - cached_cached_websearch_10x_10x: "[top_competitors] [feature_type] implementation 2024"
   - github: Similar features in top-starred projects
 
 Technical Research Agent:
   - smart_research_and_document_10x: Technical specifications
   - context7: API documentation and standards
-  - cached_websearch_10x: Technical methodologies
+  - cached_cached_websearch_10x_10x: Technical methodologies
   - fetch: Technical architecture guides
 
 UX & Requirements Agent:
   - smart_research_and_document_10x: UX research
-  - cached_websearch_10x: Business requirements templates
+  - cached_cached_websearch_10x_10x: Business requirements templates
   - context7: Design system documentation
-  - websearch: "best [feature_type] UX patterns 2024"
+  - cached_cached_websearch_10x_10x: "best [feature_type] UX patterns 2024"
 
 Performance & Security Agent:
-  - websearch: "[feature_type] performance benchmarks"
+  - cached_cached_websearch_10x_10x: "[feature_type] performance benchmarks"
   - github: Security implementations for similar features
   - fetch: Performance optimization guides
 
@@ -130,12 +130,12 @@ ML Intelligence Agents (3 CONCURRENT):
 
 Market Research Agents (3 CONCURRENT):
   Agent 4 - Competitor Analysis:
-    - websearch: "[competitors] [feature] implementation analysis"
-    - websearch: "[feature] market leaders 2024"
+    - cached_websearch_10x: "[competitors] [feature] implementation analysis"
+    - cached_websearch_10x: "[feature] market leaders 2024"
     
   Agent 5 - Best Practices:
     - gpt-researcher: Industry best practices research
-    - websearch: "[tech_stack] [feature] best practices"
+    - cached_cached_websearch_10x_10x: "[tech_stack] [feature] best practices"
     
   Agent 6 - Open Source Intelligence:
     - github: Top 10 highest-starred similar features
@@ -143,11 +143,11 @@ Market Research Agents (3 CONCURRENT):
 
 Technical Deep Dive Agents (3 CONCURRENT):
   Agent 7 - Performance Research:
-    - websearch: "[feature] performance optimization techniques"
+    - cached_websearch_10x: "[feature] performance optimization techniques"
     - fetch: Performance benchmarking guides
     
   Agent 8 - Security Research:
-    - websearch: "[feature] security vulnerabilities patterns"
+    - cached_websearch_10x: "[feature] security vulnerabilities patterns"
     - github: Security-focused implementations
     
   Agent 9 - Architecture Research:
@@ -222,7 +222,7 @@ Knowledge Preservation:
 **4.1 Performance Intelligence**
 ```yaml
 Research Phase:
-  - websearch: Performance best practices
+  - cached_websearch_10x: Performance best practices
   - github: Optimization patterns
   - fetch: Benchmarking guides
   - memory: Previous optimizations

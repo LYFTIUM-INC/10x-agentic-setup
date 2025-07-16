@@ -7,7 +7,7 @@
 - **context-aware-memory MCP**: Store feature research context with predictive loading for implementation phase
 - **ml-code-intelligence MCP**: Analyze existing codebase for similar feature patterns and quality benchmarks
 - **10x-command-analytics MCP**: Review command usage patterns to understand optimal implementation workflows
-- **websearch**: "how [top_3_competitors] implement [feature_type]"
+- **cached_websearch_10x**: "how [top_3_competitors] implement [feature_type]"
 - **gpt-researcher**: Comprehensive research on feature implementation best practices and industry patterns
 - **github**: Search highest-starred projects with similar features
 - **fetch**: Analyze competitor implementations

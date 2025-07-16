@@ -20,7 +20,7 @@ Execute all independent operations in parallel batches for 3-5x faster completio
 - `qdrant`: Vector search for similar patterns in parallel
 
 **Module B: External Intelligence** (Independent):
-- `websearch`: "[query1]", "[query2]", "[query3]" - Execute all searches simultaneously
+- `cached_websearch_10x`: "[query1]", "[query2]", "[query3]" - Execute all searches simultaneously
 - `github`: Search for [patterns/examples/implementations] concurrently
 - `gpt-researcher`: Comprehensive research on [topic] in parallel
 - `fetch`: Retrieve all external documentation simultaneously
@@ -97,7 +97,7 @@ execution_order:
     - smart_memory_unified: Load ALL context
     
   2_parallel_fresh_fetch: # Only for cache misses
-    - websearch: Fresh queries
+    - cached_websearch_10x: Fresh queries
     - github: New searches
     - fetch: Updated docs
     
@@ -112,7 +112,7 @@ execution_order:
 **Batching Configuration:**
 ```yaml
 batch_limits:
-  websearch: 5 concurrent
+  cached_websearch_10x: 5 concurrent
   github_api: 3 concurrent
   file_operations: 10 concurrent
   memory_operations: unlimited

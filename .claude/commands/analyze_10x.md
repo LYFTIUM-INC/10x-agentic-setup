@@ -133,7 +133,7 @@ Layer 1 - Foundation Analysis:
   - Pattern identification
 
 Layer 2 - Intelligence Gathering:
-  - All websearch patterns
+  - All cached_websearch_10x patterns
   - GitHub research
   - Documentation fetching
 

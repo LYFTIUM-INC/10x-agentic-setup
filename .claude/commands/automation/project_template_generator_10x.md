@@ -28,7 +28,7 @@ FRAMEWORK=$(detect_framework_for_stack "$PROJECT_TYPE" "$LANGUAGE")
 ```
 
 **1.2 Intelligence Gathering**
-- **websearch**: "best practices ${FRAMEWORK} project structure 2024"
+- **cached_websearch_10x**: "best practices ${FRAMEWORK} project structure 2024"
 - **github**: Analyze top-starred ${FRAMEWORK} projects
 - **10x-knowledge-graph MCP**: Retrieve organizational project patterns
 - **context-aware-memory MCP**: Load successful project templates
@@ -108,7 +108,7 @@ ${PROJECT_NAME}/
   },
   "mcp_servers": {
     "core": [
-      "websearch", "fetch", "github", "filesystem", "memory", "sqlite"
+      "cached_websearch_10x", "fetch", "github", "filesystem", "memory", "sqlite"
     ],
     "ml_enhanced": [
       "ml-code-intelligence", "context-aware-memory",
