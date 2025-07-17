@@ -1,0 +1,90 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run /home/dell/coding/bash/10x-agentic-setup/.claude/hooks/pre_tool_use.py"
+          },
+          {
+            "type": "command",
+            "command": "uv run /home/dell/coding/bash/10x-agentic-setup/.claude/hooks/send_event.py --source-app 10x-agentic-setup --event-type PreToolUse"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run /home/dell/coding/bash/10x-agentic-setup/.claude/hooks/post_tool_use.py"
+          },
+          {
+            "type": "command",
+            "command": "uv run /home/dell/coding/bash/10x-agentic-setup/.claude/hooks/send_event.py --source-app 10x-agentic-setup --event-type PostToolUse"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run /home/dell/coding/bash/10x-agentic-setup/.claude/hooks/notification.py --notify "
+          },
+          {
+            "type": "command",
+            "command": "uv run /home/dell/coding/bash/10x-agentic-setup/.claude/hooks/send_event.py --source-app 10x-agentic-setup --event-type Notification"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run /home/dell/coding/bash/10x-agentic-setup/.claude/hooks/stop.py --chat"
+          },
+          {
+            "type": "command",
+            "command": "uv run /home/dell/coding/bash/10x-agentic-setup/.claude/hooks/send_event.py --source-app 10x-agentic-setup --event-type Stop --add-chat"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run /home/dell/coding/bash/10x-agentic-setup/.claude/hooks/subagent_stop.py"
+          },
+          {
+            "type": "command",
+            "command": "uv run /home/dell/coding/bash/10x-agentic-setup/.claude/hooks/send_event.py --source-app 10x-agentic-setup --event-type SubagentStop"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run /home/dell/coding/bash/10x-agentic-setup/.claude/hooks/send_event.py --source-app 10x-agentic-setup --event-type PreCompact"
+          }
+        ]
+      }
+    ]
+  }
+}
