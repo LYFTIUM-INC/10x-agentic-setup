@@ -1,0 +1,44 @@
+{
+  "test_scenarios": [
+    {
+      "name": "Function-level documentation",
+      "command": "/docs:granular_10x --scope function --target \"*Auth*\" --depth api",
+      "expected": "API documentation for all authentication functions"
+    },
+    {
+      "name": "File-level overview",
+      "command": "/docs:granular_10x --scope file --target \"src/**/*.ts\" --depth summary",
+      "expected": "Summary documentation for all TypeScript files"
+    },
+    {
+      "name": "Mixed scope with ML enhancement",
+      "command": "/docs:granular_10x --scope mixed --config sample-config.json",
+      "expected": "Multi-granularity documentation with ML categorization"
+    },
+    {
+      "name": "Snippet extraction from web findings",
+      "command": "/docs:granular_10x --scope finding --url \"[security-report]\" --extract \"recommendations\"",
+      "expected": "Extracted security recommendations as documentation"
+    }
+  ],
+  "integration_tests": [
+    {
+      "workflow": "feature_workflow_10x",
+      "phase": "Phase 4 - Parallel Finalization",
+      "granular_integration": "Automatic scope detection and parallel execution"
+    },
+    {
+      "workflow": "implement_10x",
+      "phase": "Phase 3.1 - Documentation Generation", 
+      "granular_integration": "Function and file level docs with ML enhancement"
+    }
+  ],
+  "ml_data_validation": [
+    {
+      "output": "Knowledge/documentation/granular/",
+      "structure": "Hierarchical storage by scope type",
+      "embeddings": "Vector embeddings for semantic search",
+      "json_format": "Structured ML training data"
+    }
+  ]
+}

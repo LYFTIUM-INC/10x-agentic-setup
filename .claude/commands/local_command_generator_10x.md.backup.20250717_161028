@@ -17,8 +17,8 @@
 - **context7**: Access documentation for detected frameworks/libraries (e.g., React, Django, Express)
 - **context7**: Get API documentation for external services and dependencies
 - **context7**: Retrieve best practices documentation for identified tech stack
-- **websearch**: "advanced [detected_stack] development commands automation patterns"
-- **websearch**: "[primary_language] [framework] custom tooling best practices"
+- **cached_websearch_10x**: "advanced [detected_stack] development commands automation patterns"
+- **cached_websearch_10x**: "[primary_language] [framework] custom tooling best practices"
 - **github**: Research custom command patterns for similar project types
 - **fetch**: Download methodology guides for the specific technology stack
 - **memory**: Review previous project analysis patterns and command creation strategies

@@ -130,6 +130,7 @@ create_all_10x_commands() {
     create_command_if_not_exists "qa/analyze_quality_10x.md" "$commands_dir" create_analyze_quality_10x "$commands_dir/qa"
     create_command_if_not_exists "qa/security_audit_10x.md" "$commands_dir" create_security_audit_10x "$commands_dir/qa"
     create_command_if_not_exists "docs/generate_docs_10x.md" "$commands_dir" create_generate_docs_10x "$commands_dir/docs"
+    create_command_if_not_exists "docs/granular_docs_10x.md" "$commands_dir" create_granular_docs_10x "$commands_dir/docs"
     create_command_if_not_exists "git/smart_commit_10x.md" "$commands_dir" create_smart_commit_10x "$commands_dir/git"
     create_command_if_not_exists "git/smart_push_10x.md" "$commands_dir" create_smart_push_10x "$commands_dir/git"
     create_command_if_not_exists "learn_and_adapt_10x.md" "$commands_dir" create_learn_and_adapt_10x
@@ -138,10 +139,20 @@ create_all_10x_commands() {
     create_command_if_not_exists "intelligence/smart_memory_unified_10x.md" "$commands_dir" create_smart_memory_unified_10x "$commands_dir/intelligence"
     create_command_if_not_exists "intelligence/gather_insights_10x.md" "$commands_dir" create_gather_insights_10x "$commands_dir/intelligence"
     create_command_if_not_exists "intelligence/cached_websearch_10x.md" "$commands_dir" create_cached_websearch_10x "$commands_dir/intelligence"
+    create_command_if_not_exists "intelligence/capture_session_history_10x.md" "$commands_dir" create_capture_session_history_10x "$commands_dir/intelligence"
+    create_command_if_not_exists "intelligence/retrieve_conversation_context_10x.md" "$commands_dir" create_retrieve_conversation_context_10x "$commands_dir/intelligence"
     create_command_if_not_exists "qa/smart_test_generator_10x.md" "$commands_dir" create_smart_test_generator_10x "$commands_dir/qa"
     create_command_if_not_exists "qa/smart_logging_orchestrator_10x.md" "$commands_dir" create_smart_logging_orchestrator_10x "$commands_dir/qa"
     create_command_if_not_exists "qa/intelligent_debug_analyzer_10x.md" "$commands_dir" create_intelligent_debug_analyzer_10x "$commands_dir/qa"
+    create_command_if_not_exists "qa/comprehensive_10x.md" "$commands_dir" create_comprehensive_qa_10x "$commands_dir/qa"
     create_command_if_not_exists "maintenance/validate_memory_architecture_10x.md" "$commands_dir" create_validate_memory_architecture_10x "$commands_dir/maintenance"
+    create_command_if_not_exists "analyze_10x.md" "$commands_dir" create_unified_analyze_10x
+    create_command_if_not_exists "implement_10x.md" "$commands_dir" create_unified_implement_10x
+    create_command_if_not_exists "workflows/feature_workflow_10x.md" "$commands_dir" create_feature_workflow_10x "$commands_dir/workflows"
+    create_command_if_not_exists "ml_powered_development_10x.md" "$commands_dir" create_ml_powered_development_10x
+    create_command_if_not_exists "organize_and_analyze_10x.md" "$commands_dir" create_organize_and_analyze_10x
+    create_command_if_not_exists "utils/duplicate_analyzer_10x.md" "$commands_dir" create_duplicate_analyzer_10x "$commands_dir/utils"
+    create_command_if_not_exists "utils/import_validator_10x.md" "$commands_dir" create_import_validator_10x "$commands_dir/utils"
     
     print_success "All 10X commands processed (created/updated as needed)"
 }
@@ -1816,6 +1827,63 @@ create_gather_insights_10x() {
 create_cached_websearch_10x() {
     local commands_dir="$1"
     cp "/home/dell/coding/bash/10x-agentic-setup/.claude/commands/intelligence/cached_websearch_10x.md" "$commands_dir/cached_websearch_10x.md"
+}
+
+create_capture_session_history_10x() {
+    local commands_dir="$1"
+    cp "/home/dell/coding/bash/10x-agentic-setup/.claude/commands/intelligence/capture_session_history_10x.md" "$commands_dir/capture_session_history_10x.md"
+}
+
+create_retrieve_conversation_context_10x() {
+    local commands_dir="$1"
+    cp "/home/dell/coding/bash/10x-agentic-setup/.claude/commands/intelligence/retrieve_conversation_context_10x.md" "$commands_dir/retrieve_conversation_context_10x.md"
+}
+
+create_comprehensive_qa_10x() {
+    local commands_dir="$1"
+    cp "/home/dell/coding/bash/10x-agentic-setup/.claude/commands/qa/comprehensive_10x.md" "$commands_dir/comprehensive_10x.md"
+}
+
+create_unified_analyze_10x() {
+    local commands_dir="$1"
+    cp "/home/dell/coding/bash/10x-agentic-setup/.claude/commands/analyze_10x.md" "$commands_dir/analyze_10x.md"
+}
+
+create_unified_implement_10x() {
+    local commands_dir="$1"
+    cp "/home/dell/coding/bash/10x-agentic-setup/.claude/commands/implement_10x.md" "$commands_dir/implement_10x.md"
+}
+
+create_feature_workflow_10x() {
+    local commands_dir="$1"
+    cp "/home/dell/coding/bash/10x-agentic-setup/.claude/commands/workflows/feature_workflow_10x.md" "$commands_dir/feature_workflow_10x.md"
+}
+
+create_ml_powered_development_10x() {
+    local commands_dir="$1"
+    cp "/home/dell/coding/bash/10x-agentic-setup/.claude/commands/ml_powered_development_10x.md" "$commands_dir/ml_powered_development_10x.md"
+}
+
+create_granular_docs_10x() {
+    local commands_dir="$1"
+    cp "/home/dell/coding/bash/10x-agentic-setup/.claude/commands/docs/granular_docs_10x.md" "$commands_dir/granular_docs_10x.md"
+}
+
+create_organize_and_analyze_10x() {
+    local commands_dir="$1"
+    cp "/home/dell/coding/bash/10x-agentic-setup/.claude/commands/organize_and_analyze_10x.md" "$commands_dir/organize_and_analyze_10x.md"
+}
+
+create_duplicate_analyzer_10x() {
+    local commands_dir="$1"
+    mkdir -p "$commands_dir"
+    cp "/home/dell/coding/bash/10x-agentic-setup/.claude/commands/utils/duplicate_analyzer_10x.md" "$commands_dir/duplicate_analyzer_10x.md"
+}
+
+create_import_validator_10x() {
+    local commands_dir="$1"
+    mkdir -p "$commands_dir"
+    cp "/home/dell/coding/bash/10x-agentic-setup/.claude/commands/utils/import_validator_10x.md" "$commands_dir/import_validator_10x.md"
 }
 
 # Run main function

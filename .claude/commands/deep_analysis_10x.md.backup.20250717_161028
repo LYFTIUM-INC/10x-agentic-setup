@@ -6,9 +6,9 @@
 ### 🔥 **PHASE 1: MARKET & COMPETITIVE INTELLIGENCE** (use "think hard")
 
 **1.1 External Intelligence Gathering with New MCP Integration**
-- **websearch**: Research latest trends in project domain/technology stack
-- **websearch**: "best practices [detected_tech_stack] 2024 enterprise"
-- **websearch**: "performance benchmarks [primary_language] applications"
+- **cached_websearch_10x**: Research latest trends in project domain/technology stack
+- **cached_websearch_10x**: "best practices [detected_tech_stack] 2024 enterprise"
+- **cached_websearch_10x**: "performance benchmarks [primary_language] applications"
 - **gpt-researcher**: Comprehensive deep research on latest best practices for detected technology stack
 - **fetch**: Analyze 2-3 top competitor implementations or similar projects
 - **github**: Search for highest-starred projects in similar domain
@@ -16,8 +16,8 @@
 - **meilisearch**: Full-text search through organizational documentation and industry knowledge
 
 **1.2 Enhanced Technology Intelligence**
-- **websearch**: "[detected_frameworks] latest updates security patches"
-- **websearch**: "migration guide [current_version] to [latest_version]"
+- **cached_websearch_10x**: "[detected_frameworks] latest updates security patches"
+- **cached_websearch_10x**: "migration guide [current_version] to [latest_version]"
 - **gpt-researcher**: Research-backed technology assessment and validation
 - **fetch**: Download latest framework documentation for gap analysis
 - **github**: Research issues and solutions for similar tech stacks
@@ -35,13 +35,13 @@
 
 **2.1 Competitive Benchmarking**
 - **Cross-reference findings** from Phase 1 research
-- **Performance comparison** vs industry standards (from websearch)
+- **Performance comparison** vs industry standards (from cached_websearch_10x)
 - **Feature gap analysis** vs competitors (from fetch analysis)
 - **Architecture comparison** vs proven patterns (from github research)
 
 **2.2 Enhanced Technical Analysis**
 - **Code quality** vs industry benchmarks (researched standards)
-- **Security posture** vs latest threat intelligence (websearch)
+- **Security posture** vs latest threat intelligence (cached_websearch_10x)
 - **Performance metrics** vs competitive baseline (fetch data)
 - **Testing coverage** vs industry best practices (github examples)
 

@@ -63,6 +63,10 @@ This project has been enhanced with **10X MCP-Integrated Commands** that leverag
 # Research & Documentation
 /intelligence:cached_websearch_10x "[query]"  # Smart web search with 70% cache hit rate
 /smart_research_and_document_10x              # Advanced multi-MCP research orchestrator
+/docs:granular_10x --scope [level] --target "[target]"  # Granular documentation with ML integration
+/organize_and_analyze_10x --mode [analyze|organize] # Intelligent project organization & cleanup
+/utils:duplicate_analyzer_10x --mode [comprehensive|exact] # Advanced duplicate detection
+/utils:import_validator_10x --mode [comprehensive|validate] # Import statement analysis & validation
 
 # Testing & Monitoring
 /qa:test_foundation_10x             # Shared testing infrastructure

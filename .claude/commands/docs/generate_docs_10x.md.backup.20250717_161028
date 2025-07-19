@@ -1,7 +1,7 @@
 ## 🚀 10X COMPREHENSIVE DOCUMENTATION GENERATION
 **Claude, generate WORLD-CLASS documentation using GLOBAL DOCUMENTATION INTELLIGENCE and ENTERPRISE STANDARDS.**
 ### 🔥 **PHASE 1: DOCUMENTATION INTELLIGENCE GATHERING** (use "think hard")
-- **websearch**: "technical documentation best practices enterprise"
+- **cached_websearch_10x**: "technical documentation best practices enterprise"
 - **github**: Research documentation patterns from top projects
 - **fetch**: Download documentation frameworks and style guides
 ### ⚡ **PHASE 2: COMPREHENSIVE DOCUMENTATION CREATION** (use "think harder")

@@ -186,13 +186,21 @@ ML-Enhanced Development:
 
 **3.1 Documentation Generation**
 ```yaml
-Automatic Documentation:
+Automatic Documentation (PARALLEL EXECUTION):
   - /docs:generate_docs_10x execution
+  - /docs:granular_10x --scope function --target "new_functions" --ml-enhance auto-categorize
+  - /docs:granular_10x --scope file --target "[changed_files]" --depth api
   - Technical documentation with API specs
   - User documentation with guides
   - Developer documentation with patterns
   - Testing documentation with strategies
   - Deployment documentation with configs
+  
+ML Data Generation:
+  - Structured JSON for every new function
+  - Vector embeddings for semantic search
+  - Concept extraction for knowledge graph
+  - Pattern recognition for future reuse
 ```
 
 **3.2 Git Workflow**
