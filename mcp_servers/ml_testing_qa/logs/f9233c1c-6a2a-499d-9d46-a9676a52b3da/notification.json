@@ -1,0 +1,9 @@
+[
+  {
+    "session_id": "f9233c1c-6a2a-499d-9d46-a9676a52b3da",
+    "transcript_path": "/home/dell/.claude/projects/-home-dell-coding-bash-10x-agentic-setup/f9233c1c-6a2a-499d-9d46-a9676a52b3da.jsonl",
+    "cwd": "/home/dell/coding/bash/10x-agentic-setup/mcp_servers/ml_testing_qa",
+    "hook_event_name": "Notification",
+    "message": "Claude is waiting for your input"
+  }
+]

@@ -256,11 +256,942 @@ class CodeFeatureExtractor:
         }
 
 
+class TestGenLLMModel:
+    """Advanced LLM-based test generation using fine-tuned models"""
+    
+    def __init__(self):
+        self.model_name = "microsoft/CodeT5-small"  # Or use local model
+        self.tokenizer = None
+        self.model = None
+        self.max_length = 512
+        self.temperature = 0.7
+        self.is_initialized = False
+        
+    async def initialize(self):
+        """Initialize the LLM model for test generation"""
+        try:
+            # Try to import transformers - if not available, use mock
+            try:
+                from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+                self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
+                self.model = AutoModelForSeq2SeqLM.from_pretrained(self.model_name)
+                self.is_initialized = True
+                logging.info("TestGen-LLM model initialized successfully")
+            except ImportError:
+                logging.warning("Transformers not available, using mock LLM")
+                self.is_initialized = False
+        except Exception as e:
+            logging.error(f"Failed to initialize LLM model: {e}")
+            self.is_initialized = False
+    
+    async def generate_tests(self, code_context: Dict[str, Any]) -> List[str]:
+        """Generate test cases using LLM with context understanding"""
+        
+        if not self.is_initialized:
+            # Fallback to template-based generation
+            return await self._generate_template_tests(code_context)
+        
+        try:
+            # Prepare prompt for LLM
+            prompt = self._create_generation_prompt(code_context)
+            
+            # Generate tests using LLM
+            generated_tests = await self._llm_generate(prompt)
+            
+            # Filter and validate generated tests
+            valid_tests = await self._filter_and_validate(generated_tests, code_context)
+            
+            return valid_tests
+            
+        except Exception as e:
+            logging.error(f"LLM test generation failed: {e}")
+            return await self._generate_template_tests(code_context)
+    
+    def _create_generation_prompt(self, code_context: Dict[str, Any]) -> str:
+        """Create optimized prompt for test generation"""
+        
+        function_signature = code_context.get('function_signature', '')
+        function_body = code_context.get('function_body', '')
+        docstring = code_context.get('docstring', '')
+        complexity_metrics = code_context.get('complexity_metrics', {})
+        
+        prompt = f"""Generate comprehensive test cases for the following function:
+
+Function Signature: {function_signature}
+Function Body: {function_body}
+Documentation: {docstring}
+Complexity: {complexity_metrics.get('cyclomatic_complexity', 'unknown')}
+
+Requirements:
+1. Test normal cases with typical inputs
+2. Test edge cases and boundary conditions  
+3. Test error handling with invalid inputs
+4. Test performance with large inputs if applicable
+5. Include property-based tests where relevant
+6. Use pytest framework with proper assertions
+7. Include docstrings explaining test purpose
+
+Generate tests:"""
+        
+        return prompt
+    
+    async def _llm_generate(self, prompt: str) -> List[str]:
+        """Generate tests using the LLM model"""
+        
+        if not self.is_initialized:
+            return []
+        
+        try:
+            # Tokenize input
+            inputs = self.tokenizer.encode(prompt, return_tensors="pt", max_length=self.max_length, truncation=True)
+            
+            # Generate output
+            try:
+                import torch
+                with torch.no_grad():
+                    outputs = self.model.generate(
+                        inputs,
+                        max_length=self.max_length * 2,
+                        temperature=self.temperature,
+                        num_return_sequences=3,  # Generate multiple variants
+                        do_sample=True,
+                        pad_token_id=self.tokenizer.eos_token_id
+                    )
+            except ImportError:
+                logging.warning("PyTorch not available for LLM generation")
+                return []
+            
+            # Decode generated tests
+            generated_tests = []
+            for output in outputs:
+                test_code = self.tokenizer.decode(output, skip_special_tokens=True)
+                generated_tests.append(test_code)
+            
+            return generated_tests
+            
+        except Exception as e:
+            logging.error(f"LLM generation error: {e}")
+            return []
+    
+    async def _filter_and_validate(self, generated_tests: List[str], code_context: Dict[str, Any]) -> List[str]:
+        """Filter out invalid tests and validate syntax"""
+        
+        valid_tests = []
+        
+        for test_code in generated_tests:
+            try:
+                # Check syntax validity
+                ast.parse(test_code)
+                
+                # Check for hallucinations and invalid patterns
+                if self._is_valid_test(test_code, code_context):
+                    valid_tests.append(test_code)
+                    
+            except SyntaxError:
+                logging.debug(f"Invalid syntax in generated test: {test_code[:100]}...")
+                continue
+            except Exception as e:
+                logging.debug(f"Test validation error: {e}")
+                continue
+        
+        return valid_tests
+    
+    def _is_valid_test(self, test_code: str, code_context: Dict[str, Any]) -> bool:
+        """Validate that generated test is reasonable and not hallucinated"""
+        
+        function_name = code_context.get('function_name', '')
+        
+        # Check that test actually tests the target function
+        if function_name and function_name not in test_code:
+            return False
+        
+        # Check for common hallucination patterns
+        hallucination_patterns = [
+            r'import\s+non_existent_module',
+            r'from\s+fake_library',
+            r'assert\s+impossible_condition',
+            r'magic_function\(',
+            r'undefined_variable'
+        ]
+        
+        for pattern in hallucination_patterns:
+            if re.search(pattern, test_code):
+                return False
+        
+        # Check for proper test structure
+        if 'def test_' not in test_code or 'assert' not in test_code:
+            return False
+        
+        return True
+    
+    async def _generate_template_tests(self, code_context: Dict[str, Any]) -> List[str]:
+        """Fallback template-based test generation"""
+        
+        function_name = code_context.get('function_name', 'unknown_function')
+        function_signature = code_context.get('function_signature', '')
+        
+        templates = [
+            f"""
+def test_{function_name}_basic():
+    \"\"\"Test basic functionality of {function_name}\"\"\"
+    # TODO: Implement basic test case
+    result = {function_name}()  # Add appropriate parameters
+    assert result is not None
+""",
+            f"""
+def test_{function_name}_edge_cases():
+    \"\"\"Test edge cases for {function_name}\"\"\"
+    # TODO: Implement edge case tests
+    with pytest.raises((ValueError, TypeError)):
+        {function_name}(None)
+""",
+            f"""
+def test_{function_name}_invalid_input():
+    \"\"\"Test error handling in {function_name}\"\"\"
+    # TODO: Implement error handling tests
+    with pytest.raises(Exception):
+        {function_name}("invalid_input")
+"""
+        ]
+        
+        return templates
+
+
+class BugPredictionModel:
+    """ML model for predicting bug probability in code"""
+    
+    def __init__(self):
+        self.model = RandomForestClassifier(n_estimators=100, random_state=42)
+        self.feature_vectorizer = TfidfVectorizer(max_features=1000)
+        self.scaler = StandardScaler()
+        self.is_trained = False
+        self.feature_names = []
+        
+    async def train_model(self, training_data: List[Dict[str, Any]]):
+        """Train the bug prediction model on historical data"""
+        
+        try:
+            if not training_data:
+                # Create synthetic training data for demonstration
+                training_data = self._create_synthetic_data()
+            
+            # Extract features from training data
+            features, labels = self._extract_training_features(training_data)
+            
+            if len(features) == 0:
+                logging.warning("No training data available, using default model")
+                return
+            
+            # Split data for validation
+            X_train, X_test, y_train, y_test = train_test_split(
+                features, labels, test_size=0.2, random_state=42
+            )
+            
+            # Train the model
+            self.model.fit(X_train, y_train)
+            self.is_trained = True
+            
+            # Evaluate model
+            y_pred = self.model.predict(X_test)
+            accuracy = accuracy_score(y_test, y_pred)
+            precision = precision_score(y_test, y_pred, average='weighted', zero_division=0)
+            recall = recall_score(y_test, y_pred, average='weighted', zero_division=0)
+            
+            logging.info(f"Bug prediction model trained - Accuracy: {accuracy:.3f}, Precision: {precision:.3f}, Recall: {recall:.3f}")
+            
+        except Exception as e:
+            logging.error(f"Model training failed: {e}")
+            self.is_trained = False
+    
+    async def predict_bugs(self, code_metrics: Dict[str, Any]) -> Dict[str, Any]:
+        """Predict bug probability for given code"""
+        
+        if not self.is_trained:
+            # Use heuristic-based prediction as fallback
+            return self._heuristic_bug_prediction(code_metrics)
+        
+        try:
+            # Extract features for prediction
+            features = self._extract_prediction_features(code_metrics)
+            
+            if len(features) == 0:
+                return self._heuristic_bug_prediction(code_metrics)
+            
+            # Make prediction
+            bug_probability = self.model.predict_proba([features])[0][1]  # Probability of bug class
+            prediction = self.model.predict([features])[0]
+            
+            # Get feature importance for explanation
+            feature_importance = self._get_feature_importance(features)
+            
+            return {
+                'bug_probability': float(bug_probability),
+                'prediction': bool(prediction),
+                'confidence': float(max(self.model.predict_proba([features])[0])),
+                'risk_level': self._get_risk_level(bug_probability),
+                'contributing_factors': feature_importance,
+                'recommendations': self._generate_recommendations(code_metrics, bug_probability)
+            }
+            
+        except Exception as e:
+            logging.error(f"Bug prediction failed: {e}")
+            return self._heuristic_bug_prediction(code_metrics)
+    
+    def _extract_training_features(self, training_data: List[Dict[str, Any]]) -> Tuple[List[List[float]], List[int]]:
+        """Extract features from training data"""
+        
+        features = []
+        labels = []
+        
+        for item in training_data:
+            try:
+                code_metrics = item.get('metrics', {})
+                has_bugs = item.get('has_bugs', False)
+                
+                feature_vector = [
+                    code_metrics.get('cyclomatic_complexity', 0),
+                    code_metrics.get('lines_of_code', 0),
+                    code_metrics.get('number_of_functions', 0),
+                    code_metrics.get('depth_of_nesting', 0),
+                    code_metrics.get('number_of_parameters', 0),
+                    code_metrics.get('halstead_volume', 0),
+                    code_metrics.get('maintainability_index', 100),
+                    len(code_metrics.get('imports', [])),
+                    len(code_metrics.get('exceptions_caught', [])),
+                    len(code_metrics.get('global_variables', []))
+                ]
+                
+                features.append(feature_vector)
+                labels.append(1 if has_bugs else 0)
+                
+            except Exception as e:
+                logging.debug(f"Feature extraction error: {e}")
+                continue
+        
+        return features, labels
+    
+    def _extract_prediction_features(self, code_metrics: Dict[str, Any]) -> List[float]:
+        """Extract features for prediction"""
+        
+        return [
+            code_metrics.get('cyclomatic_complexity', 0),
+            code_metrics.get('lines_of_code', 0),
+            code_metrics.get('number_of_functions', 0),
+            code_metrics.get('depth_of_nesting', 0),
+            code_metrics.get('number_of_parameters', 0),
+            code_metrics.get('halstead_volume', 0),
+            code_metrics.get('maintainability_index', 100),
+            len(code_metrics.get('imports', [])),
+            len(code_metrics.get('exceptions_caught', [])),
+            len(code_metrics.get('global_variables', []))
+        ]
+    
+    def _create_synthetic_data(self) -> List[Dict[str, Any]]:
+        """Create synthetic training data for demonstration"""
+        
+        synthetic_data = []
+        
+        # Generate samples with different complexity levels
+        for i in range(100):
+            complexity = np.random.uniform(1, 20)
+            loc = int(np.random.uniform(10, 500))
+            
+            # Higher complexity correlates with more bugs
+            bug_probability = min(0.9, complexity / 15 + np.random.normal(0, 0.1))
+            has_bugs = np.random.random() < bug_probability
+            
+            synthetic_data.append({
+                'metrics': {
+                    'cyclomatic_complexity': complexity,
+                    'lines_of_code': loc,
+                    'number_of_functions': max(1, int(loc / 20)),
+                    'depth_of_nesting': int(np.random.uniform(1, 8)),
+                    'number_of_parameters': int(np.random.uniform(0, 10)),
+                    'halstead_volume': np.random.uniform(50, 1000),
+                    'maintainability_index': np.random.uniform(0, 100),
+                    'imports': ['module' + str(j) for j in range(int(np.random.uniform(0, 10)))],
+                    'exceptions_caught': ['Exception' + str(j) for j in range(int(np.random.uniform(0, 5)))],
+                    'global_variables': ['var' + str(j) for j in range(int(np.random.uniform(0, 5)))]
+                },
+                'has_bugs': has_bugs
+            })
+        
+        return synthetic_data
+    
+    def _heuristic_bug_prediction(self, code_metrics: Dict[str, Any]) -> Dict[str, Any]:
+        """Fallback heuristic-based bug prediction"""
+        
+        complexity = code_metrics.get('cyclomatic_complexity', 0)
+        loc = code_metrics.get('lines_of_code', 0)
+        nesting = code_metrics.get('depth_of_nesting', 0)
+        
+        # Simple heuristic: higher complexity = higher bug probability
+        risk_score = (complexity * 0.4 + loc / 100 * 0.3 + nesting * 0.3) / 10
+        bug_probability = min(0.95, risk_score)
+        
+        return {
+            'bug_probability': bug_probability,
+            'prediction': bug_probability > 0.5,
+            'confidence': 0.7,  # Moderate confidence for heuristics
+            'risk_level': self._get_risk_level(bug_probability),
+            'contributing_factors': {
+                'cyclomatic_complexity': complexity,
+                'lines_of_code': loc,
+                'depth_of_nesting': nesting
+            },
+            'recommendations': self._generate_recommendations(code_metrics, bug_probability)
+        }
+    
+    def _get_risk_level(self, bug_probability: float) -> str:
+        """Convert bug probability to risk level"""
+        
+        if bug_probability < 0.2:
+            return 'low'
+        elif bug_probability < 0.5:
+            return 'medium'
+        elif bug_probability < 0.8:
+            return 'high'
+        else:
+            return 'critical'
+    
+    def _get_feature_importance(self, features: List[float]) -> Dict[str, float]:
+        """Get feature importance for explanation"""
+        
+        if not self.is_trained:
+            return {}
+        
+        feature_names = [
+            'cyclomatic_complexity', 'lines_of_code', 'number_of_functions',
+            'depth_of_nesting', 'number_of_parameters', 'halstead_volume',
+            'maintainability_index', 'imports_count', 'exceptions_count', 'globals_count'
+        ]
+        
+        importance_dict = {}
+        feature_importances = self.model.feature_importances_
+        
+        for i, importance in enumerate(feature_importances):
+            if i < len(feature_names):
+                importance_dict[feature_names[i]] = float(importance)
+        
+        return importance_dict
+    
+    def _generate_recommendations(self, code_metrics: Dict[str, Any], bug_probability: float) -> List[str]:
+        """Generate actionable recommendations"""
+        
+        recommendations = []
+        
+        complexity = code_metrics.get('cyclomatic_complexity', 0)
+        loc = code_metrics.get('lines_of_code', 0)
+        nesting = code_metrics.get('depth_of_nesting', 0)
+        
+        if complexity > 10:
+            recommendations.append("Reduce cyclomatic complexity by breaking down complex functions")
+        
+        if loc > 200:
+            recommendations.append("Consider splitting large functions into smaller, focused functions")
+        
+        if nesting > 4:
+            recommendations.append("Reduce nesting depth by using early returns or extracting nested logic")
+        
+        if bug_probability > 0.7:
+            recommendations.append("Add comprehensive unit tests with edge case coverage")
+            recommendations.append("Consider code review with senior developers")
+            recommendations.append("Implement static analysis tools and linting")
+        
+        return recommendations
+
+
+class EdgeCaseDiscoveryEngine:
+    """Advanced edge case discovery using ML and heuristics"""
+    
+    def __init__(self):
+        self.boundary_analyzer = BoundaryValueAnalyzer()
+        self.equivalence_partitioner = EquivalencePartitioner()
+        self.mutation_generator = MutationTestGenerator()
+        
+    async def discover_edge_cases(self, code_analysis: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Discover edge cases using multiple techniques"""
+        
+        edge_cases = []
+        
+        try:
+            # Boundary value analysis
+            boundary_cases = await self.boundary_analyzer.analyze(code_analysis)
+            edge_cases.extend(boundary_cases)
+            
+            # Equivalence partitioning
+            partition_cases = await self.equivalence_partitioner.generate(code_analysis)
+            edge_cases.extend(partition_cases)
+            
+            # Mutation-based edge cases
+            mutation_cases = await self.mutation_generator.generate(code_analysis)
+            edge_cases.extend(mutation_cases)
+            
+            # Rank edge cases by importance
+            ranked_cases = await self._rank_edge_cases(edge_cases, code_analysis)
+            
+            return ranked_cases[:20]  # Return top 20 edge cases
+            
+        except Exception as e:
+            logging.error(f"Edge case discovery failed: {e}")
+            return self._generate_basic_edge_cases(code_analysis)
+    
+    async def _rank_edge_cases(self, edge_cases: List[Dict[str, Any]], code_analysis: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Rank edge cases by likelihood to find bugs"""
+        
+        for case in edge_cases:
+            # Calculate importance score based on multiple factors
+            score = 0.0
+            
+            # Complexity of the test case
+            score += case.get('complexity_score', 0) * 0.3
+            
+            # Coverage potential
+            score += case.get('coverage_potential', 0) * 0.3
+            
+            # Historical bug correlation
+            score += case.get('bug_correlation', 0) * 0.4
+            
+            case['importance_score'] = score
+        
+        # Sort by importance score
+        return sorted(edge_cases, key=lambda x: x.get('importance_score', 0), reverse=True)
+    
+    def _generate_basic_edge_cases(self, code_analysis: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Generate basic edge cases as fallback"""
+        
+        function_name = code_analysis.get('function_name', 'unknown')
+        
+        basic_cases = [
+            {
+                'case_type': 'null_input',
+                'description': 'Test with None/null input',
+                'test_code': f'pytest.raises(TypeError, {function_name}, None)',
+                'importance_score': 0.8,
+                'complexity_score': 0.3
+            },
+            {
+                'case_type': 'empty_input',
+                'description': 'Test with empty input',
+                'test_code': f'pytest.raises(ValueError, {function_name}, "")',
+                'importance_score': 0.7,
+                'complexity_score': 0.3
+            },
+            {
+                'case_type': 'boundary_max',
+                'description': 'Test with maximum boundary value',
+                'test_code': f'{function_name}(sys.maxsize)',
+                'importance_score': 0.6,
+                'complexity_score': 0.4
+            },
+            {
+                'case_type': 'boundary_min',
+                'description': 'Test with minimum boundary value',
+                'test_code': f'{function_name}(-sys.maxsize)',
+                'importance_score': 0.6,
+                'complexity_score': 0.4
+            }
+        ]
+        
+        return basic_cases
+
+
+class BoundaryValueAnalyzer:
+    """Analyzes code to identify boundary values for testing"""
+    
+    async def analyze(self, code_analysis: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Analyze code for boundary value test cases"""
+        
+        boundary_cases = []
+        
+        try:
+            # Extract numeric literals and ranges from code
+            numeric_values = self._extract_numeric_values(code_analysis)
+            
+            # Generate boundary tests for each numeric value
+            for value in numeric_values:
+                boundary_cases.extend(self._generate_boundary_tests(value, code_analysis))
+            
+            # Extract string length constraints
+            string_constraints = self._extract_string_constraints(code_analysis)
+            
+            # Generate boundary tests for string lengths
+            for constraint in string_constraints:
+                boundary_cases.extend(self._generate_string_boundary_tests(constraint, code_analysis))
+            
+            return boundary_cases
+            
+        except Exception as e:
+            logging.error(f"Boundary analysis failed: {e}")
+            return []
+    
+    def _extract_numeric_values(self, code_analysis: Dict[str, Any]) -> List[int]:
+        """Extract numeric values from code for boundary testing"""
+        
+        numeric_values = []
+        code = code_analysis.get('function_body', '')
+        
+        # Find numeric literals in code
+        numeric_pattern = r'\b\d+\b'
+        matches = re.findall(numeric_pattern, code)
+        
+        for match in matches:
+            try:
+                value = int(match)
+                if value > 0:  # Only consider positive values for boundary testing
+                    numeric_values.append(value)
+            except ValueError:
+                continue
+        
+        return list(set(numeric_values))  # Remove duplicates
+    
+    def _generate_boundary_tests(self, value: int, code_analysis: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Generate boundary test cases for a numeric value"""
+        
+        function_name = code_analysis.get('function_name', 'unknown')
+        
+        boundary_tests = [
+            {
+                'case_type': 'boundary_below',
+                'description': f'Test with value just below boundary ({value-1})',
+                'test_code': f'{function_name}({value-1})',
+                'boundary_value': value,
+                'test_value': value - 1,
+                'importance_score': 0.8,
+                'complexity_score': 0.4
+            },
+            {
+                'case_type': 'boundary_exact',
+                'description': f'Test with exact boundary value ({value})',
+                'test_code': f'{function_name}({value})',
+                'boundary_value': value,
+                'test_value': value,
+                'importance_score': 0.9,
+                'complexity_score': 0.3
+            },
+            {
+                'case_type': 'boundary_above',
+                'description': f'Test with value just above boundary ({value+1})',
+                'test_code': f'{function_name}({value+1})',
+                'boundary_value': value,
+                'test_value': value + 1,
+                'importance_score': 0.8,
+                'complexity_score': 0.4
+            }
+        ]
+        
+        return boundary_tests
+    
+    def _extract_string_constraints(self, code_analysis: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Extract string length constraints from code"""
+        
+        constraints = []
+        code = code_analysis.get('function_body', '')
+        
+        # Look for string length checks
+        length_patterns = [
+            r'len\([^)]+\)\s*[<>=]+\s*(\d+)',
+            r'[^.]+\.length\s*[<>=]+\s*(\d+)',
+            r'if\s+.+\s*[<>=]+\s*(\d+)'
+        ]
+        
+        for pattern in length_patterns:
+            matches = re.findall(pattern, code)
+            for match in matches:
+                try:
+                    length_limit = int(match)
+                    constraints.append({
+                        'type': 'string_length',
+                        'limit': length_limit
+                    })
+                except ValueError:
+                    continue
+        
+        return constraints
+    
+    def _generate_string_boundary_tests(self, constraint: Dict[str, Any], code_analysis: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Generate boundary test cases for string constraints"""
+        
+        function_name = code_analysis.get('function_name', 'unknown')
+        limit = constraint.get('limit', 10)
+        
+        string_tests = [
+            {
+                'case_type': 'string_empty',
+                'description': 'Test with empty string',
+                'test_code': f'{function_name}("")',
+                'importance_score': 0.8,
+                'complexity_score': 0.3
+            },
+            {
+                'case_type': 'string_limit_below',
+                'description': f'Test with string length below limit ({limit-1})',
+                'test_code': f'{function_name}("{"a" * (limit-1)}")',
+                'importance_score': 0.7,
+                'complexity_score': 0.4
+            },
+            {
+                'case_type': 'string_limit_exact',
+                'description': f'Test with string length at exact limit ({limit})',
+                'test_code': f'{function_name}("{"a" * limit}")',
+                'importance_score': 0.9,
+                'complexity_score': 0.4
+            },
+            {
+                'case_type': 'string_limit_above',
+                'description': f'Test with string length above limit ({limit+1})',
+                'test_code': f'{function_name}("{"a" * (limit+1)}")',
+                'importance_score': 0.8,
+                'complexity_score': 0.4
+            }
+        ]
+        
+        return string_tests
+
+
+class EquivalencePartitioner:
+    """Generates test cases using equivalence partitioning"""
+    
+    async def generate(self, code_analysis: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Generate equivalence partition test cases"""
+        
+        partition_cases = []
+        
+        try:
+            # Analyze input domains
+            input_domains = self._analyze_input_domains(code_analysis)
+            
+            # Generate test cases for each partition
+            for domain in input_domains:
+                partition_cases.extend(self._generate_partition_tests(domain, code_analysis))
+            
+            return partition_cases
+            
+        except Exception as e:
+            logging.error(f"Equivalence partitioning failed: {e}")
+            return []
+    
+    def _analyze_input_domains(self, code_analysis: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Analyze input domains for partitioning"""
+        
+        domains = []
+        
+        # Basic input type domains
+        domains.append({
+            'type': 'numeric',
+            'partitions': ['negative', 'zero', 'positive', 'very_large']
+        })
+        
+        domains.append({
+            'type': 'string',
+            'partitions': ['empty', 'single_char', 'normal', 'very_long']
+        })
+        
+        domains.append({
+            'type': 'boolean',
+            'partitions': ['true', 'false']
+        })
+        
+        domains.append({
+            'type': 'collection',
+            'partitions': ['empty', 'single_element', 'multiple_elements']
+        })
+        
+        return domains
+    
+    def _generate_partition_tests(self, domain: Dict[str, Any], code_analysis: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Generate test cases for a specific domain partition"""
+        
+        function_name = code_analysis.get('function_name', 'unknown')
+        domain_type = domain.get('type', 'unknown')
+        partitions = domain.get('partitions', [])
+        
+        partition_tests = []
+        
+        for partition in partitions:
+            test_value = self._get_partition_test_value(domain_type, partition)
+            
+            partition_tests.append({
+                'case_type': f'{domain_type}_{partition}',
+                'description': f'Test {domain_type} with {partition} value',
+                'test_code': f'{function_name}({test_value})',
+                'domain_type': domain_type,
+                'partition': partition,
+                'importance_score': 0.6,
+                'complexity_score': 0.3
+            })
+        
+        return partition_tests
+    
+    def _get_partition_test_value(self, domain_type: str, partition: str) -> str:
+        """Get test value for a specific partition"""
+        
+        test_values = {
+            'numeric': {
+                'negative': '-1',
+                'zero': '0',
+                'positive': '1',
+                'very_large': '999999'
+            },
+            'string': {
+                'empty': '""',
+                'single_char': '"a"',
+                'normal': '"test_string"',
+                'very_long': '"a" * 1000'
+            },
+            'boolean': {
+                'true': 'True',
+                'false': 'False'
+            },
+            'collection': {
+                'empty': '[]',
+                'single_element': '[1]',
+                'multiple_elements': '[1, 2, 3, 4, 5]'
+            }
+        }
+        
+        return test_values.get(domain_type, {}).get(partition, 'None')
+
+
+class MutationTestGenerator:
+    """Generates test cases based on code mutations"""
+    
+    async def generate(self, code_analysis: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Generate mutation-based test cases"""
+        
+        mutation_cases = []
+        
+        try:
+            # Generate mutants of the original code
+            mutants = self._generate_mutants(code_analysis)
+            
+            # Create test cases to kill each mutant
+            for mutant in mutants:
+                test_case = self._generate_mutant_killing_test(mutant, code_analysis)
+                if test_case:
+                    mutation_cases.append(test_case)
+            
+            return mutation_cases
+            
+        except Exception as e:
+            logging.error(f"Mutation test generation failed: {e}")
+            return []
+    
+    def _generate_mutants(self, code_analysis: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Generate code mutants for testing"""
+        
+        mutants = []
+        code = code_analysis.get('function_body', '')
+        
+        # Arithmetic operator mutations
+        arithmetic_mutations = [
+            ('+', '-'), ('-', '+'), ('*', '/'), ('/', '*'),
+            ('==', '!='), ('!=', '=='), ('<', '>='), ('>', '<=')
+        ]
+        
+        for original, mutated in arithmetic_mutations:
+            if original in code:
+                mutant_code = code.replace(original, mutated, 1)
+                mutants.append({
+                    'type': 'arithmetic_operator',
+                    'original': original,
+                    'mutated': mutated,
+                    'mutant_code': mutant_code,
+                    'kill_difficulty': 0.6
+                })
+        
+        # Boolean operator mutations
+        boolean_mutations = [
+            ('and', 'or'), ('or', 'and'), ('True', 'False'), ('False', 'True')
+        ]
+        
+        for original, mutated in boolean_mutations:
+            if original in code:
+                mutant_code = code.replace(original, mutated, 1)
+                mutants.append({
+                    'type': 'boolean_operator',
+                    'original': original,
+                    'mutated': mutated,
+                    'mutant_code': mutant_code,
+                    'kill_difficulty': 0.7
+                })
+        
+        # Boundary mutations
+        boundary_mutations = [
+            ('<=', '<'), ('>=', '>'), ('<', '<='), ('>', '>=')
+        ]
+        
+        for original, mutated in boundary_mutations:
+            if original in code:
+                mutant_code = code.replace(original, mutated, 1)
+                mutants.append({
+                    'type': 'boundary_condition',
+                    'original': original,
+                    'mutated': mutated,
+                    'mutant_code': mutant_code,
+                    'kill_difficulty': 0.8
+                })
+        
+        return mutants[:10]  # Limit to 10 mutants
+    
+    def _generate_mutant_killing_test(self, mutant: Dict[str, Any], code_analysis: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+        """Generate a test case designed to kill a specific mutant"""
+        
+        function_name = code_analysis.get('function_name', 'unknown')
+        mutant_type = mutant.get('type', 'unknown')
+        original = mutant.get('original', '')
+        mutated = mutant.get('mutated', '')
+        
+        # Generate test input that would expose the mutation
+        test_input = self._get_mutant_exposing_input(mutant_type, original, mutated)
+        
+        if not test_input:
+            return None
+        
+        return {
+            'case_type': f'mutation_{mutant_type}',
+            'description': f'Test to kill {mutant_type} mutation ({original} -> {mutated})',
+            'test_code': f'assert {function_name}({test_input}) != mutated_{function_name}({test_input})',
+            'mutant_type': mutant_type,
+            'mutation': f'{original} -> {mutated}',
+            'importance_score': mutant.get('kill_difficulty', 0.5),
+            'complexity_score': 0.6
+        }
+    
+    def _get_mutant_exposing_input(self, mutant_type: str, original: str, mutated: str) -> Optional[str]:
+        """Get input that would expose the mutation"""
+        
+        exposing_inputs = {
+            'arithmetic_operator': {
+                ('+', '-'): '1, 1',  # 1+1=2 vs 1-1=0
+                ('-', '+'): '5, 3',  # 5-3=2 vs 5+3=8
+                ('*', '/'): '6, 2',  # 6*2=12 vs 6/2=3
+                ('/', '*'): '8, 2',  # 8/2=4 vs 8*2=16
+            },
+            'boolean_operator': {
+                ('and', 'or'): 'True, False',  # True and False != True or False
+                ('or', 'and'): 'True, False',  # True or False != True and False
+            },
+            'boundary_condition': {
+                ('<=', '<'): '5, 5',  # 5<=5 is True, 5<5 is False
+                ('>=', '>'): '5, 5',  # 5>=5 is True, 5>5 is False
+                ('<', '<='): '5, 5',  # 5<5 is False, 5<=5 is True
+                ('>', '>='): '5, 5',  # 5>5 is False, 5>=5 is True
+            }
+        }
+        
+        mutation_key = (original, mutated)
+        return exposing_inputs.get(mutant_type, {}).get(mutation_key)
+
+
 class IntelligentTestGenerator:
-    """AI-powered test case generation with edge case discovery"""
+    """Enhanced AI-powered test case generation with edge case discovery"""
     
     def __init__(self):
         self.feature_extractor = CodeFeatureExtractor()
+        self.testgen_llm = TestGenLLMModel()
+        self.bug_predictor = BugPredictionModel()
+        self.edge_discoverer = EdgeCaseDiscoveryEngine()
         self.test_patterns = {
             'unit_test_templates': {
                 'basic_function': '''
@@ -1615,16 +2546,18 @@ async def main():
     """Main server entry point"""
     logger.info("Starting ML Testing QA MCP Server")
     
-    # Server configuration
+    # Server configuration - create proper capability objects
+    from mcp.types import ServerCapabilities, ToolsCapability, LoggingCapability
+    
+    capabilities = ServerCapabilities(
+        tools=ToolsCapability(),
+        logging=LoggingCapability()
+    )
+    
     options = InitializationOptions(
         server_name="ml-testing-qa",
         server_version="1.0.0",
-        capabilities={
-            "tools": True,
-            "resources": False,
-            "prompts": False,
-            "logging": True
-        }
+        capabilities=capabilities
     )
     
     try:
