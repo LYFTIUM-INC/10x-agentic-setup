@@ -80,6 +80,8 @@ Performance & Security Agent:
   - cached_websearch_10x: "[feature_type] performance benchmarks"
   - github: Security implementations for similar features
   - fetch: Performance optimization guides
+  - predictive-analytics: Forecast performance bottlenecks and risks
+  - ml-testing-qa: Predict bug probability for the feature
 
 CRITICAL PARALLEL DIRECTIVE:
   "You have the capability to call multiple tools in a single response.
