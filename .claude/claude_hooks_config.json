@@ -1,0 +1,308 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run .claude/hooks/security/security_validator.py",
+            "description": "Security validation for all tool calls",
+            "timeout": 10000,
+            "continueOnError": false
+          },
+          {
+            "type": "command", 
+            "command": "uv run .claude/hooks/mcp/mcp_coordinator.py",
+            "description": "MCP server coordination for parallel execution",
+            "timeout": 15000,
+            "continueOnError": true
+          },
+          {
+            "type": "command",
+            "command": "uv run .claude/hooks/observability/dashboard_updater.py",
+            "description": "Real-time dashboard update",
+            "timeout": 5000,
+            "continueOnError": true
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__.*analyze.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run .claude/hooks/analysis/analysis_prep.py",
+            "description": "Analysis preparation and coordination",
+            "timeout": 10000,
+            "continueOnError": true
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__.*implement.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run .claude/hooks/implementation/implementation_prep.py",
+            "description": "Implementation preparation and planning",
+            "timeout": 15000,
+            "continueOnError": true
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__.*qa.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run .claude/hooks/qa/qa_prep.py", 
+            "description": "QA preparation and testing coordination",
+            "timeout": 10000,
+            "continueOnError": true
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run .claude/hooks/observability/dashboard_updater.py",
+            "description": "Dashboard update with results",
+            "timeout": 5000,
+            "continueOnError": true
+          },
+          {
+            "type": "command",
+            "command": "uv run .claude/hooks/mcp/mcp_coordinator.py", 
+            "description": "MCP result coordination and learning",
+            "timeout": 10000,
+            "continueOnError": true
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__.*analyze.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run .claude/hooks/analysis/analysis_results.py",
+            "description": "Analysis result processing and storage",
+            "timeout": 10000,
+            "continueOnError": true
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__.*implement.*",
+        "hooks": [
+          {
+            "type": "command", 
+            "command": "uv run .claude/hooks/implementation/implementation_validation.py",
+            "description": "Implementation validation and quality gates",
+            "timeout": 15000,
+            "continueOnError": true
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__.*qa.*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run .claude/hooks/qa/qa_aggregation.py",
+            "description": "QA result aggregation and reporting",
+            "timeout": 10000,
+            "continueOnError": true
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run .claude/hooks/coordination/prompt_analyzer.py",
+            "description": "Analyze prompt for coordination planning",
+            "timeout": 5000,
+            "continueOnError": true
+          },
+          {
+            "type": "command",
+            "command": "uv run .claude/hooks/observability/dashboard_updater.py",
+            "description": "Dashboard session tracking",
+            "timeout": 3000,
+            "continueOnError": true
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run .claude/hooks/observability/dashboard_updater.py",
+            "description": "Progress notification tracking",
+            "timeout": 3000,
+            "continueOnError": true
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run .claude/hooks/coordination/session_finalizer.py",
+            "description": "Session finalization and learning capture",
+            "timeout": 15000,
+            "continueOnError": true
+          },
+          {
+            "type": "command",
+            "command": "uv run .claude/hooks/observability/dashboard_updater.py",
+            "description": "Final dashboard update",
+            "timeout": 5000,
+            "continueOnError": true
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run .claude/hooks/coordination/subagent_coordinator.py",
+            "description": "Subagent result coordination and aggregation",
+            "timeout": 10000,
+            "continueOnError": true
+          },
+          {
+            "type": "command",
+            "command": "uv run .claude/hooks/mcp/mcp_coordinator.py",
+            "description": "MCP subagent synchronization",
+            "timeout": 8000,
+            "continueOnError": true
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "uv run .claude/hooks/coordination/context_analyzer.py",
+            "description": "Pre-compact context analysis",
+            "timeout": 8000,
+            "continueOnError": true
+          }
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "defaultTimeout": 30000,
+    "maxConcurrentHooks": 10,
+    "logLevel": "INFO",
+    "enableMetrics": true,
+    "metricsInterval": 5000,
+    "dashboardPort": 8080,
+    "securityMode": "strict",
+    "parallelExecution": true
+  },
+  "security": {
+    "allowedCommands": [
+      "python", "python3", "uv", "pip", "npm", "node", "git",
+      "ls", "cat", "grep", "find", "mkdir", "touch", "cp", "mv"
+    ],
+    "blockedPatterns": [
+      "rm\\s+-rf\\s*/",
+      "sudo\\s+",
+      "curl.*\\|\\s*sh",
+      "wget.*\\|\\s*sh",
+      "eval\\s*\\(",
+      "exec\\s*\\(",
+      "__import__",
+      "globals\\(\\)",
+      "locals\\(\\)"
+    ],
+    "trustedDomains": [
+      "github.com",
+      "api.github.com", 
+      "pypi.org",
+      "npmjs.com",
+      "anthropic.com",
+      "docs.anthropic.com"
+    ],
+    "maxFileSize": 52428800,
+    "maxExecutionTime": 300
+  },
+  "observability": {
+    "enableDashboard": true,
+    "enableMetrics": true,
+    "enableTracing": true,
+    "retentionDays": 30,
+    "alerting": {
+      "enabled": true,
+      "errorThreshold": 5,
+      "performanceThreshold": 10.0
+    }
+  },
+  "mcp": {
+    "coordinationEnabled": true,
+    "healthCheckInterval": 30,
+    "servers": {
+      "context-aware-memory": {
+        "url": "http://localhost:8001",
+        "capabilities": ["memory_storage", "semantic_retrieval", "predictive_loading"]
+      },
+      "ml-code-intelligence": {
+        "url": "http://localhost:8002", 
+        "capabilities": ["code_analysis", "quality_assessment", "semantic_search"]
+      },
+      "agentic-workflow": {
+        "url": "http://localhost:8003",
+        "capabilities": ["agent_spawning", "workflow_optimization", "task_delegation"]
+      },
+      "predictive-analytics": {
+        "url": "http://localhost:8004",
+        "capabilities": ["velocity_forecasting", "risk_assessment", "performance_prediction"]
+      },
+      "ml-testing-qa": {
+        "url": "http://localhost:8005",
+        "capabilities": ["test_generation", "bug_prediction", "edge_case_discovery"]
+      },
+      "10x-knowledge-graph": {
+        "url": "http://localhost:8006",
+        "capabilities": ["concept_extraction", "relationship_mapping", "knowledge_queries"]
+      },
+      "10x-command-analytics": {
+        "url": "http://localhost:8007",
+        "capabilities": ["usage_analysis", "success_prediction", "workflow_recommendations"]
+      }
+    }
+  },
+  "performance": {
+    "parallelExecution": true,
+    "maxParallelHooks": 5,
+    "cacheEnabled": true,
+    "optimizations": {
+      "asyncExecution": true,
+      "resourcePooling": true,
+      "intelligentRouting": true
+    }
+  }
+}
