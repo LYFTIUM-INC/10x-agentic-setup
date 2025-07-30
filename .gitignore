@@ -10,6 +10,8 @@ Thumbs.db
 # Logs
 *.log
 logs/
+# MCP logs with sensitive data
+mcp_servers/logs/
 
 # Temporary files
 *.tmp
@@ -31,6 +33,10 @@ tmp/
 
 # Cache directories
 .cache/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
 node_modules/
 .npm/
 .yarn/
@@ -50,7 +56,14 @@ Knowledge/context/memory/temp_*.md
 Instructions/temp/
 
 # Sensitive Project Knowledge and Intelligence (DO NOT COMMIT TO PUBLIC REPO)
-Knowledge/
+Knowledge/*
+!Knowledge/intelligence/
+Knowledge/intelligence/*
+!Knowledge/intelligence/claude_code_subagents_documentation.md
+!Knowledge/intelligence/subagent_command_integration_map.md
+!Knowledge/intelligence/agentic_optimization_plan.md
+!Knowledge/intelligence/agentic_performance_evaluation.md
+!Knowledge/intelligence/subagent_test_report.json
 Instructions/
 .claude/config.json
 .claude/commands/intelligence/
