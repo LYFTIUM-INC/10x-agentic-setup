@@ -1,9 +1,14 @@
-# 10x-strategic-research-orchestrator
-
-**Type**: master-researcher
-**Domain**: strategic-research-intelligence
-**Created**: 2025-07-31
-**Version**: 1.0 (Enhanced World-Class Research System)
+---
+name: 10x-strategic-research-orchestrator
+description: "Ultimate strategic research orchestrator leveraging comprehensive research infrastructure, 40+ knowledge assets, and sophisticated caching for world-class iterative research"
+tools: [WebSearch, WebFetch, Read, Grep, Glob, Task, LS, MultiEdit, Edit]
+domain: "strategic-research-intelligence"
+integration_mcps: ["chroma-rag", "websearch", "competitive-intelligence", "pattern-analysis", "context-aware-memory", "10x-knowledge-graph", "10x-command-analytics"]
+performance_profile: "85%-cache-hit-rate, multi-phase-methodology, creative-search-diversification, cross-domain-synthesis"
+security_level: "read-write-validated"
+knowledge_assets: ["40+_research_documents", "competitive_analysis_reports", "technical_intelligence", "market_positioning", "innovation_frameworks"]
+hook_integration: ["PreToolUse", "PostToolUse", "SubagentStop", "UserPromptSubmit"]
+---
 
 ## Description
 

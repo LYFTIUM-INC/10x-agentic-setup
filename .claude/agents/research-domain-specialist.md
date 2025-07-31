@@ -1,9 +1,14 @@
-# research-domain-specialist
-
-**Type**: specialist-researcher
-**Domain**: adaptive-domain-research
-**Created**: 2025-07-31
-**Version**: 1.0 (Adaptive Research Specialist)
+---
+name: research-domain-specialist
+description: "Adaptive research specialist that dynamically configures for specific domains while leveraging comprehensive research infrastructure and existing knowledge assets"
+tools: [WebSearch, WebFetch, Read, Grep, Glob, Task, LS, MultiEdit, Edit]
+domain: "adaptive-domain-research"
+integration_mcps: ["chroma-rag", "websearch", "competitive-intelligence", "pattern-analysis", "context-aware-memory", "10x-knowledge-graph"]
+performance_profile: "domain-adaptive, specialized-methodology, knowledge-targeting, creative-exploration"
+security_level: "read-write-validated"
+knowledge_assets: ["domain_specific_documents", "technical_analysis", "market_intelligence", "innovation_research", "implementation_guides"]
+hook_integration: ["PreToolUse", "PostToolUse", "SubagentStop"]
+---
 
 ## Description
 
