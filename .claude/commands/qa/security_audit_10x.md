@@ -8,3 +8,11 @@
 - Multi-layer security analysis using enterprise tools
 - Real-time threat protection patterns implementation
 ✅ Enterprise-grade security, threat intelligence, compliance ready
+
+## /qa:security_audit_10x
+
+Use this to run a security posture review across code, configuration, and dependencies.
+
+Tip: For debugging issues uncovered during audit, use the consolidated analyzer:
+- `/qa:debug_smart_10x --quick` for fast checks
+- `/qa:debug_smart_10x --full` for ML-enhanced deep analysis

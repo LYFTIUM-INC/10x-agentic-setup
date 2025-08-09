@@ -41,3 +41,27 @@ services:
     environment:
       - PYTHONDONTWRITEBYTECODE=1
       - LOG_LEVEL=DEBUG
+
+  agentic-workflow:
+    volumes:
+      - ./agentic_workflow/src:/app/agentic_workflow/src
+      - ./shared/src:/app/shared/src
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+      - LOG_LEVEL=DEBUG
+
+  predictive-analytics:
+    volumes:
+      - ./predictive_analytics/src:/app/predictive_analytics/src
+      - ./shared/src:/app/shared/src
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+      - LOG_LEVEL=DEBUG
+
+  ml-testing-qa:
+    volumes:
+      - ./ml_testing_qa/src:/app/ml_testing_qa/src
+      - ./shared/src:/app/shared/src
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+      - LOG_LEVEL=DEBUG

@@ -76,23 +76,11 @@ install_dependencies() {
     
     cd "$PROJECT_ROOT"
     
-    # Create requirements file for hooks
+    # Create requirements file for hooks (third-party only)
     cat > .claude/hooks_requirements.txt << EOF
 aiohttp>=3.8.0
 websockets>=11.0.0
 psutil>=5.9.0
-sqlite3
-asyncio
-pathlib
-dataclasses
-typing
-logging
-json
-os
-time
-datetime
-re
-sys
 EOF
     
     # Install dependencies

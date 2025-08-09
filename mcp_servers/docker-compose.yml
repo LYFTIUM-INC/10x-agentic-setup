@@ -9,7 +9,7 @@ services:
     image: ml-code-intelligence:latest
     container_name: ml-code-intelligence
     ports:
-      - "8001:8001"
+      - "8002:8002"
     volumes:
       - ./data/ml_code_intelligence:/data/ml_code_intelligence
       - ${PROJECT_ROOT:-..}:/workspace:ro  # Mount project for analysis (read-only)
@@ -18,7 +18,7 @@ services:
       - PYTHONUNBUFFERED=1
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8001/health')"]
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8002/health')"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -31,7 +31,7 @@ services:
     image: context-aware-memory:latest
     container_name: context-aware-memory
     ports:
-      - "8002:8002"
+      - "8001:8001"
     volumes:
       - ./data/context_aware_memory:/data/context_aware_memory
     environment:
@@ -39,7 +39,7 @@ services:
       - PYTHONUNBUFFERED=1
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8002/health')"]
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8001/health')"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -52,17 +52,16 @@ services:
     image: 10x-knowledge-graph:latest
     container_name: 10x-knowledge-graph
     ports:
-      - "8003:8003"
+      - "8006:8006"
     volumes:
       - ./data/knowledge_graph:/data/knowledge_graph
       - ${PROJECT_ROOT:-..}/Knowledge:/Knowledge:ro  # Mount Knowledge folder
-      - ${PROJECT_ROOT:-..}/Intelligence:/Intelligence:ro  # Mount Intelligence folder
     environment:
       - LOG_LEVEL=${LOG_LEVEL:-INFO}
       - PYTHONUNBUFFERED=1
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8003/health')"]
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8006/health')"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -75,7 +74,7 @@ services:
     image: 10x-command-analytics:latest
     container_name: 10x-command-analytics
     ports:
-      - "8004:8004"
+      - "8007:8007"
     volumes:
       - ./data/command_analytics:/data/command_analytics
       - ${PROJECT_ROOT:-..}/.claude/commands:/.claude/commands:ro  # Mount commands folder
@@ -84,7 +83,7 @@ services:
       - PYTHONUNBUFFERED=1
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8004/health')"]
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8007/health')"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -110,6 +109,69 @@ services:
       timeout: 10s
       retries: 3
 
+  # Agentic Workflow MCP Server
+  agentic-workflow:
+    build:
+      context: .
+      dockerfile: agentic_workflow/Dockerfile
+    image: agentic-workflow:latest
+    container_name: agentic-workflow
+    ports:
+      - "8003:8003"
+    volumes:
+      - ./data/agentic_workflow:/data/agentic_workflow
+    environment:
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8003/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Predictive Analytics MCP Server
+  predictive-analytics:
+    build:
+      context: .
+      dockerfile: predictive_analytics/Dockerfile
+    image: predictive-analytics:latest
+    container_name: predictive-analytics
+    ports:
+      - "8004:8004"
+    volumes:
+      - ./data/predictive_analytics:/data/predictive_analytics
+    environment:
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8004/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ML Testing QA MCP Server
+  ml-testing-qa:
+    build:
+      context: .
+      dockerfile: ml_testing_qa/Dockerfile
+    image: ml-testing-qa:latest
+    container_name: ml-testing-qa
+    ports:
+      - "8008:8008"
+    volumes:
+      - ./data/ml_testing_qa:/data/ml_testing_qa
+    environment:
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8008/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
 networks:
   default:
     name: ml-mcp-network
@@ -121,3 +183,6 @@ volumes:
   knowledge_graph_data:
   command_analytics_data:
   workflow_optimizer_data:
+  agentic_workflow_data:
+  predictive_analytics_data:
+  ml_testing_qa_data:

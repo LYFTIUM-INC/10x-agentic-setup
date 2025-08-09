@@ -270,7 +270,7 @@
         "capabilities": ["memory_storage", "semantic_retrieval", "predictive_loading"]
       },
       "ml-code-intelligence": {
-        "url": "http://localhost:8002", 
+        "url": "http://localhost:8002",
         "capabilities": ["code_analysis", "quality_assessment", "semantic_search"]
       },
       "agentic-workflow": {
@@ -281,9 +281,9 @@
         "url": "http://localhost:8004",
         "capabilities": ["velocity_forecasting", "risk_assessment", "performance_prediction"]
       },
-      "ml-testing-qa": {
+      "workflow-optimizer": {
         "url": "http://localhost:8005",
-        "capabilities": ["test_generation", "bug_prediction", "edge_case_discovery"]
+        "capabilities": ["sequence_optimization", "pattern_learning", "efficiency_scoring"]
       },
       "10x-knowledge-graph": {
         "url": "http://localhost:8006",
@@ -292,6 +292,10 @@
       "10x-command-analytics": {
         "url": "http://localhost:8007",
         "capabilities": ["usage_analysis", "success_prediction", "workflow_recommendations"]
+      },
+      "ml-testing-qa": {
+        "url": "http://localhost:8008",
+        "capabilities": ["test_generation", "bug_prediction", "edge_case_discovery"]
       }
     }
   },
