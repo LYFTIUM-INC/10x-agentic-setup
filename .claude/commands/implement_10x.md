@@ -1,3 +1,7 @@
+## Standard Flags
+- `--plan-only` | `--dry-run` | `--parallel-agents <N>`
+- `--reflexion <none|lite|full>` | `--budget-guard` | `--trace-id <id>`
+
 ## 🚀 UNIFIED IMPLEMENTATION COMMAND 10X
 *Consolidated Implementation Preserving Full Depth of Specification and Implementation Commands*
 

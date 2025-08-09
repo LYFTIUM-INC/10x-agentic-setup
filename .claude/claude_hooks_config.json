@@ -4,27 +4,11 @@
       {
         "matcher": ".*",
         "hooks": [
-          {
-            "type": "command",
-            "command": "uv run .claude/hooks/security/security_validator.py",
-            "description": "Security validation for all tool calls",
-            "timeout": 10000,
-            "continueOnError": false
-          },
-          {
-            "type": "command", 
-            "command": "uv run .claude/hooks/mcp/mcp_coordinator.py",
-            "description": "MCP server coordination for parallel execution",
-            "timeout": 15000,
-            "continueOnError": true
-          },
-          {
-            "type": "command",
-            "command": "uv run .claude/hooks/observability/dashboard_updater.py",
-            "description": "Real-time dashboard update",
-            "timeout": 5000,
-            "continueOnError": true
-          }
+          {"type": "command", "command": "uv run .claude/hooks/governance/budget_guard.py", "description": "Budget enforcement", "timeout": 3000, "continueOnError": true},
+          {"type": "command", "command": "uv run .claude/hooks/governance/schema_validator.py", "description": "Schema validation", "timeout": 5000, "continueOnError": true},
+          {"type": "command", "command": "uv run .claude/hooks/security/security_validator.py", "description": "Security validation for all tool calls", "timeout": 10000, "continueOnError": false},
+          {"type": "command", "command": "uv run .claude/hooks/mcp/mcp_coordinator.py", "description": "MCP server coordination for parallel execution", "timeout": 15000, "continueOnError": true},
+          {"type": "command", "command": "uv run .claude/hooks/observability/dashboard_updater.py", "description": "Real-time dashboard update", "timeout": 5000, "continueOnError": true}
         ]
       },
       {

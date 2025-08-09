@@ -1,3 +1,7 @@
+## Standard Flags
+- `--plan-only` | `--dry-run` | `--parallel-agents <N>`
+- `--reflexion <none|lite|full>` | `--budget-guard` | `--trace-id <id>`
+
 ## 🛡️ UNIFIED QA COMMAND 10X
 *Consolidated Quality Assurance Preserving Full Depth of All Original QA Commands*
 

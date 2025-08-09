@@ -3,6 +3,10 @@
 
 **Claude, execute COMPLETE FEATURE WORKFLOW from analysis to deployment with INTELLIGENT ORCHESTRATION.**
 
+## Standard Flags
+- `--plan-only` | `--dry-run` | `--parallel-agents <N>`
+- `--reflexion <none|lite|full>` | `--budget-guard` | `--trace-id <id>`
+
 ### 🎯 **ONE COMMAND, COMPLETE WORKFLOW**
 
 ```bash
