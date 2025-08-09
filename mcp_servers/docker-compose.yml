@@ -52,7 +52,7 @@ services:
     image: 10x-knowledge-graph:latest
     container_name: 10x-knowledge-graph
     ports:
-      - "8006:8006"
+      - "8006:8003"
     volumes:
       - ./data/knowledge_graph:/data/knowledge_graph
       - ${PROJECT_ROOT:-..}/Knowledge:/Knowledge:ro  # Mount Knowledge folder
@@ -61,7 +61,7 @@ services:
       - PYTHONUNBUFFERED=1
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8006/health')"]
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8003/health')"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -74,7 +74,7 @@ services:
     image: 10x-command-analytics:latest
     container_name: 10x-command-analytics
     ports:
-      - "8007:8007"
+      - "8007:8004"
     volumes:
       - ./data/command_analytics:/data/command_analytics
       - ${PROJECT_ROOT:-..}/.claude/commands:/.claude/commands:ro  # Mount commands folder
@@ -83,7 +83,7 @@ services:
       - PYTHONUNBUFFERED=1
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8007/health')"]
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8004/health')"]
       interval: 30s
       timeout: 10s
       retries: 3
