@@ -1,3 +1,5 @@
+> Deprecated: Use `/analyze_10x` for unified analysis with parallel intelligence. This command remains for backward compatibility.
+
 ## 🚀 10X DEEP ANALYSIS & STRATEGIC INTELLIGENCE
 *Enhanced with full MCP ecosystem orchestration including vector search and deep research*
 

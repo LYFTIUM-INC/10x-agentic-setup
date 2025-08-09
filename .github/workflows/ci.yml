@@ -16,13 +16,17 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install linters
+      - name: Install linters and scanners
         run: |
-          pip install ruff==0.5.6
+          pip install ruff==0.5.6 pip-audit==2.7.3
 
       - name: Lint shared utils
         run: |
           ruff check mcp_servers/shared/src || true
+
+      - name: Security scan (pip-audit)
+        run: |
+          if [ -f mcp_servers/requirements.txt ]; then pip-audit -r mcp_servers/requirements.txt || true; fi
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
