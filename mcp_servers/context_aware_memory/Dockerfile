@@ -18,11 +18,7 @@ ENV MODEL_CACHE_DIR="/data/context_aware_memory/models"
 ENV CACHE_DIR="/data/context_aware_memory/cache"
 
 # Expose port for health checks
-EXPOSE 8002
+EXPOSE 8001
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-  CMD python -c "import sys; sys.path.append('/app/context_aware_memory/src'); from server import mcp; print('Health check passed')" || exit 1
-
-# Run the server
-CMD ["python", "/app/context_aware_memory/src/server.py"]
+# Health server and MCP server
+CMD ["/bin/sh", "-lc", "uvicorn health_http:app --app-dir /app/context_aware_memory/src --host 0.0.0.0 --port 8001 & python /app/context_aware_memory/src/server.py"]

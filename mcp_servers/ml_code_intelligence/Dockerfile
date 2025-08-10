@@ -17,11 +17,7 @@ ENV MODEL_CACHE_DIR="/data/ml_code_intelligence/models"
 ENV CACHE_DIR="/data/ml_code_intelligence/cache"
 
 # Expose port for health checks
-EXPOSE 8001
+EXPOSE 8002
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-  CMD python -c "import sys; sys.path.append('/app/ml_code_intelligence/src'); from server import mcp; print('Health check passed')" || exit 1
-
-# Run the server
-CMD ["python", "/app/ml_code_intelligence/src/server.py"]
+# Health HTTP server and MCP server
+CMD ["/bin/sh", "-lc", "uvicorn health_http:app --app-dir /app/ml_code_intelligence/src --host 0.0.0.0 --port 8002 & python /app/ml_code_intelligence/src/server.py"]
