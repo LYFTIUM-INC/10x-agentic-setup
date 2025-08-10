@@ -81,6 +81,7 @@ install_dependencies() {
 aiohttp>=3.8.0
 websockets>=11.0.0
 psutil>=5.9.0
+jsonschema>=4.20.0
 EOF
     
     # Install dependencies
