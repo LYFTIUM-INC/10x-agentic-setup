@@ -49,10 +49,11 @@ def test_schema_validator_strict_fail(tmp_path: Path):
         "required": ["target"],
         "additionalProperties": True,
     }
-    with open(SCHEMA_DIR / "analyze_10x.json", "w") as f:
+    # Use a unique command to avoid any caching side-effects
+    with open(SCHEMA_DIR / "analyze_10x_strict.json", "w") as f:
         json.dump(schema, f)
 
-    payload = {"command": "/analyze_10x", "input": {}}
+    payload = {"command": "/analyze_10x_strict", "input": {}}
     os.environ["CLAUDE_HOOK_PAYLOAD"] = json.dumps(payload)
     os.environ["SCHEMA_VALIDATION_STRICT"] = "true"
     os.environ["SCHEMA_DIR_OVERRIDE"] = str(SCHEMA_DIR)
