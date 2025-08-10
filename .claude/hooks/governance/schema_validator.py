@@ -15,10 +15,17 @@ except Exception:
 THIS_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = THIS_DIR.parents[2]
 SCHEMA_DIR = Path(os.environ.get("SCHEMA_DIR_OVERRIDE", str(PROJECT_ROOT / ".claude" / "schemas")))
+SCHEMA_FILE = os.environ.get("SCHEMA_FILE", "")
 STRICT = os.environ.get("SCHEMA_VALIDATION_STRICT", "false").lower() == "true"
 
 
 def load_schema(command: str):
+    # Explicit file override takes precedence
+    if SCHEMA_FILE:
+        p = Path(SCHEMA_FILE)
+        if p.exists():
+            with open(p, "r") as f:
+                return json.load(f)
     fname = command.strip("/").replace(":", "_").replace("/", "_") + ".json"
     path = SCHEMA_DIR / fname
     if path.exists():

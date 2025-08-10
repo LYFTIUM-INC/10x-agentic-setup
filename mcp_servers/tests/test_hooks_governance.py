@@ -57,6 +57,7 @@ def test_schema_validator_strict_fail(tmp_path: Path):
     os.environ["CLAUDE_HOOK_PAYLOAD"] = json.dumps(payload)
     os.environ["SCHEMA_VALIDATION_STRICT"] = "true"
     os.environ["SCHEMA_DIR_OVERRIDE"] = str(SCHEMA_DIR)
+    os.environ["SCHEMA_FILE"] = str(SCHEMA_DIR / "analyze_10x_strict.json")
 
     mod = load_module(ROOT / ".claude" / "hooks" / "governance" / "schema_validator.py")
     rc = mod.main()
