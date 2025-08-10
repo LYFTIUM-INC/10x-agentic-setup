@@ -5,7 +5,10 @@ Provides standardized health monitoring and status resources
 
 import asyncio
 import time
-import psutil
+try:
+    import psutil  # type: ignore
+except Exception:  # psutil is optional; provide fallbacks
+    psutil = None  # type: ignore
 import platform
 from typing import Dict, Any, List, Optional, Callable, Awaitable
 from dataclasses import dataclass, asdict
@@ -151,8 +154,20 @@ class HealthChecker:
         }
     
     async def _get_system_metrics(self) -> Dict[str, Any]:
-        """Get system-level metrics"""
+        """Get system-level metrics (graceful fallback without psutil)"""
         try:
+            if psutil is None:
+                return {
+                    "cpu": {"usage_percent": None, "count": None},
+                    "memory": {"total": None, "available": None, "used": None, "percent": None},
+                    "disk": {"total": None, "used": None, "free": None, "percent": None},
+                    "process": {"memory_rss": None, "memory_vms": None, "cpu_percent": None, "num_threads": None},
+                    "platform": {
+                        "system": platform.system(),
+                        "release": platform.release(),
+                        "python_version": platform.python_version()
+                    }
+                }
             # CPU metrics
             cpu_percent = psutil.cpu_percent(interval=0.1)
             cpu_count = psutil.cpu_count()
