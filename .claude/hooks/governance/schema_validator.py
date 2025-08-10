@@ -14,7 +14,7 @@ except Exception:
 # Resolve project root relative to this file
 THIS_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = THIS_DIR.parents[2]
-SCHEMA_DIR = PROJECT_ROOT / ".claude" / "schemas"
+SCHEMA_DIR = Path(os.environ.get("SCHEMA_DIR_OVERRIDE", str(PROJECT_ROOT / ".claude" / "schemas")))
 STRICT = os.environ.get("SCHEMA_VALIDATION_STRICT", "false").lower() == "true"
 
 

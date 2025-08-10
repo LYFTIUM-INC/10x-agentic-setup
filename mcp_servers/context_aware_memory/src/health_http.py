@@ -1,5 +1,11 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
 import os
+try:
+    from prometheus_client import CONTENT_TYPE_LATEST, CollectorRegistry, generate_latest
+    PROM = True
+    REGISTRY = CollectorRegistry()
+except Exception:
+    PROM = False
 
 app = FastAPI(title="Context-Aware Memory - Health")
 
@@ -11,9 +17,14 @@ def health():
 
 @app.get("/ready")
 def readiness():
-    # TODO: wire real checks (model loaded, vector DB reachable)
     status = all(ready.values())
     return {"ready": status, **ready}
+
+@app.get("/metrics")
+def metrics():
+    if not PROM:
+        return Response("", media_type="text/plain")
+    return Response(generate_latest(), media_type=CONTENT_TYPE_LATEST)
 
 if __name__ == "__main__":
     import uvicorn

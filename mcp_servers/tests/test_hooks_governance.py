@@ -33,6 +33,7 @@ def test_schema_validator_pass(tmp_path: Path):
     payload = {"command": "/analyze_10x", "input": {"target": "repo"}}
     os.environ["CLAUDE_HOOK_PAYLOAD"] = json.dumps(payload)
     os.environ["SCHEMA_VALIDATION_STRICT"] = "false"
+    os.environ["SCHEMA_DIR_OVERRIDE"] = str(SCHEMA_DIR)
 
     mod = load_module(ROOT / ".claude" / "hooks" / "governance" / "schema_validator.py")
     rc = mod.main()
@@ -54,6 +55,7 @@ def test_schema_validator_strict_fail(tmp_path: Path):
     payload = {"command": "/analyze_10x", "input": {}}
     os.environ["CLAUDE_HOOK_PAYLOAD"] = json.dumps(payload)
     os.environ["SCHEMA_VALIDATION_STRICT"] = "true"
+    os.environ["SCHEMA_DIR_OVERRIDE"] = str(SCHEMA_DIR)
 
     mod = load_module(ROOT / ".claude" / "hooks" / "governance" / "schema_validator.py")
     rc = mod.main()
