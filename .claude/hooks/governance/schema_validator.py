@@ -11,7 +11,10 @@ try:
 except Exception:
     jsonschema = None
 
-SCHEMA_DIR = Path(".claude/schemas")
+# Resolve project root relative to this file
+THIS_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = THIS_DIR.parents[2]
+SCHEMA_DIR = PROJECT_ROOT / ".claude" / "schemas"
 STRICT = os.environ.get("SCHEMA_VALIDATION_STRICT", "false").lower() == "true"
 
 
