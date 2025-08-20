@@ -1,11 +1,11 @@
 {
-  "timestamp": 1755730017.445165,
+  "timestamp": 1755732472.522146,
   "system_health": {
-    "cpu_percent": 28.0,
-    "memory_percent": 51.5,
+    "cpu_percent": 39.6,
+    "memory_percent": 49.8,
     "disk_percent": 84.2,
-    "mcp_servers": 98,
-    "processes": 545
+    "mcp_servers": 106,
+    "processes": 558
   },
   "status": "warning",
   "recent_alerts": [
