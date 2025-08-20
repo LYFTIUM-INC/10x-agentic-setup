@@ -1,0 +1,10 @@
+# Command Analytics specific requirements  
+-r ../requirements.txt
+
+# Analytics and statistics
+scipy>=1.11.0
+statsmodels>=0.14.0
+plotly>=5.15.0
+
+# Time series analysis
+pandas>=2.0.0

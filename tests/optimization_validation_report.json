@@ -1,0 +1,69 @@
+{
+  "timestamp": "2025-07-29T18:25:23.030539",
+  "performance_tests": [
+    {
+      "test": "parallel_execution",
+      "file_ops_gain": 4.942503913099763,
+      "command_gain": 3.9517826662804856,
+      "agent_gain": 5.9833048270619535,
+      "average_gain": 4.959197135480734,
+      "target_met": false
+    }
+  ],
+  "cache_tests": [
+    {
+      "test": "intelligent_caching",
+      "total_queries": 20,
+      "cache_hits": 10,
+      "hit_rate": 50.0,
+      "time_saved": 19.9,
+      "speedup": 1.990049751243781,
+      "target_met": false
+    }
+  ],
+  "optimization_tests": [
+    {
+      "test": "optimization_effectiveness",
+      "command_gain": 6.535714285714286,
+      "resource_improvements": {
+        "cpu": 29.411764705882355,
+        "memory": 26.666666666666668,
+        "utilization": 75.0
+      },
+      "workflow_gain": 6.470588235294118,
+      "overall_gain": 6.503151260504202,
+      "target_met": true
+    },
+    {
+      "test": "real_world_scenarios",
+      "scenarios": [
+        {
+          "scenario": "feature_development",
+          "old_time": 165,
+          "new_time": 26,
+          "gain": 6.346153846153846
+        },
+        {
+          "scenario": "bug_investigation",
+          "old_time": 120,
+          "new_time": 15,
+          "gain": 8.0
+        },
+        {
+          "scenario": "performance_optimization",
+          "old_time": 180,
+          "new_time": 20,
+          "gain": 9.0
+        }
+      ],
+      "average_gain": 7.782051282051282
+    }
+  ],
+  "summary": {
+    "average_performance_gain": 6.414799892678739,
+    "average_cache_hit_rate": 50.0,
+    "performance_target_met": true,
+    "cache_target_met": false,
+    "all_targets_met": false
+  }
+}

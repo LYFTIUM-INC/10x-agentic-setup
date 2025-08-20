@@ -1,0 +1,68 @@
+{
+  "api_keys": {
+    "ml-code-intelligence": {
+      "key_hash": "b48ca6d0439ae6aa4244036adfe6304078de700e47f5736ebfecd881056ab951",
+      "created": 1754498491,
+      "permissions": [
+        "read",
+        "write",
+        "execute"
+      ]
+    },
+    "context-aware-memory": {
+      "key_hash": "ccac890e270bc2cf83de7480593175b19acccb53fe28d42ab8dfc9f01b8be196",
+      "created": 1754498491,
+      "permissions": [
+        "read",
+        "write",
+        "execute"
+      ]
+    },
+    "agentic-workflow": {
+      "key_hash": "e7f932538b7c3b8de8dffe0ea585650ed7a048efc44190b64e100670951a2e1f",
+      "created": 1754498491,
+      "permissions": [
+        "read",
+        "write",
+        "execute"
+      ]
+    },
+    "predictive-analytics": {
+      "key_hash": "c6fa9e231d3135505f665b937621751fcb697d7c93a5dfda939fa61324068025",
+      "created": 1754498491,
+      "permissions": [
+        "read",
+        "write",
+        "execute"
+      ]
+    },
+    "ml-testing-qa": {
+      "key_hash": "5b43808afe724fdd9ea05cd58567a74c7e4e83c329e9bf9149f1d04eceea29ac",
+      "created": 1754498491,
+      "permissions": [
+        "read",
+        "write",
+        "execute"
+      ]
+    },
+    "10x-knowledge-graph": {
+      "key_hash": "b06faa1ede07019c09c3b5632c9d2b0fb8e59d6a902f8318dc0957955d14016e",
+      "created": 1754498491,
+      "permissions": [
+        "read",
+        "write",
+        "execute"
+      ]
+    },
+    "10x-command-analytics": {
+      "key_hash": "0b7b337926f9606312e123da59c66b757d7c0fe6d7dbd79d7292bb54dcd9df03",
+      "created": 1754498491,
+      "permissions": [
+        "read",
+        "write",
+        "execute"
+      ]
+    }
+  },
+  "generated": 1754498491
+}

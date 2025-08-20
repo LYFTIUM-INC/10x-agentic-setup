@@ -1,0 +1,48 @@
+{
+  "timestamp": "2025-07-28T07:58:05.162369",
+  "success_rate": 83.33333333333334,
+  "tests_passed": 5,
+  "total_tests": 6,
+  "detailed_results": [
+    {
+      "test": "velocity_prediction_access",
+      "status": "PASSED",
+      "predictions_found": 24,
+      "sample_data": true
+    },
+    {
+      "test": "performance_metrics_analysis",
+      "status": "PASSED",
+      "unique_metrics": 56,
+      "data_richness": 10
+    },
+    {
+      "test": "bottleneck_prediction_simulation",
+      "status": "PASSED",
+      "bottlenecks_detected": 2,
+      "prediction": "Stable performance expected",
+      "trend_value": 1.0033006410426397
+    },
+    {
+      "test": "resource_planning_forecast",
+      "status": "PASSED",
+      "cpu_forecast_peak": 21.04363030447405,
+      "memory_forecast_peak": 36.32006418012511,
+      "recommendations": 0
+    },
+    {
+      "test": "ml_model_integration",
+      "status": "PASSED",
+      "models_tested": 5,
+      "ensemble_prediction": 74.21354576157665,
+      "avg_confidence": 0.868
+    },
+    {
+      "test": "predictive_accuracy_benchmark",
+      "status": "WARNING",
+      "avg_error": 6.231104387883606,
+      "within_10_percent": 82.0,
+      "bottleneck_accuracy": 89
+    }
+  ]
+}

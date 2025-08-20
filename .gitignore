@@ -107,3 +107,28 @@ Knowledge/intelligence/vector_store/
 **/models--*/
 **/snapshots/
 **/blobs/
+
+# Python virtual environments
+.venv/
+venv/
+env/
+mcp_venv/
+
+# Backup files
+*.backup.*
+*.bak
+*.orig
+
+# Test setup directory (temporary testing)
+test-setup/
+
+# Claude Code specific
+claude-code-hooks-multi-agent-observability/
+
+# Demos and generated HTML reports (can be regenerated)
+*.html
+!docs/**/*.html
+
+# Performance and test databases
+*.db
+!Knowledge/intelligence/vector_store/chroma.sqlite3

@@ -1,0 +1,76 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/usr/bin/python3",
+            "args": ["/home/dell/coding/bash/10x-agentic-setup/.claude/hooks/security_validation_hook.py"],
+            "description": "Comprehensive security validation (path, content, command)",
+            "timeout": 15000,
+            "continueOnError": false,
+            "env": {
+              "PYTHONPATH": "/home/dell/coding/bash/10x-agentic-setup",
+              "SECURITY_MODE": "strict"
+            }
+          },
+          {
+            "type": "command",
+            "command": "/usr/bin/python3",
+            "args": ["/home/dell/coding/bash/10x-agentic-setup/.claude/hooks/performance_monitoring_hook.py"],
+            "description": "Performance monitoring and optimization",
+            "timeout": 10000,
+            "continueOnError": true,
+            "env": {
+              "PYTHONPATH": "/home/dell/coding/bash/10x-agentic-setup"
+            }
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/usr/bin/python3",
+            "args": ["/home/dell/coding/bash/10x-agentic-setup/.claude/hooks/post_tool_use.py"],
+            "description": "Result validation and learning capture",
+            "timeout": 10000,
+            "continueOnError": true,
+            "env": {
+              "PYTHONPATH": "/home/dell/coding/bash/10x-agentic-setup"
+            }
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/usr/bin/python3",
+            "args": ["/home/dell/coding/bash/10x-agentic-setup/.claude/hooks/stop.py"],
+            "description": "Session finalization and learning consolidation",
+            "timeout": 15000,
+            "continueOnError": true,
+            "env": {
+              "PYTHONPATH": "/home/dell/coding/bash/10x-agentic-setup"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "security": {
+    "allowedCommands": ["/usr/bin/python3"],
+    "allowedPaths": ["/home/dell/coding/bash/10x-agentic-setup"],
+    "maxTimeout": 30000,
+    "validateArgs": true
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "timestamp": "2025-07-29T18:22:58.912439",
+  "results": [
+    {
+      "test": "cache_operations",
+      "results": {
+        "total_queries": 20,
+        "cache_hits": 9,
+        "cache_misses": 11,
+        "hit_rate": 45.0,
+        "target_met": false
+      }
+    },
+    {
+      "test": "performance_gains",
+      "results": {
+        "api_time": 2.0016391277313232,
+        "cache_time": 0.002878427505493164,
+        "speedup": 695.3932742483227,
+        "time_saved": 1.99876070022583
+      }
+    }
+  ],
+  "summary": {
+    "total_searches": 20,
+    "cache_hits": 9,
+    "api_calls_saved": 9,
+    "hit_rate": 45.0
+  }
+}

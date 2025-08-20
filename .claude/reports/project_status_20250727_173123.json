@@ -1,0 +1,94 @@
+{
+  "timestamp": "2025-07-28T00:31:23.716341+00:00",
+  "summary": {
+    "git_clean": false,
+    "uncommitted_changes": 58,
+    "avg_claude_score": 0,
+    "critical_alerts": 0,
+    "primary_tech": []
+  },
+  "execution": {
+    "quick_start": "bun run src/index.ts",
+    "dependencies_required": true
+  },
+  "focus_areas": [],
+  "last_activity": {
+    "git": "062aeaf - feat: Complete Claude Code Sub-Agent Integration with Comprehensive Testing & Evaluation \ud83e\udd16 (85 minutes ago)",
+    "claude": null
+  },
+  "raw_data": {
+    "git_status": {
+      "current_branch": "master",
+      "last_commit": "062aeaf - feat: Complete Claude Code Sub-Agent Integration with Comprehensive Testing & Evaluation \ud83e\udd16 (85 minutes ago)",
+      "uncommitted_changes": 58,
+      "recent_commits": [
+        "062aeaf feat: Complete Claude Code Sub-Agent Integration with Comprehensive Testing & Evaluation \ud83e\udd16",
+        "3fef4f0 feat: Complete 42 Agent Command System Integration with Claude Code Hooks \ud83d\ude80",
+        "5a66f24 feat: Complete Claude Code hooks integration with enterprise observability",
+        "4635f45 feat: Integrate new MCPs into agentic commands and documentation \ud83d\udd17",
+        "8af5897 feat: Complete ML-powered MCP ecosystem implementation \ud83d\ude80"
+      ],
+      "clean": false
+    },
+    "claude_logs": {
+      "recent_sessions": [],
+      "insights": {
+        "total_tasks": 0,
+        "unique_task_types": 0,
+        "repeated_tasks": 0,
+        "average_completion_score": 0.0,
+        "user_satisfaction_concerns": 0
+      },
+      "alerts": []
+    },
+    "project_structure": {
+      "directories": {
+        ".claude": {
+          "exists": true,
+          "file_count": 226
+        },
+        "apps/server": {
+          "exists": false
+        },
+        "apps/client": {
+          "exists": false
+        },
+        "node_modules": {
+          "exists": false
+        }
+      },
+      "key_files": {
+        "package.json": {
+          "exists": false
+        },
+        "README.md": {
+          "exists": true,
+          "size": 29813,
+          "modified": "2025-07-27T16:00:53.068810"
+        },
+        ".env": {
+          "exists": false
+        },
+        ".claude/settings.json": {
+          "exists": true,
+          "size": 3196,
+          "modified": "2025-07-27T17:31:19.269889"
+        },
+        ".claude/claude.json": {
+          "exists": true,
+          "size": 894,
+          "modified": "2025-07-27T17:31:19.269889"
+        }
+      },
+      "tech_stack": []
+    },
+    "execution_instructions": {
+      "server": [],
+      "client": [],
+      "setup": [
+        "npm install",
+        "bun install"
+      ]
+    }
+  }
+}

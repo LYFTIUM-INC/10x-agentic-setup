@@ -1,0 +1,65 @@
+{
+  "timestamp": "2025-07-30T13:53:54.383936",
+  "realtime_metrics": {
+    "labels": [
+      "13:53:26",
+      "13:53:27",
+      "13:53:27",
+      "13:53:28",
+      "13:53:28",
+      "13:53:29",
+      "13:53:30",
+      "13:53:30",
+      "13:53:31",
+      "13:53:31"
+    ],
+    "cpu": [
+      16.2,
+      13.6,
+      13.7,
+      15.0,
+      2.5,
+      2.5,
+      3.8,
+      5.0,
+      3.8,
+      16.3
+    ],
+    "memory": [
+      82.8,
+      82.8,
+      82.7,
+      82.7,
+      82.7,
+      82.7,
+      82.7,
+      82.6,
+      82.6,
+      82.8
+    ],
+    "processes": [
+      466,
+      466,
+      466,
+      466,
+      466,
+      466,
+      466,
+      466,
+      466,
+      466
+    ]
+  },
+  "coordination_efficiency": {
+    "mcp_response_avg": 1.1,
+    "metric_collection_avg": 603.0,
+    "target_response": 20,
+    "status": "OPTIMIZATION_NEEDED"
+  },
+  "system_health": {
+    "cpu_status": "HEALTHY",
+    "memory_status": "HIGH_USAGE",
+    "disk_status": "HIGH_USAGE",
+    "overall": "OPTIMIZATION_RECOMMENDED"
+  }
+}

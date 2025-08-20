@@ -32,9 +32,6 @@
 - **cached_websearch_10x**: "[framework] testing patterns edge cases security vulnerabilities"
 - **context7**: Access latest testing documentation and framework-specific testing methodologies
 - **gpt-researcher**: Deep research on advanced testing strategies for detected technology stack
-- **ml-testing-qa**: Generate intelligent tests using TestGen-LLM with edge case discovery
-- **ml-testing-qa**: Predict code quality and bug probability to focus testing efforts
-- **predictive-analytics**: Forecast test effectiveness and predict coverage gaps
 
 ### 🔬 **PHASE 2: INTELLIGENT TEST STRATEGY GENERATION** (use "ultrathink")
 

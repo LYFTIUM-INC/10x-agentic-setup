@@ -1,274 +1,370 @@
-# 🚀 10X Agentic Coding Environment
+# 🚀 10X Agentic Setup
 
-**Transform your development workflow with AI-powered agents, persistent memory, and world-class research capabilities.**
+Enterprise-grade AI agent orchestration system with persistent memory, research capabilities, and advanced MCP integrations for accelerated development workflows.
 
-Build faster, code smarter, and leverage AI agents that remember everything and help you make better decisions.
+## 📋 Quick Installation
 
-## ⚡ Quick Start
+### Prerequisites
+- Linux/macOS system
+- Python 3.8+ with pip
+- Node.js 16+ with npm
+- Git configured
+- 8GB+ RAM recommended
 
-**One command sets up everything:**
+### Complete Setup (Recommended)
 
 ```bash
-# Transform any project into a 10X agentic environment
+# 1. Clone the repository
+git clone https://github.com/your-org/10x-agentic-setup.git
+cd 10x-agentic-setup
+
+# 2. Make setup script executable
+chmod +x 10x-agentic-setup.sh
+
+# 3. Run complete installation
 ./10x-agentic-setup.sh
+
+# 4. Copy configuration files to your project
+cp .claude/claude.json ~/.claude/
+cp .claude/settings.json ~/.claude/
+cp -r .claude/agents ~/.claude/
+cp -r .claude/commands ~/.claude/
+cp -r .claude/hooks ~/.claude/
+
+# 5. Verify installation
+./verify_global_mcps.sh
 ```
 
-**What you get instantly:**
-- 🤖 **22+ AI Agents** specialized for development, research, and analysis
-- 🧠 **Persistent Memory** that remembers all your work and decisions
-- 🔍 **World-Class Research System** with 85% cache efficiency
-- 📊 **Real-Time Dashboard** monitoring all AI activities
-- 🛡️ **Enterprise Security** with multi-layer validation
-- ⚡ **5-10x Development Speed** through intelligent automation
+### Manual Installation Steps
 
-## 🤖 What This Does For You
-
-### **Intelligent Development Assistant**
-Your code is continuously analyzed and optimized by specialized AI agents:
-- **Project Architect** understands your entire codebase architecture
-- **Performance Engineer** identifies bottlenecks before they become problems  
-- **Security Auditor** catches vulnerabilities and suggests fixes
-- **Agent Orchestrator** coordinates multiple AI agents for complex tasks
-
-### **Persistent Infinite Memory**
-Never lose context or repeat research:
-- **Everything Remembered**: All conversations, decisions, and learnings persist
-- **Smart Context**: AI agents access relevant history automatically
-- **Knowledge Graphs**: Your project knowledge grows and connects over time
-- **Vector Search**: Find related work instantly across all past sessions
-
-### **World-Class Research System**
-Stop Googling, start leveraging AI research:
-- **85% Cache Hit Rate**: Most research questions answered instantly from memory
-- **Multi-Agent Research**: 3-9 AI agents research topics simultaneously
-- **Creative Exploration**: AI generates related research questions you didn't think of
-- **Strategic Insights**: Research includes implementation roadmaps and competitive analysis
-
-## 🎯 Core Commands You'll Use Daily
-
-### **Development Commands**
 ```bash
-# Analyze and improve your entire project
-/analyze_10x --mode deep
+# Install dependencies
+pip install anthropic mcp python-dotenv requests aiohttp
 
-# Implement features with full AI assistance  
-/implement_10x --feature "user authentication" --full
+# Setup MCP servers
+cd mcp_servers
+python start_mcp_servers.py
 
-# Comprehensive quality assurance
-/qa:comprehensive_10x --all
+# Configure Claude Desktop
+echo '{
+  "mcpServers": {
+    "ml-code-intelligence": {
+      "command": "python",
+      "args": ["mcp_servers/ml_code_intelligence/src/server.py"],
+      "env": {"PYTHONPATH": "mcp_servers"}
+    },
+    "context-aware-memory": {
+      "command": "python", 
+      "args": ["mcp_servers/context_aware_memory/src/server.py"],
+      "env": {"PYTHONPATH": "mcp_servers"}
+    },
+    "agentic-workflow": {
+      "command": "python",
+      "args": ["mcp_servers/agentic_workflow/src/server.py"],
+      "env": {"PYTHONPATH": "mcp_servers"}
+    },
+    "predictive-analytics": {
+      "command": "python",
+      "args": ["mcp_servers/predictive_analytics/src/server.py"],
+      "env": {"PYTHONPATH": "mcp_servers"}
+    },
+    "ml-testing-qa": {
+      "command": "python",
+      "args": ["mcp_servers/ml_testing_qa/src/server.py"],
+      "env": {"PYTHONPATH": "mcp_servers"}
+    },
+    "10x-knowledge-graph": {
+      "command": "python",
+      "args": ["mcp_servers/knowledge_graph/src/server.py"],
+      "env": {"PYTHONPATH": "mcp_servers"}
+    },
+    "10x-command-analytics": {
+      "command": "python",
+      "args": ["mcp_servers/command_analytics/src/server.py"],
+      "env": {"PYTHONPATH": "mcp_servers"}
+    }
+  }
+}' > ~/.claude/claude_desktop_config.json
 
-# Complete feature development lifecycle
-/workflows/feature_workflow_10x "payment system" --complete
+# Configure Claude Code
+echo '{
+  "servers": {
+    "ml-code-intelligence": {
+      "command": "python",
+      "args": ["mcp_servers/ml_code_intelligence/src/server.py"]
+    },
+    "context-aware-memory": {
+      "command": "python",
+      "args": ["mcp_servers/context_aware_memory/src/server.py"]
+    },
+    "agentic-workflow": {
+      "command": "python", 
+      "args": ["mcp_servers/agentic_workflow/src/server.py"]
+    },
+    "predictive-analytics": {
+      "command": "python",
+      "args": ["mcp_servers/predictive_analytics/src/server.py"]
+    },
+    "ml-testing-qa": {
+      "command": "python",
+      "args": ["mcp_servers/ml_testing_qa/src/server.py"]
+    },
+    "10x-knowledge-graph": {
+      "command": "python",
+      "args": ["mcp_servers/knowledge_graph/src/server.py"]
+    },
+    "10x-command-analytics": {
+      "command": "python",
+      "args": ["mcp_servers/command_analytics/src/server.py"]
+    }
+  }
+}' > .mcp.json
 ```
 
-### **Research Commands**
+### MCP Server Installation & Verification
+
 ```bash
-# Strategic research with creative exploration
-/smart_research_and_document_10x "microservices architecture patterns"
+# Install all MCP servers
+cd mcp_servers
+pip install -r requirements.txt
 
-# Market and competitive intelligence
-@10x-innovation-intelligence-analyst → "enterprise AI adoption trends"
+# For each server directory, install dependencies:
+for server in agentic_workflow context_aware_memory ml_code_intelligence ml_testing_qa predictive_analytics; do
+  cd $server && pip install -r requirements.txt && cd ..
+done
 
-# Technical deep-dive research
-@10x-technical-pattern-discovery → "React performance optimization techniques"
+# Start all servers
+python start_mcp_servers.py
 
-# Knowledge synthesis across domains
-/knowledge_intelligence_synthesizer_10x "authentication best practices"
+# Verify servers are running
+python -c "
+import requests
+import json
+servers = ['ml-code-intelligence:8001', 'context-aware-memory:8002', 'agentic-workflow:8003', 'predictive-analytics:8004', 'ml-testing-qa:8005', '10x-knowledge-graph:8006', '10x-command-analytics:8007']
+for server in servers:
+    try:
+        response = requests.get(f'http://localhost:{server.split(\":\")[1]}/health')
+        print(f'✅ {server.split(\":\")[0]}: {response.status_code}')
+    except:
+        print(f'❌ {server.split(\":\")[0]}: Not responding')
+"
+
+# Test MCP tools
+/mcp-debug --check all
 ```
 
-### **Memory & Knowledge Commands**
+For detailed MCP configuration instructions, see: [GitHub Repository MCP Setup Guide](https://github.com/your-org/10x-agentic-setup/blob/main/mcp_servers/README.md)
+
+## 📁 Project Structure
+
+```
+10x-agentic-setup/
+├── .claude/
+│   ├── agents/                    # 4 Core AI Agents
+│   │   ├── project-architect.md
+│   │   ├── performance-engineer.md
+│   │   ├── security-auditor.md
+│   │   ├── agent-orchestrator.md
+│   │   └── mcp-configuration-debugger.md
+│   ├── commands/                  # Slash Commands
+│   │   ├── dev/
+│   │   │   └── implement_feature_10x.md
+│   │   ├── git/
+│   │   │   └── smart_push_10x.md
+│   │   ├── qa/
+│   │   │   └── smart_test_generator_10x.md
+│   │   ├── layered_agentic_analysis.md
+│   │   ├── smart_research_and_document_10x.md
+│   │   └── mcp-debug.md
+│   ├── hooks/                     # Execution Hooks
+│   │   ├── pre_tool_use.py
+│   │   ├── post_tool_use.py
+│   │   ├── stop.py
+│   │   ├── subagent_stop.py
+│   │   └── coordination/
+│   └── settings.json
+├── mcp_servers/                   # 7 MCP Servers
+│   ├── ml_code_intelligence/      # Code analysis & quality
+│   ├── context_aware_memory/      # Persistent memory
+│   ├── agentic_workflow/          # Workflow orchestration
+│   ├── predictive_analytics/      # Performance forecasting
+│   ├── ml_testing_qa/             # Test generation
+│   ├── knowledge_graph/           # Knowledge mapping
+│   ├── command_analytics/         # Usage analytics
+│   ├── shared/                    # Common utilities
+│   ├── scripts/                   # Startup scripts
+│   └── start_mcp_servers.py
+├── 10x-agentic-setup.sh          # Main installation script
+├── .mcp.json                      # MCP configuration
+├── CLAUDE.md                      # Project instructions
+└── CHANGELOG.md                   # Version history
+```
+
+## 🤖 Available Agents
+
+### Core Agents
+| Agent | Purpose | Key Capabilities |
+|-------|---------|------------------|
+| **project-architect** | System design & architecture | Codebase analysis, architecture recommendations, design patterns |
+| **performance-engineer** | Performance optimization | Bottleneck detection, resource monitoring, optimization strategies |
+| **security-auditor** | Security analysis | Threat detection, vulnerability assessment, security recommendations |
+| **agent-orchestrator** | Multi-agent coordination | Task delegation, workflow management, agent coordination |
+| **mcp-configuration-debugger** | MCP server management | Server health checks, tool testing, configuration debugging |
+
+### Usage
 ```bash
-# Capture and organize session learnings
-/intelligence:capture_session_history_10x
+# Use specific agent
+Task: Use the project-architect agent to analyze the codebase structure
 
-# Retrieve relevant context from past work
-/intelligence:retrieve_conversation_context_10x
+# Agent with parameters
+Task: Use the performance-engineer agent to identify database query bottlenecks
 
-# Organize project knowledge
-/organize_and_analyze_10x --mode analyze
+# Multi-agent orchestration
+Task: Use the agent-orchestrator agent to coordinate a complete security audit
 ```
 
-## 🧠 Persistent Memory & Knowledge Management
+## 🔧 Available Commands
 
-### **How It Works**
-Your 10X environment never forgets:
-
-1. **Session Memory**: Every conversation, decision, and code change is captured
-2. **Vector Embeddings**: All knowledge is semantically indexed for intelligent retrieval
-3. **Knowledge Graphs**: Relationships between concepts, decisions, and implementations
-4. **Context-Aware Retrieval**: AI agents automatically access relevant past work
-
-### **Knowledge Structure**
-```
-Knowledge/
-├── intelligence/     # Research findings and competitive analysis
-├── context/         # Session history and decision context  
-├── patterns/        # Proven implementation patterns
-└── specifications/ # Technical specs and requirements
-```
-
-### **Smart Context Loading**
-- **Predictive**: System predicts what context you'll need
-- **Semantic**: Related work surfaces automatically
-- **Federated**: Knowledge shared across all AI agents
-- **Incremental**: Memory grows smarter over time
-
-## 🔍 Research System Architecture
-
-### **Multi-Agent Research Coordination**
-When you ask for research, multiple AI agents work simultaneously:
-
-```
-Research Query → Strategic Orchestrator
-                ├── Competitive Intelligence Agent
-                ├── Innovation Intelligence Agent  
-                ├── Technical Pattern Discovery Agent
-                └── Knowledge Synthesis Coordinator
-                       ↓
-                Strategic Report with Implementation Plan
-```
-
-### **Research Quality Features**
-- **85% Cache Hit Rate**: Most questions answered from existing knowledge
-- **Creative Variations**: AI generates related search angles automatically
-- **Multi-Source Validation**: Findings verified across multiple sources
-- **Strategic Insights**: Research includes competitive positioning and ROI analysis
-- **Implementation Ready**: Every research report includes practical next steps
-
-### **Sample Research Workflow**
+### Development Commands
 ```bash
-# You ask about microservices
-/smart_research_and_document_10x "microservices for e-commerce"
+# Feature implementation
+/implement_feature_10x "user authentication system"
 
-# System automatically researches:
-# → Microservices architecture patterns
-# → E-commerce specific implementations  
-# → Performance and scaling considerations
-# → Security and data consistency patterns
-# → Competitive analysis of solutions
-# → Implementation roadmap with timelines
+# Code analysis  
+/layered_agentic_analysis "performance optimization"
 
-# Result: 20+ page strategic analysis with actionable recommendations
+# Research and documentation
+/smart_research_and_document_10x "microservices architecture"
 ```
 
-## ⚡ Development Features
-
-### **Intelligent Code Analysis**
-- **Architecture Understanding**: AI maps your entire codebase structure
-- **Performance Monitoring**: Real-time bottleneck detection and optimization
-- **Security Scanning**: Continuous vulnerability assessment with fixes
-- **Quality Metrics**: Code quality tracked with improvement suggestions
-
-### **AI-Powered Implementation**
-- **Feature Planning**: AI creates implementation plans before coding
-- **Code Generation**: Context-aware code that fits your patterns
-- **Testing Strategy**: Comprehensive test plans with edge case coverage
-- **Documentation**: Auto-generated docs that stay in sync
-
-### **Development Workflow Integration**
+### Git & Collaboration
 ```bash
-# Complete feature development
-/implement_10x --feature "user dashboard" --full
-
-# What happens automatically:
-# 1. Research best practices and patterns
-# 2. Analyze existing codebase for integration points
-# 3. Generate implementation plan with tasks
-# 4. Create tests and validation criteria
-# 5. Implement with your coding patterns
-# 6. Generate documentation
-# 7. Performance and security validation
+# Intelligent git operations
+/smart_push_10x --commit "feature implementation"
 ```
 
-## 📊 Dashboard & Monitoring
-
-### **Real-Time Intelligence Dashboard**
-Open `.claude/dashboard.html` to see:
-- **AI Agent Activity**: What agents are working on
-- **System Performance**: Response times, cache hit rates, resource usage
-- **Security Events**: Threat detection and validation results
-- **Research Analytics**: Knowledge growth and research efficiency
-- **Development Metrics**: Code quality, feature velocity, test coverage
-
-### **Performance Metrics**
-- **Agent Coordination**: <5ms coordination overhead
-- **Cache Efficiency**: 70-85% hit rates across the system
-- **Research Quality**: 9.2/10 average research output quality
-- **Development Speed**: 5-10x faster feature development
-
-## 💡 Sample Development Prompts
-
-### **Project Analysis**
+### Quality Assurance
 ```bash
-"Analyze my React application architecture and suggest performance optimizations"
-"Review my API design for scalability issues and security vulnerabilities"  
-"Help me plan a migration from monolith to microservices"
+# Automated test generation
+/smart_test_generator_10x --coverage 95 --edge-cases
+
+# MCP system debugging
+/mcp-debug --check all
+/mcp-debug --diagnose ml-code-intelligence
+/mcp-debug --fix all
 ```
 
-### **Feature Implementation**
+## 🏗️ Technical Architecture
+
+### MCP Server Ecosystem
+| Server | Port | Purpose | Key Tools |
+|--------|------|---------|-----------|
+| **ml-code-intelligence** | 8001 | Code analysis & quality assessment | `semantic_code_search`, `analyze_code`, `assess_code_quality` |
+| **context-aware-memory** | 8002 | Persistent memory & knowledge management | `store_memory`, `retrieve_memories`, `analyze_memory_patterns` |
+| **agentic-workflow** | 8003 | Workflow orchestration & automation | `execute_workflow`, `coordinate_agents`, `optimize_process` |
+| **predictive-analytics** | 8004 | Performance forecasting & trend analysis | `predict_performance`, `analyze_trends`, `forecast_resources` |
+| **ml-testing-qa** | 8005 | Test generation & quality assurance | `generate_intelligent_tests`, `predict_code_quality`, `optimize_testing_strategy` |
+| **10x-knowledge-graph** | 8006 | Knowledge relationship mapping | `extract_concepts`, `find_relationships`, `visualize_graph` |
+| **10x-command-analytics** | 8007 | Usage analytics & optimization | `track_command`, `analyze_patterns`, `predict_success` |
+
+### Agent Coordination Architecture
+```
+User Request → Agent Orchestrator
+              ├── Project Architect (architecture analysis)
+              ├── Performance Engineer (optimization)
+              ├── Security Auditor (threat assessment)
+              └── MCP Configuration Debugger (system health)
+                    ↓
+              Coordinated Response with Action Plan
+```
+
+### Hook System Integration
+```
+Tool Execution → Pre-Tool Hook (validation)
+               → Tool Execution
+               → Post-Tool Hook (learning)
+               → Stop Hook (finalization)
+```
+
+## 💡 Sample Development Workflows
+
+### Project-Specific Asset Integration
 ```bash
-"Implement a real-time chat system with WebSocket and Redis"
-"Add OAuth2 authentication with role-based permissions"
-"Create a data visualization dashboard with D3.js"
+# Analyze current codebase with memory context
+"Review my React components in src/components/ and suggest improvements based on our previous architectural decisions stored in CLAUDE.md"
+
+# Research with project context
+"Research authentication patterns suitable for our Express.js API, considering the database schema in models/ and security requirements in .claude/security/"
+
+# Feature implementation with asset awareness
+"Implement user role management using the patterns established in src/auth/ and update the API documentation in docs/api/"
+
+# Performance optimization with historical data
+"Optimize the database queries in src/services/user.js based on the performance metrics collected in .claude/performance/ and previous optimization wins"
 ```
 
-### **Research & Strategy**
+### End-to-End Development Example
 ```bash
-"Research the best state management patterns for large React apps"
-"Analyze competitor pricing strategies and suggest our positioning"
-"What are the emerging trends in serverless architecture for 2025?"
+# 1. Architecture analysis
+Task: Use the project-architect agent to analyze my e-commerce platform structure and suggest scalability improvements
+
+# 2. Security assessment  
+Task: Use the security-auditor agent to review payment processing code in src/payments/ and identify vulnerabilities
+
+# 3. Performance optimization
+Task: Use the performance-engineer agent to optimize checkout flow based on user analytics in analytics/checkout_metrics.json
+
+# 4. Test generation
+/smart_test_generator_10x --focus "payment processing" --include "edge cases,security,performance"
+
+# 5. Implementation
+/implement_feature_10x "payment retry mechanism" --integration-points "src/payments/,src/orders/" --test-coverage 95
+
+# 6. Documentation  
+/smart_research_and_document_10x "payment retry patterns" --output "docs/architecture/payment-retry.md"
 ```
 
-### **Code Quality & Maintenance**
+### System Monitoring & Maintenance
 ```bash
-"Refactor my database queries for better performance"
-"Add comprehensive testing for my payment processing module"
-"Generate documentation for my API endpoints"
+# Health check all systems
+/mcp-debug --check all
+
+# Performance analysis
+Task: Use the performance-engineer agent to analyze system metrics and predict resource needs
+
+# Knowledge organization
+Task: Use the agent-orchestrator to coordinate a complete project knowledge audit and optimization
 ```
 
-## 🛠️ Technical Architecture
+## 🔍 Configuration & Debugging
 
-### **Core Components**
-- **22+ Specialized AI Agents** with domain expertise
-- **7 MCP Servers** for advanced capabilities (vector search, analytics, etc.)
-- **Persistent Vector Database** with semantic search
-- **Real-Time Dashboard** with performance monitoring
-- **Multi-Layer Security** with threat detection
-- **Enterprise Hooks System** for observability
+### MCP Configuration Files
+- **Claude Desktop**: `~/.claude/claude_desktop_config.json`
+- **Claude Code**: `.mcp.json` (project root)
+- **Server Configuration**: `mcp_servers/*/config/`
 
-### **Performance Specifications**
-- **Response Time**: <100ms for most operations
-- **Cache Efficiency**: 70-85% hit rates
-- **Concurrent Agents**: 3-9 agents working simultaneously
-- **Memory Capacity**: Unlimited persistent storage
-- **Security Validation**: 87.5% threat detection accuracy
+### Common Issues & Solutions
+```bash
+# Server not responding
+/mcp-debug --diagnose [server-name]
 
-### **Integration Capabilities**
-- **Any Codebase**: Works with existing projects
-- **Any Language**: Supports all major programming languages
-- **CI/CD Integration**: Hooks into existing development workflows
-- **Cloud Native**: Scales across distributed environments
+# Tool validation failures
+/mcp-debug --test-tools [server-name]
 
-## 🚀 Why Choose 10X Agentic Setup
+# Performance issues
+/mcp-debug --profile all
 
-### **Immediate Benefits**
-- ✅ **5-10x Development Speed**: Proven performance improvements
-- ✅ **Zero Context Loss**: Everything remembered and accessible
-- ✅ **World-Class Research**: Professional-grade market intelligence
-- ✅ **Enterprise Security**: Multi-layer protection and validation
-- ✅ **One-Command Setup**: Transform any project in minutes
+# Complete system recovery
+/mcp-debug --fix all
+```
 
-### **Long-Term Advantages**
-- 📈 **Compound Learning**: System gets smarter over time
-- 🎯 **Strategic Intelligence**: Research-backed technical decisions
-- 🏆 **Competitive Edge**: Market intelligence and positioning insights
-- 🛡️ **Risk Mitigation**: Proactive security and performance monitoring
-- 🚀 **Innovation Acceleration**: AI-powered experimentation and validation
+### Logging & Monitoring
+- **Server Logs**: `mcp_servers/logs/`
+- **Hook Execution**: `.claude/logs/`
+- **Performance Metrics**: Real-time dashboard at `.claude/dashboard.html`
 
 ---
 
-**Transform your development workflow today. One command. Infinite possibilities.**
-
-```bash
-./10x-agentic-setup.sh
-```
+**Repository**: [GitHub - 10X Agentic Setup](https://github.com/your-org/10x-agentic-setup)
+**MCP Documentation**: [MCP Setup Guide](https://github.com/your-org/10x-agentic-setup/blob/main/mcp_servers/README.md)
+**Support**: Create issues on GitHub for bugs and feature requests

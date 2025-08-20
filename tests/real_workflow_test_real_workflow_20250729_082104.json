@@ -1,0 +1,91 @@
+{
+  "test_id": "real_workflow_20250729_082104",
+  "timestamp": "2025-07-29T08:21:04.026136",
+  "test_scenarios": [],
+  "performance_metrics": {},
+  "system_health": {
+    "cpu_percent": 27.2,
+    "memory_percent": 64.8,
+    "memory_used_gb": 38.008689880371094,
+    "disk_percent": 78.4,
+    "process_count": 419,
+    "timestamp": "2025-07-29T08:21:05.039674"
+  },
+  "summary": {
+    "total_tests": 14,
+    "passed_tests": 14,
+    "failed_tests": 0,
+    "success_rate": 100.0,
+    "test_timestamp": "2025-07-29T08:21:05.039887"
+  },
+  "system_setup": {
+    "claude_directory": true,
+    "hooks_directory": true,
+    "agents_directory": true,
+    "commands_directory": true,
+    "performance_db": true,
+    "dashboard_html": true
+  },
+  "hook_integration": {
+    "total_hook_files": 54,
+    "security_hooks": 8,
+    "performance_hooks": 9,
+    "coordination_hooks": 5,
+    "qa_hooks": 2,
+    "implementation_hooks": 2
+  },
+  "agent_availability": {
+    "total_agents": 18,
+    "project-architect": true,
+    "performance-engineer": true,
+    "security-auditor": true,
+    "agent-orchestrator": true,
+    "mcp-orchestration-master": true
+  },
+  "performance_database": {
+    "tables": [
+      "performance_metrics",
+      "sqlite_sequence"
+    ],
+    "metrics_count": 5600,
+    "top_metrics": {
+      "user_satisfaction_score": 100,
+      "tool_success_rate": 100,
+      "tool_execution_time_ms": 100,
+      "tool_error_count": 100,
+      "thread_count": 100
+    }
+  },
+  "command_execution": {
+    "Python Version": {
+      "success": true,
+      "output": "Python 3.10.9\n"
+    },
+    "MCP Server Check": {
+      "success": true,
+      "output": "agentic_workflow\ncommand_analytics\ncontext_aware_memory\nCONTRIBUTING.md\ndocker\ndocker-compose.dev.ym"
+    },
+    "Knowledge Directory": {
+      "success": true,
+      "output": "context\ndocumentation\ngit\nimprovements\nintelligence\npatterns\nperformance\nquality\nsecurity\nsessions\ns"
+    }
+  },
+  "mcp_integration": {
+    "ml-code-intelligence": false,
+    "context-aware-memory": false,
+    "predictive-analytics": false,
+    "ml-testing-qa": false,
+    "agentic-workflow": false,
+    "10x-knowledge-graph": false,
+    "10x-command-analytics": false
+  },
+  "cache_performance": {
+    "simulated_requests": 100,
+    "cache_hits": 70,
+    "cache_misses": 30,
+    "hit_rate": 70.0,
+    "average_cache_response_time": 0.5,
+    "average_miss_response_time": 150.0,
+    "performance_improvement": 69.76666666666667
+  }
+}

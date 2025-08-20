@@ -1,0 +1,108 @@
+{
+  "timestamp": "2025-07-27T22:23:14.546251+00:00",
+  "summary": {
+    "git_clean": false,
+    "uncommitted_changes": 78,
+    "avg_claude_score": 0,
+    "critical_alerts": 0,
+    "primary_tech": [
+      "Bun"
+    ]
+  },
+  "execution": {
+    "quick_start": "npm run dev:server",
+    "dependencies_required": false
+  },
+  "focus_areas": [],
+  "last_activity": {
+    "git": "76829ec - fix: Eliminate recursive updates in timeline animation loop (8 days ago)",
+    "claude": null
+  },
+  "raw_data": {
+    "git_status": {
+      "current_branch": "main",
+      "last_commit": "76829ec - fix: Eliminate recursive updates in timeline animation loop (8 days ago)",
+      "uncommitted_changes": 78,
+      "recent_commits": [
+        "76829ec fix: Eliminate recursive updates in timeline animation loop",
+        "7118302 fix: Resolve recursive update error and timeline positioning issues",
+        "feeeca7 debug: Add comprehensive timeline positioning debugging",
+        "b4a9beb fix: Improve timeline event distribution and movement visibility",
+        "9f77ac8 fix: Resolve icon rendering issues in multi-agent dashboard"
+      ],
+      "clean": false
+    },
+    "claude_logs": {
+      "recent_sessions": [],
+      "insights": {},
+      "alerts": []
+    },
+    "project_structure": {
+      "directories": {
+        ".claude": {
+          "exists": true,
+          "file_count": 66
+        },
+        "apps/server": {
+          "exists": true,
+          "file_count": 70
+        },
+        "apps/client": {
+          "exists": true,
+          "file_count": 163
+        },
+        "node_modules": {
+          "exists": true,
+          "file_count": 24566
+        }
+      },
+      "key_files": {
+        "package.json": {
+          "exists": true,
+          "size": 1033,
+          "modified": "2025-07-22T14:31:15.620290"
+        },
+        "README.md": {
+          "exists": true,
+          "size": 12968,
+          "modified": "2025-07-15T13:30:18.278884"
+        },
+        ".env": {
+          "exists": true,
+          "size": 139,
+          "modified": "2025-07-15T13:53:03.442201"
+        },
+        ".claude/settings.json": {
+          "exists": true,
+          "size": 3196,
+          "modified": "2025-07-15T19:56:35.637750"
+        },
+        ".claude/claude.json": {
+          "exists": true,
+          "size": 894,
+          "modified": "2025-07-27T14:43:07.244292"
+        }
+      },
+      "tech_stack": [
+        "Bun"
+      ]
+    },
+    "execution_instructions": {
+      "server": [
+        "npm run dev:server",
+        "npm run build:server",
+        "npm run start:server",
+        "cd apps/server && bun run src/index.ts"
+      ],
+      "client": [
+        "npm run dev",
+        "npm run dev:client",
+        "npm run build:client",
+        "cd apps/client && npm run dev"
+      ],
+      "setup": [
+        "npm run install:all"
+      ]
+    }
+  }
+}

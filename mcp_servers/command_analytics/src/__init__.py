@@ -1,0 +1,1 @@
+# 10X Command Analytics MCP Server

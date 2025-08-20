@@ -1,0 +1,53 @@
+{
+  "mcpServers": {
+    "ml-code-intelligence": {
+      "command": "/home/dell/.local/bin/mcp-servers/ml-code-intelligence.sh",
+      "args": [],
+      "env": {
+        "MCP_SERVER_PORT": "8001"
+      }
+    },
+    "context-aware-memory": {
+      "command": "/home/dell/.local/bin/mcp-servers/context-aware-memory.sh",
+      "args": [],
+      "env": {
+        "MCP_SERVER_PORT": "8002"
+      }
+    },
+    "agentic-workflow": {
+      "command": "/home/dell/.local/bin/mcp-servers/agentic-workflow.sh",
+      "args": [],
+      "env": {
+        "MCP_SERVER_PORT": "8003"
+      }
+    },
+    "predictive-analytics": {
+      "command": "/home/dell/.local/bin/mcp-servers/predictive-analytics.sh",
+      "args": [],
+      "env": {
+        "MCP_SERVER_PORT": "8004"
+      }
+    },
+    "ml-testing-qa": {
+      "command": "/home/dell/.local/bin/mcp-servers/ml-testing-qa.sh",
+      "args": [],
+      "env": {
+        "MCP_SERVER_PORT": "8005"
+      }
+    },
+    "10x-knowledge-graph": {
+      "command": "/home/dell/.local/bin/mcp-servers/10x-knowledge-graph.sh",
+      "args": [],
+      "env": {
+        "MCP_SERVER_PORT": "8006"
+      }
+    },
+    "10x-command-analytics": {
+      "command": "/home/dell/.local/bin/mcp-servers/10x-command-analytics.sh",
+      "args": [],
+      "env": {
+        "MCP_SERVER_PORT": "8007"
+      }
+    }
+  }
+}

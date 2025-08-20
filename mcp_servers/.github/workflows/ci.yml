@@ -1,0 +1,261 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  release:
+    types: [ created ]
+
+env:
+  PYTHON_VERSION: '3.10'
+  DOCKER_BUILDKIT: 1
+
+jobs:
+  lint:
+    name: Lint Code
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install ruff black mypy
+      
+      - name: Run Ruff
+        run: ruff check .
+      
+      - name: Run Black
+        run: black --check .
+      
+      - name: Run MyPy
+        run: mypy . --ignore-missing-imports
+
+  test-unit:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        server: [ml_code_intelligence, context_aware_memory, knowledge_graph, command_analytics, workflow_optimizer]
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -r ${{ matrix.server }}/requirements.txt || true
+      
+      - name: Run tests
+        run: |
+          pytest ${{ matrix.server }}/tests -v --cov=${{ matrix.server }} --cov-report=xml
+      
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
+        with:
+          file: ./coverage.xml
+          flags: ${{ matrix.server }}
+          name: ${{ matrix.server }}-coverage
+
+  test-integration:
+    name: Integration Tests
+    runs-on: ubuntu-latest
+    needs: [lint, test-unit]
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Run integration tests
+        run: |
+          pytest test_ecosystem_integration.py -v
+          pytest test_mcp_improvements.py -v
+
+  build-docker:
+    name: Build Docker Images
+    runs-on: ubuntu-latest
+    needs: [test-unit]
+    strategy:
+      matrix:
+        service: [ml-code-intelligence, context-aware-memory, knowledge-graph, command-analytics, workflow-optimizer]
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      
+      - name: Build base image
+        run: |
+          docker build -t ml-enhanced-mcps-base:latest -f docker/Dockerfile.base .
+      
+      - name: Build service image
+        run: |
+          docker-compose build ${{ matrix.service }}
+      
+      - name: Run container tests
+        run: |
+          docker-compose run --rm ${{ matrix.service }} python -m pytest /app/tests -v
+
+  docker-compose-test:
+    name: Docker Compose Integration
+    runs-on: ubuntu-latest
+    needs: [build-docker]
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Create .env file
+        run: |
+          cp .env.example .env
+          echo "PROJECT_ROOT=$(pwd)/.." >> .env
+      
+      - name: Start services
+        run: |
+          docker-compose up -d
+          sleep 30  # Wait for services to be ready
+      
+      - name: Check service health
+        run: |
+          for port in 8001 8002 8003 8004 8005; do
+            curl -f http://localhost:$port/health || exit 1
+          done
+      
+      - name: Run smoke tests
+        run: |
+          docker-compose exec -T ml-code-intelligence python -c "import server; print('ML Code Intelligence OK')"
+          docker-compose exec -T context-aware-memory python -c "import server; print('Context Memory OK')"
+      
+      - name: Stop services
+        if: always()
+        run: docker-compose down -v
+
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+      
+      - name: Upload Trivy scan results
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: 'trivy-results.sarif'
+
+  publish-docker:
+    name: Publish Docker Images
+    runs-on: ubuntu-latest
+    needs: [test-integration, docker-compose-test, security-scan]
+    if: github.event_name == 'release'
+    strategy:
+      matrix:
+        service: [ml-code-intelligence, context-aware-memory, knowledge-graph, command-analytics, workflow-optimizer]
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_TOKEN }}
+      
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ secrets.DOCKER_USERNAME }}/${{ matrix.service }}
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+      
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ${{ matrix.service }}/Dockerfile
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  create-release:
+    name: Create Release Assets
+    runs-on: ubuntu-latest
+    needs: [publish-docker]
+    if: github.event_name == 'release'
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Create installation script
+        run: |
+          cat > install.sh << 'EOF'
+          #!/bin/bash
+          set -e
+          echo "Installing ML-Enhanced MCP Servers..."
+          
+          # Clone repository
+          git clone https://github.com/${{ github.repository }}.git ml-enhanced-mcp-servers
+          cd ml-enhanced-mcp-servers
+          
+          # Run setup
+          ./scripts/start.sh
+          
+          echo "Installation complete! Check the README for Claude Desktop configuration."
+          EOF
+          chmod +x install.sh
+      
+      - name: Upload release assets
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            install.sh
+            docker-compose.yml
+            .env.example
+            README_GITHUB.md

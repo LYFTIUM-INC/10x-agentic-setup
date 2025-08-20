@@ -12,7 +12,7 @@
 - **fetch**: Analyze relevant external documentation and examples
 
 **1.2 Enhanced Memory & Pattern Retrieval**
-- **smart_memory_unified**: Cross-session learning and pattern storage for organizational intelligence with automatic classification
+- **memory**: Cross-session learning and pattern storage for organizational intelligence
 - **smart_memory_10x**: Retrieve previous successful project analysis patterns for similar tech stacks
 - **qdrant**: Vector-based semantic search for similar project patterns and successful architectures
 - **sqlite**: Query historical project success patterns and performance metrics
@@ -20,7 +20,7 @@
 ### 🔍 **PHASE 2: LAYER 2 - INTELLIGENT ANALYSIS & RESEARCH** (use "think hard")
 
 **2.1 Market & Competitive Intelligence**
-- **cached_websearch_10x**: Real-time market research and competitive analysis for project domain
+- **websearch**: Real-time market research and competitive analysis for project domain
 - **gpt-researcher**: Comprehensive deep research on latest best practices for detected technology stack
 - **cached_websearch_10x**: Smart web search with automatic caching for efficiency
 - **meilisearch**: Full-text intelligent search through organizational documentation and knowledge base
@@ -46,7 +46,7 @@
 ### 🚀 **PHASE 4: LAYER 4 - CROSS-PROJECT KNOWLEDGE SYNTHESIS** (use "ultrathink")
 
 **4.1 Organizational Pattern Evolution**
-- **smart_memory_unified**: Store and evolve organizational patterns with new project insights and cross-system synchronization
+- **memory**: Store and evolve organizational patterns with new project insights
 - **qdrant**: Create semantic embeddings of successful patterns for intelligent matching
 - **meilisearch**: Index all analysis outcomes for instant organizational knowledge access
 - **sqlite**: Track pattern evolution and success metrics across projects
@@ -105,7 +105,7 @@ Intelligence Metrics:
 **Execute this layered agentic analysis by:**
 
 1. **PHASE 1**: Gather comprehensive data using filesystem, github, context7, memory, and qdrant
-2. **PHASE 2**: Conduct intelligent analysis using cached_websearch_10x, gpt-researcher, meilisearch, and security MCPs
+2. **PHASE 2**: Conduct intelligent analysis using websearch, gpt-researcher, meilisearch, and security MCPs
 3. **PHASE 3**: Perform specialized domain analysis using communication, infrastructure, and thinking MCPs
 4. **PHASE 4**: Synthesize cross-project knowledge using memory, vector, and analytics MCPs  
 5. **PHASE 5**: Generate intelligent recommendations and optimal command sequences

@@ -1,0 +1,721 @@
+{
+  "summary": {
+    "total_mcp_servers_configured": 7,
+    "valid_mcp_configurations": 7,
+    "mcp_configuration_success_rate": "100.0%",
+    "total_agents_registered": 20,
+    "agents_with_mcp_integration": 20,
+    "agent_mcp_integration_rate": "100.0%",
+    "import_test_success_rate": "85.7%",
+    "validation_timestamp": "2025-08-06 15:28:14"
+  },
+  "mcp_server_analysis": {
+    "configured_servers": [
+      "ml-code-intelligence",
+      "context-aware-memory",
+      "ml-testing-qa",
+      "agentic-workflow",
+      "predictive-analytics",
+      "10x-knowledge-graph",
+      "10x-command-analytics"
+    ],
+    "working_servers": [
+      "ml-code-intelligence",
+      "context-aware-memory",
+      "ml-testing-qa",
+      "agentic-workflow",
+      "predictive-analytics",
+      "10x-knowledge-graph",
+      "10x-command-analytics"
+    ],
+    "problematic_servers": [],
+    "import_successful_servers": [
+      "context-aware-memory",
+      "ml-testing-qa",
+      "agentic-workflow",
+      "predictive-analytics",
+      "10x-knowledge-graph",
+      "10x-command-analytics"
+    ],
+    "configuration_issues": []
+  },
+  "agent_integration_analysis": {
+    "most_integrated_mcps": [
+      [
+        "context-aware-memory",
+        16
+      ],
+      [
+        "ml-code-intelligence",
+        15
+      ],
+      [
+        "predictive-analytics",
+        14
+      ],
+      [
+        "agentic-workflow",
+        10
+      ],
+      [
+        "10x-knowledge-graph",
+        10
+      ],
+      [
+        "chroma-rag",
+        7
+      ],
+      [
+        "websearch",
+        5
+      ],
+      [
+        "competitive-intelligence",
+        4
+      ],
+      [
+        "pattern-analysis",
+        4
+      ],
+      [
+        "10x-command-analytics",
+        4
+      ],
+      [
+        "ml-testing-qa",
+        3
+      ],
+      [
+        "performance-monitoring",
+        2
+      ],
+      [
+        "knowledge-graph",
+        2
+      ],
+      [
+        "command-analytics",
+        2
+      ],
+      [
+        "resource-optimization",
+        1
+      ],
+      [
+        "fetch",
+        1
+      ]
+    ],
+    "agents_by_integration_level": {
+      "high_integration_agents": [
+        "10x-enterprise-coordination-director",
+        "research-domain-specialist",
+        "10x-security-intelligence-auditor",
+        "mcp-orchestration-master",
+        "10x-intelligence-coordination-hub",
+        "10x-workflow-acceleration-engine",
+        "10x-competitive-intelligence-researcher",
+        "10x-test-command-validation-specialist",
+        "10x-technical-pattern-discovery",
+        "10x-performance-intelligence-specialist",
+        "10x-strategic-research-orchestrator",
+        "10x-innovation-intelligence-analyst"
+      ],
+      "medium_integration_agents": [
+        "10x-resource-intelligence-manager",
+        "10x-code-architecture-specialist",
+        "10x-predictive-performance-oracle",
+        "agent-orchestrator",
+        "security-auditor",
+        "10x-knowledge-synthesis-coordinator",
+        "project-architect",
+        "performance-engineer"
+      ],
+      "low_integration_agents": [],
+      "no_integration_agents": []
+    }
+  },
+  "recommendations": [
+    "\u2705 All MCP servers properly configured",
+    "\u2705 High agent-MCP integration rate achieved",
+    "\u26a0\ufe0f 1 MCP servers have import issues",
+    "\ud83c\udfaf 20 agents registered and accessible via /agent interface",
+    "\ud83d\udd27 16 unique MCP servers integrated",
+    "\ud83d\ude80 Agent-MCP integration system operational and ready for use"
+  ],
+  "detailed_results": {
+    "mcp_config": {
+      "total_servers_configured": 7,
+      "valid_configurations": 7,
+      "configuration_issues": [],
+      "server_details": {
+        "ml-code-intelligence": {
+          "name": "ml-code-intelligence",
+          "configured": true,
+          "command_exists": true,
+          "script_exists": true,
+          "environment_valid": true,
+          "issues": []
+        },
+        "context-aware-memory": {
+          "name": "context-aware-memory",
+          "configured": true,
+          "command_exists": true,
+          "script_exists": true,
+          "environment_valid": true,
+          "issues": []
+        },
+        "ml-testing-qa": {
+          "name": "ml-testing-qa",
+          "configured": true,
+          "command_exists": true,
+          "script_exists": true,
+          "environment_valid": true,
+          "issues": []
+        },
+        "agentic-workflow": {
+          "name": "agentic-workflow",
+          "configured": true,
+          "command_exists": true,
+          "script_exists": true,
+          "environment_valid": true,
+          "issues": []
+        },
+        "predictive-analytics": {
+          "name": "predictive-analytics",
+          "configured": true,
+          "command_exists": true,
+          "script_exists": true,
+          "environment_valid": true,
+          "issues": []
+        },
+        "10x-knowledge-graph": {
+          "name": "10x-knowledge-graph",
+          "configured": true,
+          "command_exists": true,
+          "script_exists": true,
+          "environment_valid": true,
+          "issues": []
+        },
+        "10x-command-analytics": {
+          "name": "10x-command-analytics",
+          "configured": true,
+          "command_exists": true,
+          "script_exists": true,
+          "environment_valid": true,
+          "issues": []
+        }
+      }
+    },
+    "agent_registry": {
+      "total_agents_registered": 20,
+      "agents_with_mcp_integration": 20,
+      "mcp_usage_distribution": {
+        "performance-monitoring": 2,
+        "resource-optimization": 1,
+        "predictive-analytics": 14,
+        "ml-code-intelligence": 15,
+        "agentic-workflow": 10,
+        "context-aware-memory": 16,
+        "ml-testing-qa": 3,
+        "knowledge-graph": 2,
+        "command-analytics": 2,
+        "10x-knowledge-graph": 10,
+        "chroma-rag": 7,
+        "websearch": 5,
+        "competitive-intelligence": 4,
+        "pattern-analysis": 4,
+        "10x-command-analytics": 4,
+        "fetch": 1
+      },
+      "agent_details": {
+        "10x-resource-intelligence-manager": {
+          "has_mcp_integration": true,
+          "mcp_count": 4,
+          "integrated_mcps": [
+            "performance-monitoring",
+            "resource-optimization",
+            "predictive-analytics",
+            "ml-code-intelligence"
+          ],
+          "domain": "10x-resource-intelligence",
+          "tools": [
+            "Edit",
+            "MultiEdit",
+            "Read",
+            "Write",
+            "Bash",
+            "WebSearch",
+            "WebFetch",
+            "TodoWrite",
+            "Grep",
+            "Glob",
+            "LS"
+          ]
+        },
+        "10x-enterprise-coordination-director": {
+          "has_mcp_integration": true,
+          "mcp_count": 7,
+          "integrated_mcps": [
+            "agentic-workflow",
+            "ml-code-intelligence",
+            "predictive-analytics",
+            "context-aware-memory",
+            "ml-testing-qa",
+            "knowledge-graph",
+            "command-analytics"
+          ],
+          "domain": "10x-enterprise-coordination",
+          "tools": [
+            "Read",
+            "Grep",
+            "Glob",
+            "Bash",
+            "Task",
+            "LS",
+            "TodoWrite",
+            "Edit",
+            "MultiEdit"
+          ]
+        },
+        "10x-code-architecture-specialist": {
+          "has_mcp_integration": true,
+          "mcp_count": 4,
+          "integrated_mcps": [
+            "ml-code-intelligence",
+            "agentic-workflow",
+            "10x-knowledge-graph",
+            "predictive-analytics"
+          ],
+          "domain": "10x-code-architecture",
+          "tools": [
+            "Read",
+            "Grep",
+            "Glob",
+            "Bash",
+            "Task",
+            "LS",
+            "MultiEdit",
+            "Edit"
+          ]
+        },
+        "research-domain-specialist": {
+          "has_mcp_integration": true,
+          "mcp_count": 6,
+          "integrated_mcps": [
+            "chroma-rag",
+            "websearch",
+            "competitive-intelligence",
+            "pattern-analysis",
+            "context-aware-memory",
+            "10x-knowledge-graph"
+          ],
+          "domain": "adaptive-domain-research",
+          "tools": [
+            "WebSearch",
+            "WebFetch",
+            "Read",
+            "Grep",
+            "Glob",
+            "Task",
+            "LS",
+            "MultiEdit",
+            "Edit"
+          ]
+        },
+        "10x-predictive-performance-oracle": {
+          "has_mcp_integration": true,
+          "mcp_count": 4,
+          "integrated_mcps": [
+            "predictive-analytics",
+            "ml-code-intelligence",
+            "context-aware-memory",
+            "10x-command-analytics"
+          ],
+          "domain": "10x-predictive-performance",
+          "tools": [
+            "WebSearch",
+            "WebFetch",
+            "Read",
+            "Grep",
+            "Glob",
+            "Task",
+            "LS",
+            "MultiEdit",
+            "Edit"
+          ]
+        },
+        "10x-security-intelligence-auditor": {
+          "has_mcp_integration": true,
+          "mcp_count": 5,
+          "integrated_mcps": [
+            "ml-code-intelligence",
+            "predictive-analytics",
+            "agentic-workflow",
+            "context-aware-memory",
+            "10x-knowledge-graph"
+          ],
+          "domain": "10x-security-intelligence",
+          "tools": [
+            "Read",
+            "Grep",
+            "Glob",
+            "Task",
+            "WebSearch",
+            "WebFetch"
+          ]
+        },
+        "mcp-orchestration-master": {
+          "has_mcp_integration": true,
+          "mcp_count": 7,
+          "integrated_mcps": [
+            "agentic-workflow",
+            "ml-code-intelligence",
+            "predictive-analytics",
+            "context-aware-memory",
+            "ml-testing-qa",
+            "knowledge-graph",
+            "command-analytics"
+          ],
+          "domain": "10x-mcp-orchestration",
+          "tools": [
+            "Read",
+            "Grep",
+            "Glob",
+            "Bash",
+            "Task",
+            "LS",
+            "TodoWrite",
+            "Edit",
+            "MultiEdit"
+          ]
+        },
+        "10x-intelligence-coordination-hub": {
+          "has_mcp_integration": true,
+          "mcp_count": 7,
+          "integrated_mcps": [
+            "chroma-rag",
+            "websearch",
+            "context-aware-memory",
+            "10x-knowledge-graph",
+            "10x-command-analytics",
+            "predictive-analytics",
+            "ml-code-intelligence"
+          ],
+          "domain": "10x-intelligence-coordination",
+          "tools": [
+            "WebSearch",
+            "WebFetch",
+            "Read",
+            "Grep",
+            "Glob",
+            "Task",
+            "LS",
+            "MultiEdit",
+            "Edit"
+          ]
+        },
+        "agent-orchestrator": {
+          "has_mcp_integration": true,
+          "mcp_count": 4,
+          "integrated_mcps": [
+            "agentic-workflow",
+            "ml-code-intelligence",
+            "predictive-analytics",
+            "context-aware-memory"
+          ],
+          "domain": "agent-coordination",
+          "tools": [
+            "Read",
+            "Grep",
+            "Glob",
+            "Bash",
+            "Task",
+            "LS",
+            "TodoWrite"
+          ]
+        },
+        "security-auditor": {
+          "has_mcp_integration": true,
+          "mcp_count": 3,
+          "integrated_mcps": [
+            "ml-code-intelligence",
+            "agentic-workflow",
+            "predictive-analytics"
+          ],
+          "domain": "security-analysis",
+          "tools": [
+            "Read",
+            "Grep",
+            "Glob",
+            "Task"
+          ]
+        },
+        "10x-workflow-acceleration-engine": {
+          "has_mcp_integration": true,
+          "mcp_count": 5,
+          "integrated_mcps": [
+            "agentic-workflow",
+            "predictive-analytics",
+            "performance-monitoring",
+            "ml-code-intelligence",
+            "context-aware-memory"
+          ],
+          "domain": "10x-workflow-acceleration",
+          "tools": [
+            "Edit",
+            "MultiEdit",
+            "Read",
+            "Write",
+            "Bash",
+            "Grep",
+            "Glob",
+            "LS",
+            "TodoWrite",
+            "WebSearch",
+            "WebFetch"
+          ]
+        },
+        "10x-competitive-intelligence-researcher": {
+          "has_mcp_integration": true,
+          "mcp_count": 6,
+          "integrated_mcps": [
+            "websearch",
+            "fetch",
+            "chroma-rag",
+            "pattern-analysis",
+            "competitive-intelligence",
+            "context-aware-memory"
+          ],
+          "domain": "10x-competitive-intelligence",
+          "tools": [
+            "WebSearch",
+            "WebFetch",
+            "Read",
+            "Grep",
+            "Glob",
+            "Task",
+            "LS",
+            "MultiEdit",
+            "Edit"
+          ]
+        },
+        "10x-knowledge-synthesis-coordinator": {
+          "has_mcp_integration": true,
+          "mcp_count": 4,
+          "integrated_mcps": [
+            "10x-knowledge-graph",
+            "chroma-rag",
+            "context-aware-memory",
+            "10x-command-analytics"
+          ],
+          "domain": "10x-knowledge-synthesis",
+          "tools": [
+            "WebSearch",
+            "WebFetch",
+            "Read",
+            "Grep",
+            "Glob",
+            "Task",
+            "LS",
+            "MultiEdit",
+            "Edit"
+          ]
+        },
+        "10x-test-command-validation-specialist": {
+          "has_mcp_integration": true,
+          "mcp_count": 5,
+          "integrated_mcps": [
+            "ml-testing-qa",
+            "agentic-workflow",
+            "ml-code-intelligence",
+            "predictive-analytics",
+            "context-aware-memory"
+          ],
+          "domain": "test-command-validation",
+          "tools": [
+            "Bash",
+            "Read",
+            "Write",
+            "Edit",
+            "MultiEdit",
+            "Grep",
+            "Glob",
+            "LS"
+          ]
+        },
+        "10x-technical-pattern-discovery": {
+          "has_mcp_integration": true,
+          "mcp_count": 5,
+          "integrated_mcps": [
+            "ml-code-intelligence",
+            "10x-knowledge-graph",
+            "chroma-rag",
+            "context-aware-memory",
+            "predictive-analytics"
+          ],
+          "domain": "10x-technical-pattern-discovery",
+          "tools": [
+            "WebSearch",
+            "WebFetch",
+            "Read",
+            "Grep",
+            "Glob",
+            "Task",
+            "LS",
+            "MultiEdit",
+            "Edit"
+          ]
+        },
+        "10x-performance-intelligence-specialist": {
+          "has_mcp_integration": true,
+          "mcp_count": 5,
+          "integrated_mcps": [
+            "predictive-analytics",
+            "ml-code-intelligence",
+            "agentic-workflow",
+            "context-aware-memory",
+            "10x-knowledge-graph"
+          ],
+          "domain": "10x-performance-intelligence",
+          "tools": [
+            "Edit",
+            "MultiEdit",
+            "Read",
+            "Write",
+            "Bash",
+            "WebSearch",
+            "WebFetch",
+            "TodoWrite",
+            "Glob",
+            "Grep",
+            "LS",
+            "Task"
+          ]
+        },
+        "project-architect": {
+          "has_mcp_integration": true,
+          "mcp_count": 3,
+          "integrated_mcps": [
+            "ml-code-intelligence",
+            "agentic-workflow",
+            "10x-knowledge-graph"
+          ],
+          "domain": "system-architecture",
+          "tools": [
+            "Read",
+            "Grep",
+            "Glob",
+            "Bash",
+            "Task",
+            "LS"
+          ]
+        },
+        "performance-engineer": {
+          "has_mcp_integration": true,
+          "mcp_count": 3,
+          "integrated_mcps": [
+            "predictive-analytics",
+            "ml-code-intelligence",
+            "context-aware-memory"
+          ],
+          "domain": "performance-optimization",
+          "tools": [
+            "Read",
+            "Grep",
+            "Glob",
+            "Bash",
+            "Task"
+          ]
+        },
+        "10x-strategic-research-orchestrator": {
+          "has_mcp_integration": true,
+          "mcp_count": 7,
+          "integrated_mcps": [
+            "chroma-rag",
+            "websearch",
+            "competitive-intelligence",
+            "pattern-analysis",
+            "context-aware-memory",
+            "10x-knowledge-graph",
+            "10x-command-analytics"
+          ],
+          "domain": "strategic-research-intelligence",
+          "tools": [
+            "WebSearch",
+            "WebFetch",
+            "Read",
+            "Grep",
+            "Glob",
+            "Task",
+            "LS",
+            "MultiEdit",
+            "Edit"
+          ]
+        },
+        "10x-innovation-intelligence-analyst": {
+          "has_mcp_integration": true,
+          "mcp_count": 6,
+          "integrated_mcps": [
+            "chroma-rag",
+            "websearch",
+            "competitive-intelligence",
+            "pattern-analysis",
+            "context-aware-memory",
+            "10x-knowledge-graph"
+          ],
+          "domain": "10x-innovation-intelligence",
+          "tools": [
+            "WebSearch",
+            "WebFetch",
+            "Read",
+            "Grep",
+            "Glob",
+            "Task",
+            "LS",
+            "MultiEdit",
+            "Edit"
+          ]
+        }
+      }
+    },
+    "import_tests": {
+      "servers_tested": 7,
+      "import_successful": 6,
+      "import_failures": [
+        "ml-code-intelligence: Command '['/home/dell/coding/bash/10x-agentic-setup/mcp_servers/mcp_venv/bin/python', '-c', \"import sys; sys.path.append('/home/dell/coding/bash/10x-agentic-setup/mcp_servers/ml_code_intelligence/src'); import server; print('Import successful')\"]' timed out after 10 seconds"
+      ],
+      "server_test_details": {
+        "ml-code-intelligence": {
+          "import_success": false,
+          "error": "Command '['/home/dell/coding/bash/10x-agentic-setup/mcp_servers/mcp_venv/bin/python', '-c', \"import sys; sys.path.append('/home/dell/coding/bash/10x-agentic-setup/mcp_servers/ml_code_intelligence/src'); import server; print('Import successful')\"]' timed out after 10 seconds",
+          "script_path": "/home/dell/coding/bash/10x-agentic-setup/mcp_servers/ml_code_intelligence/src/server.py"
+        },
+        "context-aware-memory": {
+          "import_success": true,
+          "script_path": "/home/dell/coding/bash/10x-agentic-setup/mcp_servers/context_aware_memory/src/server.py"
+        },
+        "ml-testing-qa": {
+          "import_success": true,
+          "script_path": "/home/dell/coding/bash/10x-agentic-setup/mcp_servers/ml_testing_qa/src/server.py"
+        },
+        "agentic-workflow": {
+          "import_success": true,
+          "script_path": "/home/dell/coding/bash/10x-agentic-setup/mcp_servers/agentic_workflow/src/server.py"
+        },
+        "predictive-analytics": {
+          "import_success": true,
+          "script_path": "/home/dell/coding/bash/10x-agentic-setup/mcp_servers/predictive_analytics/src/server.py"
+        },
+        "10x-knowledge-graph": {
+          "import_success": true,
+          "script_path": "/home/dell/coding/bash/10x-agentic-setup/mcp_servers/knowledge_graph/src/server.py"
+        },
+        "10x-command-analytics": {
+          "import_success": true,
+          "script_path": "/home/dell/coding/bash/10x-agentic-setup/mcp_servers/command_analytics/src/server.py"
+        }
+      }
+    }
+  }
+}

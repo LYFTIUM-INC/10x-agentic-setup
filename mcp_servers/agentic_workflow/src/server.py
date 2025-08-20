@@ -20,14 +20,14 @@ from mcp.server.stdio import stdio_server
 from mcp.types import Resource, Tool, TextContent, ImageContent, EmbeddedResource
 
 # Internal imports
-from .engines.react_engine import ReActEngine, ReActResult
-from .engines.agent_spawner import AgentSpawner, AgentType
-from .engines.workflow_optimizer import WorkflowLearningEngine, SelfImprovingWorkflow
-from .agents.base_agent import BaseAgent, AgentTask, AgentResult
-from .agents.research_agent import ResearchAgent
-from .agents.code_agent import CodeAgent
-from .agents.test_agent import TestAgent
-from .agents.orchestrator_agent import OrchestratorAgent
+from engines.react_engine import ReActEngine, ReActResult
+from engines.agent_spawner import AgentSpawner, AgentType
+from engines.workflow_optimizer import WorkflowLearningEngine, SelfImprovingWorkflow
+from agents.base_agent import BaseAgent, AgentTask, AgentResult
+from agents.research_agent import ResearchAgent
+from agents.code_agent import CodeAgent
+from agents.test_agent import TestAgent
+from agents.orchestrator_agent import OrchestratorAgent
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)

@@ -1,0 +1,77 @@
+{
+  "timestamp": "2025-07-30T13:54:56.370465",
+  "predictions": {
+    "current_avg_cpu": 9.239999999999998,
+    "current_avg_memory": 82.71000000000001,
+    "predicted_cpu_trend": "DECREASING",
+    "predicted_memory_trend": "DECREASING",
+    "cpu_slope": -0.8775757575757572,
+    "memory_slope": -0.011515151515151895,
+    "next_cpu_values": [
+      4.413333333333334,
+      3.535757575757577,
+      2.658181818181818,
+      1.7806060606060612,
+      0.9030303030303042,
+      0.025454545454547173,
+      -0.8521212121212098,
+      -1.7296969696969668,
+      -2.607272727272724,
+      -3.4848484848484826
+    ],
+    "next_memory_values": [
+      82.64666666666666,
+      82.63515151515152,
+      82.62363636363636,
+      82.61212121212121,
+      82.60060606060605,
+      82.58909090909091,
+      82.57757575757576,
+      82.5660606060606,
+      82.55454545454545,
+      82.54303030303029
+    ]
+  },
+  "bottlenecks": [
+    {
+      "type": "RESPONSE_TIME",
+      "severity": "MEDIUM",
+      "current_value": 603,
+      "threshold": 100,
+      "impact": "Slow system responsiveness",
+      "recommendation": "Optimize metric collection process"
+    }
+  ],
+  "optimization_plan": {
+    "memory": {
+      "priority": "HIGH",
+      "current": 82.7,
+      "target": 70,
+      "strategies": [
+        "Garbage collection optimization",
+        "Data structure optimization",
+        "Memory pooling implementation"
+      ]
+    },
+    "response_time": {
+      "priority": "MEDIUM",
+      "current": 603,
+      "target": 20,
+      "strategies": [
+        "Asynchronous metric collection",
+        "Batch processing",
+        "Database optimization"
+      ]
+    },
+    "disk_space": {
+      "priority": "MEDIUM",
+      "current": 79,
+      "target": 70,
+      "strategies": [
+        "Temporary file cleanup",
+        "Log rotation",
+        "Data archival"
+      ]
+    }
+  }
+}

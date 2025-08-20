@@ -1,0 +1,5 @@
+{
+  "test_generation": true,
+  "bug_prediction": true,
+  "coverage_target": 0.95
+}

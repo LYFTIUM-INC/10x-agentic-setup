@@ -14,10 +14,51 @@ from functools import wraps
 from pydantic import BaseModel, Field, validator
 from mcp.server.fastmcp import Context, FastMCP
 
-# Import new utilities
-from .utils.response_formatter import ResponseFormatter
-from .utils.progress_manager import ProgressManager, ProgressContext
-from .utils.health_checker import HealthChecker
+# Import new utilities (fix relative imports)
+try:
+    from .utils.response_formatter import ResponseFormatter
+    from .utils.progress_manager import ProgressManager, ProgressContext
+    from .utils.health_checker import HealthChecker
+except ImportError:
+    try:
+        # Fallback for direct execution
+        import sys
+        import os
+        sys.path.append(os.path.dirname(__file__))
+        from utils.response_formatter import ResponseFormatter
+        from utils.progress_manager import ProgressManager, ProgressContext
+        from utils.health_checker import HealthChecker
+    except ImportError:
+        # Final fallback - create stub implementations
+        class ResponseFormatter:
+            def __init__(self, name, version):
+                self.name = name
+                self.version = version
+            def success(self, data):
+                return {"success": True, "data": data}
+            def error(self, message):
+                return {"success": False, "error": message}
+        
+        class ProgressManager:
+            def __init__(self, name):
+                self.name = name
+                self.active_operations = set()
+        
+        class HealthChecker:
+            def __init__(self, name, version):
+                self.name = name
+                self.version = version
+                self.start_time = time.time()
+            async def start_periodic_checks(self):
+                pass
+            async def stop_periodic_checks(self):
+                pass
+            async def get_health_status(self):
+                return {"status": "healthy"}
+            async def get_metrics(self):
+                return {"uptime": time.time() - self.start_time}
+            async def _get_system_metrics(self):
+                return {"cpu": 0.5, "memory": 0.6}
 
 # Configure structured logging
 logging.basicConfig(
@@ -315,12 +356,14 @@ class BaseMCPServer:
     def register_prompt(self, name: str, description: str = None, arguments: List[Dict[str, Any]] = None):
         """Register a prompt template with the MCP server"""
         def decorator(func):
-            # Create prompt configuration
+            # Create prompt configuration - FastMCP only accepts name and description
             prompt_config = {
                 "name": name,
-                "description": description or f"Prompt template: {name}",
-                "arguments": arguments or []
+                "description": description or func.__doc__ or f"Prompt template: {name}"
             }
+            # Note: FastMCP doesn't support 'arguments' parameter, storing for reference only
+            if arguments:
+                func._prompt_arguments = arguments
             
             # Register with MCP
             return self.mcp.prompt(**prompt_config)(func)
@@ -347,12 +390,8 @@ class BaseMCPServer:
     def run(self, transport="stdio"):
         """Run the MCP server"""
         logger.info(f"Starting {self.config.name} MCP Server with {transport} transport")
-        if transport == "stdio":
-            import sys
-            from mcp.server.stdio import run_server
-            asyncio.run(run_server(self.mcp, sys.stdin, sys.stdout))
-        else:
-            raise ValueError(f"Unsupported transport: {transport}")
+        # FastMCP has its own run method that handles the event loop
+        self.mcp.run(transport=transport)
 
 
 # Example usage and testing

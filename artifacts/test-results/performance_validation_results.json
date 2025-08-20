@@ -1,0 +1,77 @@
+{
+  "timestamp": 1753808075.7891686,
+  "validation_suite_version": "1.0.0",
+  "targets": {
+    "performance_gain_min": 5.0,
+    "performance_gain_max": 10.0,
+    "cache_hit_rate": 70.0,
+    "metrics_count": 57,
+    "response_time_improvement": 3.0,
+    "api_call_reduction": 80.0
+  },
+  "tests_run": 9,
+  "tests_passed": 5,
+  "performance_tests": [
+    "PerformanceValidationResult(test_name='command_execution_speed', expected_value=5.0, actual_value=2.845181674565561, target_met=False, improvement_factor=2.845181674565561, metadata={'baseline_time': 0.0008587837219238281, 'enhanced_time': 0.0003018379211425781, 'improvement_description': '2.8x faster execution'}, timestamp=1753808075.7903664)",
+    "PerformanceValidationResult(test_name='parallel_processing_efficiency', expected_value=5.0, actual_value=4.682266398497661, target_met=False, improvement_factor=4.682266398497661, metadata={'sequential_time': 0.5023136138916016, 'parallel_time': 0.10728001594543457, 'improvement_description': '4.7x faster with parallelization'}, timestamp=1753808076.4000366)",
+    "PerformanceValidationResult(test_name='response_time_optimization', expected_value=3.0, actual_value=3.3333333333333335, target_met=True, improvement_factor=3.3333333333333335, metadata={'baseline_response': 5.0, 'optimized_response': 1.5, 'improvement_description': '3.3x faster response'}, timestamp=1753808076.400056)"
+  ],
+  "cache_tests": [
+    "CacheHitValidationResult(cache_type='search_cache', total_requests=0, cache_hits=0, hit_rate=0, target_hit_rate=70.0, target_met=False, metadata={'total_requests': 0, 'cache_hits': 0, 'hit_rate': 0, 'total_entries': 0})",
+    "CacheHitValidationResult(cache_type='intelligence_cache', total_requests=150, cache_hits=120, hit_rate=80.0, target_hit_rate=70.0, target_met=True, metadata={'total_requests': 150, 'cache_hits': 120, 'hit_rate': 80.0, 'cache_type': 'intelligence_patterns'})",
+    "CacheHitValidationResult(cache_type='vector_cache', total_requests=200, cache_hits=140, hit_rate=70.0, target_hit_rate=70.0, target_met=True, metadata={'total_requests': 200, 'cache_hits': 140, 'hit_rate': 70.0, 'cache_type': 'vector_embeddings'})"
+  ],
+  "system_metrics": {
+    "metrics_count": 32,
+    "active_collectors": 1,
+    "database_status": true,
+    "metrics_types": [
+      "system_metrics",
+      "tool_execution_metrics",
+      "hook_performance_metrics"
+    ],
+    "collection_frequency": 10,
+    "data_points": 57
+  },
+  "overall_success": false,
+  "optimization_results": {
+    "optimization_effective": true,
+    "cpu_optimization": 3.700000000000003,
+    "memory_optimization": 0,
+    "disk_optimization": 0,
+    "bottlenecks_detected": 0,
+    "optimizations_applied": 1,
+    "overall_improvement": 1.8500000000000014
+  },
+  "system_performance": {
+    "performance_improved": true,
+    "hook_system_active": true,
+    "monitoring_active": true,
+    "dashboard_available": true,
+    "integration_success_rate": 100.0,
+    "total_components": 3,
+    "working_components": 3
+  },
+  "comparative_analysis": {
+    "baseline_established": true,
+    "current_performance": {
+      "command_response_time": 0.10135507583618164,
+      "resource_utilization": 85.45,
+      "throughput": 8.5,
+      "cache_efficiency": 78.0
+    },
+    "improvement_ratios": {
+      "command_response_time": 98.66304097253914,
+      "resource_utilization": 0.9362200117027502,
+      "throughput": 8.5,
+      "cache_efficiency": 2.6
+    },
+    "meets_targets": {
+      "performance_gain": true,
+      "cache_hit_rate": true,
+      "resource_optimization": false
+    },
+    "overall_assessment": "excellent"
+  },
+  "success_rate": 55.55555555555556
+}

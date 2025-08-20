@@ -1,0 +1,22 @@
+{
+  "tests_run": 1,
+  "tests_passed": 1,
+  "tests_failed": 0,
+  "performance_metrics": {},
+  "detailed_results": [
+    {
+      "name": "Quick Dispatcher Test",
+      "status": "PASSED",
+      "result": {
+        "tasks_created": 3,
+        "servers": [
+          "ml-code-intelligence",
+          "ml-testing-qa",
+          "predictive-analytics",
+          "context-aware-memory",
+          "agentic-workflow"
+        ]
+      }
+    }
+  ]
+}

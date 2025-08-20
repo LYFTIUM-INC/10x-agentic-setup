@@ -1,0 +1,256 @@
+{
+  "timestamp": "2025-07-28T19:19:33.031722",
+  "summary": {
+    "docker_installed": true,
+    "docker_running": false,
+    "docker_compose_installed": false,
+    "python_version": "3.10.9 (main, Mar  1 2023, 18:23:06) [GCC 11.2.0]",
+    "venv_exists": true,
+    "missing_packages": [],
+    "running_servers": {
+      "ml-code-intelligence": {
+        "status": "RUNNING",
+        "processes": 1,
+        "details": "dell     1878507  0.0  0.0 285352 39028 pts/18   Sl+  Jul24   0:04 /home/dell/coding/mcp/ml-enhanced..."
+      },
+      "context-aware-memory": {
+        "status": "RUNNING",
+        "processes": 1,
+        "details": "dell     1878595  0.0  0.0 285512 41456 pts/18   Sl+  Jul24   0:04 /home/dell/coding/mcp/ml-enhanced..."
+      },
+      "10x-knowledge-graph": {
+        "status": "RUNNING",
+        "processes": 1,
+        "details": "dell     1878615  0.0  0.0 287228 36876 pts/18   Sl+  Jul24   0:04 /home/dell/coding/mcp/ml-enhanced..."
+      },
+      "10x-command-analytics": {
+        "status": "RUNNING",
+        "processes": 1,
+        "details": "dell     1878621  0.0  0.0 285776 39320 pts/18   Sl+  Jul24   0:04 /home/dell/coding/mcp/ml-enhanced..."
+      },
+      "chroma-rag": {
+        "status": "RUNNING",
+        "external": true,
+        "processes": 2
+      },
+      "websearch": {
+        "status": "RUNNING",
+        "external": true,
+        "processes": 1
+      },
+      "fetch": {
+        "status": "RUNNING",
+        "external": true,
+        "processes": 2
+      },
+      "github": {
+        "status": "RUNNING",
+        "external": true,
+        "processes": 1
+      },
+      "memory": {
+        "status": "RUNNING",
+        "external": true,
+        "processes": 2
+      }
+    },
+    "integration_test_results": {
+      "overall_success": 0.2857142857142857,
+      "server_compliance": 0.5714285714285714,
+      "servers_meeting_targets": 4,
+      "total_servers_tested": 7
+    },
+    "integration_score": 0.75,
+    "target_score": 0.95,
+    "gap_to_target": 0.19999999999999996
+  },
+  "servers": {
+    "ml-code-intelligence": {
+      "status": "RUNNING_NOT_RESPONSIVE",
+      "port": 8001,
+      "responsive": false
+    },
+    "context-aware-memory": {
+      "status": "RUNNING_NOT_RESPONSIVE",
+      "port": 8002,
+      "responsive": false
+    },
+    "predictive-analytics": {
+      "status": "NOT_RUNNING",
+      "port": 8004
+    },
+    "ml-testing-qa": {
+      "status": "NOT_RUNNING",
+      "port": 8005
+    },
+    "agentic-workflow": {
+      "status": "NOT_RUNNING",
+      "port": 8003
+    },
+    "10x-knowledge-graph": {
+      "status": "RUNNING_NOT_RESPONSIVE",
+      "port": 8003,
+      "responsive": false
+    },
+    "10x-command-analytics": {
+      "status": "RUNNING_NOT_RESPONSIVE",
+      "port": 8004,
+      "responsive": false
+    },
+    "chroma-rag": {
+      "status": "RUNNING",
+      "external": true,
+      "processes": 2
+    },
+    "websearch": {
+      "status": "RUNNING",
+      "external": true,
+      "processes": 1
+    },
+    "fetch": {
+      "status": "RUNNING",
+      "external": true,
+      "processes": 2
+    },
+    "github": {
+      "status": "RUNNING",
+      "external": true,
+      "processes": 1
+    },
+    "filesystem": {
+      "status": "BUILT_IN"
+    },
+    "memory": {
+      "status": "RUNNING",
+      "external": true,
+      "processes": 2
+    },
+    "sqlite": {
+      "status": "BUILT_IN"
+    }
+  },
+  "issues": [
+    {
+      "severity": "HIGH",
+      "component": "Docker",
+      "issue": "Docker daemon is not running",
+      "impact": "Cannot start containerized MCP servers",
+      "details": "Cannot connect to the Docker daemon at unix:///home/dell/.docker/desktop/docker.sock. Is the docker daemon running?\n"
+    },
+    {
+      "severity": "HIGH",
+      "component": "ml-code-intelligence",
+      "issue": "Server running but not responding on port 8001",
+      "impact": "Server may be misconfigured or crashed"
+    },
+    {
+      "severity": "HIGH",
+      "component": "context-aware-memory",
+      "issue": "Server running but not responding on port 8002",
+      "impact": "Server may be misconfigured or crashed"
+    },
+    {
+      "severity": "HIGH",
+      "component": "10x-knowledge-graph",
+      "issue": "Server running but not responding on port 8003",
+      "impact": "Server may be misconfigured or crashed"
+    },
+    {
+      "severity": "HIGH",
+      "component": "10x-command-analytics",
+      "issue": "Server running but not responding on port 8004",
+      "impact": "Server may be misconfigured or crashed"
+    },
+    {
+      "severity": "MEDIUM",
+      "component": "ml-code-intelligence",
+      "issue": "Reliability score 96.67% below target",
+      "impact": "Server may fail intermittently",
+      "details": {
+        "semantic_search": {
+          "success_rate": 0.9,
+          "avg_response_time": 0.04603252705128398,
+          "meets_time_target": true,
+          "meets_reliability_target": false
+        },
+        "quality_assessment": {
+          "success_rate": 1.0,
+          "avg_response_time": 0.049987817747751254,
+          "meets_time_target": true,
+          "meets_reliability_target": true
+        },
+        "code_analysis": {
+          "success_rate": 1.0,
+          "avg_response_time": 0.04864226434729062,
+          "meets_time_target": true,
+          "meets_reliability_target": true
+        }
+      }
+    },
+    {
+      "severity": "MEDIUM",
+      "component": "predictive-analytics",
+      "issue": "Reliability score 91.67% below target",
+      "impact": "Server may fail intermittently",
+      "details": {
+        "velocity_predict": {
+          "success_rate": 0.9,
+          "avg_response_time": 0.1036044684558874,
+          "meets_time_target": false,
+          "meets_reliability_target": false
+        },
+        "risk_assess": {
+          "success_rate": 0.9,
+          "avg_response_time": 0.10094618475122843,
+          "meets_time_target": false,
+          "meets_reliability_target": false
+        },
+        "trend_analyze": {
+          "success_rate": 0.95,
+          "avg_response_time": 0.09597483255201951,
+          "meets_time_target": true,
+          "meets_reliability_target": true
+        }
+      }
+    },
+    {
+      "severity": "MEDIUM",
+      "component": "10x-command-analytics",
+      "issue": "Reliability score 95.00% below target",
+      "impact": "Server may fail intermittently",
+      "details": {
+        "usage_track": {
+          "success_rate": 0.9,
+          "avg_response_time": 0.034615948805003426,
+          "meets_time_target": true,
+          "meets_reliability_target": false
+        },
+        "pattern_analyze": {
+          "success_rate": 1.0,
+          "avg_response_time": 0.036178288096562025,
+          "meets_time_target": false,
+          "meets_reliability_target": true
+        },
+        "workflow_optimize": {
+          "success_rate": 0.95,
+          "avg_response_time": 0.03477681260847021,
+          "meets_time_target": true,
+          "meets_reliability_target": false
+        }
+      }
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "CRITICAL",
+      "action": "Use Python-based local startup instead of Docker",
+      "command": "python start_mcp_servers_local.py",
+      "reason": "Docker is not available, but Python servers can run directly"
+    },
+    {
+      "priority": "HIGH",
+      "action": "Start Docker daemon",
+      "command": "sudo systemctl start docker"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .claude/hooks/goal_analyzer.py",
+            "description": "Analyze user intent and track task patterns"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command", 
+            "command": "python3 .claude/hooks/execution_tracker.py",
+            "description": "Track execution progress and tool usage"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .claude/hooks/performance_analyzer.py", 
+            "description": "Analyze completion and verify implementation"
+          }
+        ]
+      }
+    ]
+  }
+}

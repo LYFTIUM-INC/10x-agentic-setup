@@ -1,0 +1,1033 @@
+{
+  "timestamp": "2025-07-29T09:42:03.418757",
+  "summary": {
+    "unified_commands_tested": 4,
+    "unified_commands_successful": 4,
+    "unified_success_rate": 1.0,
+    "foundation_commands_tested": 3,
+    "foundation_commands_successful": 3,
+    "foundation_success_rate": 1.0,
+    "specialized_commands_tested": 2,
+    "specialized_commands_successful": 2,
+    "specialized_success_rate": 1.0,
+    "workflows_tested": 4,
+    "workflows_meeting_targets": 1,
+    "workflow_success_rate": 0.25,
+    "overall_integration_success": 0.8125,
+    "integration_health_score": 0.9679883350571,
+    "meets_95_percent_target": false,
+    "system_status": "NEEDS_OPTIMIZATION",
+    "performance_grade": "B (Satisfactory)"
+  },
+  "unified_commands": {
+    "/analyze_10x": {
+      "command": "/analyze_10x",
+      "modes_tested": [
+        "deep",
+        "accelerate",
+        "layered",
+        "execute"
+      ],
+      "mcp_integration": {
+        "deep": {
+          "servers_coordinated": [
+            "ml-code-intelligence",
+            "context-aware-memory",
+            "10x-knowledge-graph"
+          ],
+          "coordination_successful": true,
+          "avg_coordination_time": 0.04409455192785459,
+          "server_details": {
+            "ml-code-intelligence": {
+              "available": true,
+              "response_time": 0.05564060262480635,
+              "successful": true
+            },
+            "context-aware-memory": {
+              "available": true,
+              "response_time": 0.02527490781435045,
+              "successful": true
+            },
+            "10x-knowledge-graph": {
+              "available": true,
+              "response_time": 0.05136814534440696,
+              "successful": true
+            }
+          }
+        },
+        "accelerate": {
+          "servers_coordinated": [
+            "ml-code-intelligence",
+            "context-aware-memory",
+            "10x-knowledge-graph"
+          ],
+          "coordination_successful": true,
+          "avg_coordination_time": 0.050440143574035944,
+          "server_details": {
+            "ml-code-intelligence": {
+              "available": true,
+              "response_time": 0.04820896027524734,
+              "successful": true
+            },
+            "context-aware-memory": {
+              "available": true,
+              "response_time": 0.03529291459137621,
+              "successful": true
+            },
+            "10x-knowledge-graph": {
+              "available": true,
+              "response_time": 0.06781855585548427,
+              "successful": true
+            }
+          }
+        },
+        "layered": {
+          "servers_coordinated": [
+            "ml-code-intelligence",
+            "context-aware-memory",
+            "10x-knowledge-graph"
+          ],
+          "coordination_successful": true,
+          "avg_coordination_time": 0.04324612134147519,
+          "server_details": {
+            "ml-code-intelligence": {
+              "available": true,
+              "response_time": 0.04005238905973079,
+              "successful": true
+            },
+            "context-aware-memory": {
+              "available": true,
+              "response_time": 0.028077662289705044,
+              "successful": true
+            },
+            "10x-knowledge-graph": {
+              "available": true,
+              "response_time": 0.061608312674989736,
+              "successful": true
+            }
+          }
+        },
+        "execute": {
+          "servers_coordinated": [
+            "ml-code-intelligence",
+            "context-aware-memory",
+            "10x-knowledge-graph"
+          ],
+          "coordination_successful": true,
+          "avg_coordination_time": 0.046277521873587045,
+          "server_details": {
+            "ml-code-intelligence": {
+              "available": true,
+              "response_time": 0.05023953049342931,
+              "successful": true
+            },
+            "context-aware-memory": {
+              "available": true,
+              "response_time": 0.024708764552124955,
+              "successful": true
+            },
+            "10x-knowledge-graph": {
+              "available": true,
+              "response_time": 0.06388427057520685,
+              "successful": true
+            }
+          }
+        }
+      },
+      "parallel_execution": {
+        "deep": {
+          "parallel_agents": 5,
+          "agent_execution_times": [
+            0.07079331536193254,
+            0.034586664433184915,
+            0.07622788855436301,
+            0.0263080546374554,
+            0.03820788418408505
+          ],
+          "total_parallel_time": 0.07622788855436301,
+          "efficiency_gain": 3.2287895131123063,
+          "parallelization_successful": true
+        },
+        "accelerate": {
+          "parallel_agents": 5,
+          "agent_execution_times": [
+            0.05966288621598391,
+            0.04974252267721634,
+            0.07463862401182833,
+            0.05039535624432248,
+            0.05703459832981039
+          ],
+          "total_parallel_time": 0.07463862401182833,
+          "efficiency_gain": 3.9051361321046083,
+          "parallelization_successful": true
+        },
+        "layered": {
+          "parallel_agents": 5,
+          "agent_execution_times": [
+            0.07699408430029488,
+            0.06606798847638462,
+            0.05334017766638613,
+            0.036211919079560576,
+            0.07862539471474707
+          ],
+          "total_parallel_time": 0.07862539471474707,
+          "efficiency_gain": 3.9585119460010394,
+          "parallelization_successful": true
+        },
+        "execute": {
+          "parallel_agents": 5,
+          "agent_execution_times": [
+            0.055603265169326926,
+            0.052361519059449,
+            0.05825023654658919,
+            0.029043163664833886,
+            0.036154379784371846
+          ],
+          "total_parallel_time": 0.05825023654658919,
+          "efficiency_gain": 3.972731750874256,
+          "parallelization_successful": true
+        }
+      },
+      "performance_metrics": {
+        "deep": {
+          "execution_time": 11.645871450018603,
+          "expected_time": 120,
+          "execution_successful": true,
+          "efficiency_score": 1.0
+        },
+        "accelerate": {
+          "execution_time": 12.479002080042847,
+          "expected_time": 120,
+          "execution_successful": true,
+          "efficiency_score": 1.0
+        },
+        "layered": {
+          "execution_time": 13.377999141986948,
+          "expected_time": 120,
+          "execution_successful": true,
+          "efficiency_score": 1.0
+        },
+        "execute": {
+          "execution_time": 12.485978522046935,
+          "expected_time": 120,
+          "execution_successful": true,
+          "efficiency_score": 1.0
+        }
+      },
+      "success_rate": 1.0,
+      "meets_expectations": true
+    },
+    "/implement_10x": {
+      "command": "/implement_10x",
+      "modes_tested": [
+        "spec",
+        "feature",
+        "full",
+        "optimize"
+      ],
+      "mcp_integration": {
+        "spec": {
+          "servers_coordinated": [
+            "ml-code-intelligence",
+            "agentic-workflow",
+            "predictive-analytics"
+          ],
+          "coordination_successful": true,
+          "avg_coordination_time": 0.05453700409925918,
+          "server_details": {
+            "ml-code-intelligence": {
+              "available": true,
+              "response_time": 0.0404391481189631,
+              "successful": true
+            },
+            "agentic-workflow": {
+              "available": true,
+              "response_time": 0.03699167732020337,
+              "successful": true
+            },
+            "predictive-analytics": {
+              "available": true,
+              "response_time": 0.08618018685861108,
+              "successful": true
+            }
+          }
+        },
+        "feature": {
+          "servers_coordinated": [
+            "ml-code-intelligence",
+            "agentic-workflow",
+            "predictive-analytics"
+          ],
+          "coordination_successful": true,
+          "avg_coordination_time": 0.058978471589218956,
+          "server_details": {
+            "ml-code-intelligence": {
+              "available": true,
+              "response_time": 0.051827979875208846,
+              "successful": true
+            },
+            "agentic-workflow": {
+              "available": true,
+              "response_time": 0.03223811537811153,
+              "successful": true
+            },
+            "predictive-analytics": {
+              "available": true,
+              "response_time": 0.0928693195143365,
+              "successful": true
+            }
+          }
+        },
+        "full": {
+          "servers_coordinated": [
+            "ml-code-intelligence",
+            "agentic-workflow",
+            "predictive-analytics"
+          ],
+          "coordination_successful": true,
+          "avg_coordination_time": 0.05644074352132261,
+          "server_details": {
+            "ml-code-intelligence": {
+              "available": true,
+              "response_time": 0.052727928267864724,
+              "successful": true
+            },
+            "agentic-workflow": {
+              "available": true,
+              "response_time": 0.04337641627286802,
+              "successful": true
+            },
+            "predictive-analytics": {
+              "available": true,
+              "response_time": 0.07321788602323508,
+              "successful": true
+            }
+          }
+        },
+        "optimize": {
+          "servers_coordinated": [
+            "ml-code-intelligence",
+            "agentic-workflow",
+            "predictive-analytics"
+          ],
+          "coordination_successful": true,
+          "avg_coordination_time": 0.05049961966943628,
+          "server_details": {
+            "ml-code-intelligence": {
+              "available": true,
+              "response_time": 0.0450489591785653,
+              "successful": true
+            },
+            "agentic-workflow": {
+              "available": true,
+              "response_time": 0.03361831448607706,
+              "successful": true
+            },
+            "predictive-analytics": {
+              "available": true,
+              "response_time": 0.0728315853436665,
+              "successful": true
+            }
+          }
+        }
+      },
+      "parallel_execution": {
+        "spec": {
+          "parallel_agents": 9,
+          "agent_execution_times": [
+            0.0656255365266277,
+            0.03170918891310072,
+            0.07705979983075667,
+            0.046605666254251485,
+            0.05854463020378886,
+            0.02772576876881677,
+            0.0424258835567881,
+            0.036037458307149675,
+            0.02913831143754894
+          ],
+          "total_parallel_time": 0.07705979983075667,
+          "efficiency_gain": 5.383770068310534,
+          "parallelization_successful": true
+        },
+        "feature": {
+          "parallel_agents": 9,
+          "agent_execution_times": [
+            0.04388565696039891,
+            0.04617492580494219,
+            0.04622101015248827,
+            0.048417795594430726,
+            0.048351232737883415,
+            0.03973469935812099,
+            0.034713208519171784,
+            0.04591041033060993,
+            0.03612896848855546
+          ],
+          "total_parallel_time": 0.048417795594430726,
+          "efficiency_gain": 8.04534578999727,
+          "parallelization_successful": true
+        },
+        "full": {
+          "parallel_agents": 9,
+          "agent_execution_times": [
+            0.04055237067693602,
+            0.07650041783963783,
+            0.06862099549384659,
+            0.06708807264057272,
+            0.07039517423593183,
+            0.056841831597645026,
+            0.023774173027175858,
+            0.05396803597320392,
+            0.024344064174765104
+          ],
+          "total_parallel_time": 0.07650041783963783,
+          "efficiency_gain": 6.301732059428412,
+          "parallelization_successful": true
+        },
+        "optimize": {
+          "parallel_agents": 9,
+          "agent_execution_times": [
+            0.03559057004975953,
+            0.07118996138741723,
+            0.07056854400810278,
+            0.06420508299026433,
+            0.040184199832169115,
+            0.04936116950834697,
+            0.05001127320528523,
+            0.06002924756062156,
+            0.059131732939619486
+          ],
+          "total_parallel_time": 0.07118996138741723,
+          "efficiency_gain": 7.027279854235303,
+          "parallelization_successful": true
+        }
+      },
+      "performance_metrics": {
+        "spec": {
+          "execution_time": 18.137991461029742,
+          "expected_time": 180,
+          "execution_successful": true,
+          "efficiency_score": 1.0
+        },
+        "feature": {
+          "execution_time": 19.984983682981692,
+          "expected_time": 180,
+          "execution_successful": true,
+          "efficiency_score": 1.0
+        },
+        "full": {
+          "execution_time": 19.17283332097577,
+          "expected_time": 180,
+          "execution_successful": true,
+          "efficiency_score": 1.0
+        },
+        "optimize": {
+          "execution_time": 19.581076483998913,
+          "expected_time": 180,
+          "execution_successful": true,
+          "efficiency_score": 1.0
+        }
+      },
+      "success_rate": 1.0,
+      "meets_expectations": true
+    },
+    "/qa:comprehensive_10x": {
+      "command": "/qa:comprehensive_10x",
+      "modes_tested": [
+        "all",
+        "quality",
+        "testing",
+        "security"
+      ],
+      "mcp_integration": {
+        "all": {
+          "servers_coordinated": [
+            "ml-testing-qa",
+            "context-aware-memory",
+            "predictive-analytics"
+          ],
+          "coordination_successful": true,
+          "avg_coordination_time": 0.06097764354161924,
+          "server_details": {
+            "ml-testing-qa": {
+              "available": true,
+              "response_time": 0.06056427268173685,
+              "successful": true
+            },
+            "context-aware-memory": {
+              "available": true,
+              "response_time": 0.033038454145335835,
+              "successful": true
+            },
+            "predictive-analytics": {
+              "available": true,
+              "response_time": 0.08933020379778502,
+              "successful": true
+            }
+          }
+        },
+        "quality": {
+          "servers_coordinated": [
+            "ml-testing-qa",
+            "context-aware-memory",
+            "predictive-analytics"
+          ],
+          "coordination_successful": true,
+          "avg_coordination_time": 0.053906324827409126,
+          "server_details": {
+            "ml-testing-qa": {
+              "available": true,
+              "response_time": 0.06298774635147746,
+              "successful": true
+            },
+            "context-aware-memory": {
+              "available": true,
+              "response_time": 0.02806945152746331,
+              "successful": true
+            },
+            "predictive-analytics": {
+              "available": true,
+              "response_time": 0.07066177660328664,
+              "successful": true
+            }
+          }
+        },
+        "testing": {
+          "servers_coordinated": [
+            "ml-testing-qa",
+            "context-aware-memory",
+            "predictive-analytics"
+          ],
+          "coordination_successful": true,
+          "avg_coordination_time": 0.053610157777377855,
+          "server_details": {
+            "ml-testing-qa": {
+              "available": true,
+              "response_time": 0.05948755753044923,
+              "successful": true
+            },
+            "context-aware-memory": {
+              "available": true,
+              "response_time": 0.032205329607595035,
+              "successful": true
+            },
+            "predictive-analytics": {
+              "available": true,
+              "response_time": 0.06913758619408929,
+              "successful": true
+            }
+          }
+        },
+        "security": {
+          "servers_coordinated": [
+            "ml-testing-qa",
+            "context-aware-memory",
+            "predictive-analytics"
+          ],
+          "coordination_successful": true,
+          "avg_coordination_time": 0.050323331491931855,
+          "server_details": {
+            "ml-testing-qa": {
+              "available": true,
+              "response_time": 0.056711260878165685,
+              "successful": true
+            },
+            "context-aware-memory": {
+              "available": true,
+              "response_time": 0.02617071286635673,
+              "successful": true
+            },
+            "predictive-analytics": {
+              "available": true,
+              "response_time": 0.06808802073127317,
+              "successful": true
+            }
+          }
+        }
+      },
+      "parallel_execution": {
+        "all": {
+          "parallel_agents": 8,
+          "agent_execution_times": [
+            0.025356658715544867,
+            0.0532740167762457,
+            0.07803176873078096,
+            0.033662737818231606,
+            0.05066310759199438,
+            0.02175694228429228,
+            0.0781172370871338,
+            0.040167651459599156
+          ],
+          "total_parallel_time": 0.0781172370871338,
+          "efficiency_gain": 4.877670213026259,
+          "parallelization_successful": true
+        },
+        "quality": {
+          "parallel_agents": 8,
+          "agent_execution_times": [
+            0.07706489736164186,
+            0.03795360036376645,
+            0.02524450675291417,
+            0.04268188185086327,
+            0.040307693380753254,
+            0.06440460872584476,
+            0.04691475765419231,
+            0.05090927526181906
+          ],
+          "total_parallel_time": 0.07706489736164186,
+          "efficiency_gain": 5.0020337994203805,
+          "parallelization_successful": true
+        },
+        "testing": {
+          "parallel_agents": 8,
+          "agent_execution_times": [
+            0.04470864787382302,
+            0.04764979541869465,
+            0.033171168961285864,
+            0.07501935393213607,
+            0.06431134716392191,
+            0.0579660140434745,
+            0.032844989796346966,
+            0.0784155018968374
+          ],
+          "total_parallel_time": 0.0784155018968374,
+          "efficiency_gain": 5.535727102245681,
+          "parallelization_successful": true
+        },
+        "security": {
+          "parallel_agents": 8,
+          "agent_execution_times": [
+            0.024345663047926524,
+            0.061189284147158685,
+            0.04857841732888235,
+            0.0771036438699451,
+            0.0699740001174462,
+            0.035678369844603,
+            0.024495239769003342,
+            0.06541586168126458
+          ],
+          "total_parallel_time": 0.0771036438699451,
+          "efficiency_gain": 5.27576207023845,
+          "parallelization_successful": true
+        }
+      },
+      "performance_metrics": {
+        "all": {
+          "execution_time": 15.68996587296715,
+          "expected_time": 150,
+          "execution_successful": true,
+          "efficiency_score": 1.0
+        },
+        "quality": {
+          "execution_time": 15.063024720991962,
+          "expected_time": 150,
+          "execution_successful": true,
+          "efficiency_score": 1.0
+        },
+        "testing": {
+          "execution_time": 16.10092757898383,
+          "expected_time": 150,
+          "execution_successful": true,
+          "efficiency_score": 1.0
+        },
+        "security": {
+          "execution_time": 16.31697449804051,
+          "expected_time": 150,
+          "execution_successful": true,
+          "efficiency_score": 1.0
+        }
+      },
+      "success_rate": 1.0,
+      "meets_expectations": true
+    },
+    "/workflows/feature_workflow_10x": {
+      "command": "/workflows/feature_workflow_10x",
+      "modes_tested": [
+        "complete",
+        "quick"
+      ],
+      "mcp_integration": {
+        "complete": {
+          "servers_coordinated": [
+            "agentic-workflow",
+            "ml-code-intelligence",
+            "ml-testing-qa"
+          ],
+          "coordination_successful": true,
+          "avg_coordination_time": 0.047345739487568615,
+          "server_details": {
+            "agentic-workflow": {
+              "available": true,
+              "response_time": 0.03292546260650859,
+              "successful": true
+            },
+            "ml-code-intelligence": {
+              "available": true,
+              "response_time": 0.04477931860578885,
+              "successful": true
+            },
+            "ml-testing-qa": {
+              "available": true,
+              "response_time": 0.06433243725040842,
+              "successful": true
+            }
+          }
+        },
+        "quick": {
+          "servers_coordinated": [
+            "agentic-workflow",
+            "ml-code-intelligence",
+            "ml-testing-qa"
+          ],
+          "coordination_successful": true,
+          "avg_coordination_time": 0.04813189439347612,
+          "server_details": {
+            "agentic-workflow": {
+              "available": true,
+              "response_time": 0.03462664650354217,
+              "successful": true
+            },
+            "ml-code-intelligence": {
+              "available": true,
+              "response_time": 0.04091614027728299,
+              "successful": true
+            },
+            "ml-testing-qa": {
+              "available": true,
+              "response_time": 0.06885289639960321,
+              "successful": true
+            }
+          }
+        }
+      },
+      "parallel_execution": {
+        "complete": {
+          "parallel_agents": 6,
+          "agent_execution_times": [
+            0.06139087369667884,
+            0.05939358564825868,
+            0.0768570114011985,
+            0.0793120040894543,
+            0.07479362354530059,
+            0.07366726416278782
+          ],
+          "total_parallel_time": 0.0793120040894543,
+          "efficiency_gain": 5.363808006463473,
+          "parallelization_successful": true
+        },
+        "quick": {
+          "parallel_agents": 6,
+          "agent_execution_times": [
+            0.06932596864879279,
+            0.0482884885143431,
+            0.03232830353481806,
+            0.06846466932360605,
+            0.06654484394535519,
+            0.030171010078602144
+          ],
+          "total_parallel_time": 0.06932596864879279,
+          "efficiency_gain": 4.545530198675483,
+          "parallelization_successful": true
+        }
+      },
+      "performance_metrics": {
+        "complete": {
+          "execution_time": 26.598983592994045,
+          "expected_time": 240,
+          "execution_successful": true,
+          "efficiency_score": 1.0
+        },
+        "quick": {
+          "execution_time": 26.804993241035845,
+          "expected_time": 240,
+          "execution_successful": true,
+          "efficiency_score": 1.0
+        }
+      },
+      "success_rate": 1.0,
+      "meets_expectations": true
+    }
+  },
+  "foundation_commands": {
+    "/intelligence:gather_insights_10x": {
+      "command": "/intelligence:gather_insights_10x",
+      "mcp_integration": {
+        "servers_coordinated": [
+          "10x-knowledge-graph",
+          "context-aware-memory"
+        ],
+        "coordination_successful": true,
+        "avg_coordination_time": 0.04144150807493294,
+        "server_details": {
+          "10x-knowledge-graph": {
+            "available": true,
+            "response_time": 0.05027348539637592,
+            "successful": true
+          },
+          "context-aware-memory": {
+            "available": true,
+            "response_time": 0.03260953075348995,
+            "successful": true
+          }
+        }
+      },
+      "special_features": {},
+      "execution_time": 5.956965557998046,
+      "expected_time": 60,
+      "successful": true,
+      "efficiency_score": 1.0
+    },
+    "/intelligence:cached_websearch_10x": {
+      "command": "/intelligence:cached_websearch_10x",
+      "mcp_integration": {
+        "servers_coordinated": [
+          "context-aware-memory"
+        ],
+        "coordination_successful": true,
+        "avg_coordination_time": 0.03544275635311533,
+        "server_details": {
+          "context-aware-memory": {
+            "available": true,
+            "response_time": 0.03544275635311533,
+            "successful": true
+          }
+        }
+      },
+      "special_features": {
+        "caching": {
+          "cache_hit_rate": 0.7,
+          "cache_performance": true
+        }
+      },
+      "execution_time": 2.919990781985689,
+      "expected_time": 30,
+      "successful": true,
+      "efficiency_score": 1.0
+    },
+    "/smart_research_and_document_10x": {
+      "command": "/smart_research_and_document_10x",
+      "mcp_integration": {
+        "servers_coordinated": [
+          "10x-knowledge-graph",
+          "ml-code-intelligence",
+          "context-aware-memory"
+        ],
+        "coordination_successful": true,
+        "avg_coordination_time": 0.0407722525830382,
+        "server_details": {
+          "10x-knowledge-graph": {
+            "available": true,
+            "response_time": 0.04918018639686946,
+            "successful": true
+          },
+          "ml-code-intelligence": {
+            "available": true,
+            "response_time": 0.04123470639268417,
+            "successful": true
+          },
+          "context-aware-memory": {
+            "available": true,
+            "response_time": 0.03190186495956097,
+            "successful": true
+          }
+        }
+      },
+      "special_features": {},
+      "execution_time": 8.709018786030356,
+      "expected_time": 90,
+      "successful": true,
+      "efficiency_score": 1.0
+    }
+  },
+  "specialized_commands": {
+    "/qa:debug_smart_10x": {
+      "command": "/qa:debug_smart_10x",
+      "mcp_integration": {
+        "servers_coordinated": [
+          "ml-code-intelligence",
+          "predictive-analytics"
+        ],
+        "coordination_successful": true,
+        "avg_coordination_time": 0.07018562219553748,
+        "server_details": {
+          "ml-code-intelligence": {
+            "available": true,
+            "response_time": 0.04769730848863186,
+            "successful": true
+          },
+          "predictive-analytics": {
+            "available": true,
+            "response_time": 0.0926739359024431,
+            "successful": true
+          }
+        }
+      },
+      "ml_features": {
+        "pattern_matching": {
+          "ml_analysis": true,
+          "pattern_accuracy": 0.92,
+          "learning_capability": true
+        }
+      },
+      "execution_time": 4.4538823380135,
+      "expected_time": 45,
+      "successful": true,
+      "efficiency_score": 1.0
+    },
+    "/ml_powered_development_10x": {
+      "command": "/ml_powered_development_10x",
+      "mcp_integration": {
+        "servers_coordinated": [
+          "ml-code-intelligence",
+          "predictive-analytics",
+          "ml-testing-qa",
+          "agentic-workflow",
+          "10x-knowledge-graph"
+        ],
+        "coordination_successful": true,
+        "avg_coordination_time": 0.06065944537957413,
+        "server_details": {
+          "ml-code-intelligence": {
+            "available": true,
+            "response_time": 0.04920456677036677,
+            "successful": true
+          },
+          "predictive-analytics": {
+            "available": true,
+            "response_time": 0.09458290947308112,
+            "successful": true
+          },
+          "ml-testing-qa": {
+            "available": true,
+            "response_time": 0.06890596434732564,
+            "successful": true
+          },
+          "agentic-workflow": {
+            "available": true,
+            "response_time": 0.04235276979199529,
+            "successful": true
+          },
+          "10x-knowledge-graph": {
+            "available": true,
+            "response_time": 0.048251016515101754,
+            "successful": true
+          }
+        }
+      },
+      "ml_features": {},
+      "execution_time": 16.950004363025073,
+      "expected_time": 180,
+      "successful": true,
+      "efficiency_score": 1.0
+    }
+  },
+  "workflow_efficiency": {
+    "morning_intelligence_briefing": {
+      "workflow": "morning_intelligence_briefing",
+      "commands": [
+        "/analyze_10x --mode deep"
+      ],
+      "parallel_streams": 3,
+      "expected_speedup": 7,
+      "actual_speedup": 2.5652902117951726,
+      "execution_time": 0.18458603200269863,
+      "meets_speedup_target": false,
+      "efficiency_score": 0.36647003025645325
+    },
+    "feature_development": {
+      "workflow": "feature_development",
+      "commands": [
+        "/implement_10x --feature 'test-feature' --full"
+      ],
+      "parallel_streams": 9,
+      "expected_speedup": 9,
+      "actual_speedup": 6.560583702115773,
+      "execution_time": 0.49957875901600346,
+      "meets_speedup_target": false,
+      "efficiency_score": 0.7289537446795303
+    },
+    "quality_assurance": {
+      "workflow": "quality_assurance",
+      "commands": [
+        "/qa:comprehensive_10x --all"
+      ],
+      "parallel_streams": 8,
+      "expected_speedup": 7,
+      "actual_speedup": 5.275944773911785,
+      "execution_time": 0.34168779698666185,
+      "meets_speedup_target": false,
+      "efficiency_score": 0.7537063962731122
+    },
+    "complete_workflow": {
+      "workflow": "complete_workflow",
+      "commands": [
+        "/workflows/feature_workflow_10x 'test-feature' --complete"
+      ],
+      "parallel_streams": 6,
+      "expected_speedup": 4.5,
+      "actual_speedup": 4.523756353699672,
+      "execution_time": 0.34221911802887917,
+      "meets_speedup_target": true,
+      "efficiency_score": 1.0
+    }
+  },
+  "integration_health": {
+    "health_checks": {
+      "mcp_server_availability": {
+        "available_servers": 7,
+        "total_servers": 7,
+        "availability_rate": 1.0,
+        "score": 1.0,
+        "status": "EXCELLENT"
+      },
+      "command_responsiveness": {
+        "avg_response_time": 0.06836643628892333,
+        "response_times": [
+          0.09803512996597694,
+          0.09656038521320512,
+          0.037069461424853206,
+          0.06572139146204928,
+          0.06739166816432088,
+          0.04866348201743238,
+          0.07278211332915102,
+          0.08630143466150196,
+          0.03813403622736084,
+          0.07300526042338168
+        ],
+        "target_response_time": 0.1,
+        "meets_target": true,
+        "score": 1.0,
+        "status": "ACCEPTABLE"
+      },
+      "parallel_execution_capability": {
+        "sequential_time": 0.2874103088405563,
+        "parallel_time": 0.07644365506861306,
+        "speedup_achieved": 3.7597667011420004,
+        "target_speedup": 4.0,
+        "parallel_efficiency": 0.7519533402284001,
+        "score": 0.9399416752855001,
+        "status": "GOOD"
+      },
+      "error_handling": {
+        "total_error_scenarios": 10,
+        "successfully_handled": 9,
+        "error_handling_rate": 0.9,
+        "recovery_time": 2.3,
+        "score": 0.9,
+        "status": "ROBUST"
+      },
+      "monitoring_integration": {
+        "dashboard_available": true,
+        "databases_active": true,
+        "real_time_monitoring": true,
+        "hooks_integration": true,
+        "score": 1.0,
+        "status": "FULLY_INTEGRATED"
+      }
+    },
+    "overall_health_score": 0.9679883350571,
+    "integration_status": "HEALTHY",
+    "recommendations": [
+      "System is performing well - continue monitoring and optimization"
+    ]
+  }
+}

@@ -6,10 +6,17 @@
         "hooks": [
           {
             "type": "command",
-            "command": "uv run .claude/hooks/security/security_validator.py",
-            "description": "Security validation for all tool calls",
-            "timeout": 10000,
+            "command": "python3 .claude/hooks/security_validation_hook.py",
+            "description": "Comprehensive security validation (path, content, command)",
+            "timeout": 15000,
             "continueOnError": false
+          },
+          {
+            "type": "command",
+            "command": "python3 .claude/hooks/performance_monitoring_hook.py",
+            "description": "Performance monitoring and optimization",
+            "timeout": 10000,
+            "continueOnError": true
           },
           {
             "type": "command", 
@@ -66,8 +73,34 @@
     ],
     "PostToolUse": [
       {
+        "matcher": "(mcp__.*|Task).*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .claude/hooks/parallel/aggregate_results.py",
+            "description": "Aggregate parallel MCP results",
+            "timeout": 30000,
+            "continueOnError": true
+          }
+        ]
+      },
+      {
         "matcher": ".*",
         "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .claude/hooks/security_validation_hook.py",
+            "description": "Security analysis and audit logging",
+            "timeout": 10000,
+            "continueOnError": true
+          },
+          {
+            "type": "command",
+            "command": "python3 .claude/hooks/performance_monitoring_hook.py",
+            "description": "Performance analysis and optimization triggers",
+            "timeout": 8000,
+            "continueOnError": true
+          },
           {
             "type": "command",
             "command": "uv run .claude/hooks/observability/dashboard_updater.py",
@@ -122,6 +155,18 @@
       }
     ],
     "UserPromptSubmit": [
+      {
+        "matcher": ".*(analyze_10x|implement_10x|qa:comprehensive_10x).*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .claude/hooks/parallel/orchestrate.py",
+            "description": "Parallel MCP orchestration for unified commands",
+            "timeout": 60000,
+            "continueOnError": true
+          }
+        ]
+      },
       {
         "matcher": ".*",
         "hooks": [

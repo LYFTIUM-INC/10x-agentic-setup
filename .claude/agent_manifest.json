@@ -1,0 +1,516 @@
+{
+  "manifest_version": "1.0.0",
+  "generated_at": "2025-08-06T15:26:15.931430",
+  "total_agents": 20,
+  "agents": {
+    "10x-resource-intelligence-manager": {
+      "name": "10x-resource-intelligence-manager",
+      "description": "Resource optimization specialist using performance monitoring and intelligent allocation patterns to achieve 85% utilization with dynamic resource management",
+      "domain": "10x-resource-intelligence",
+      "tools": [
+        "Edit",
+        "MultiEdit",
+        "Read",
+        "Write",
+        "Bash",
+        "WebSearch",
+        "WebFetch",
+        "TodoWrite",
+        "Grep",
+        "Glob",
+        "LS"
+      ],
+      "integration_mcps": [
+        "performance-monitoring",
+        "resource-optimization",
+        "predictive-analytics",
+        "ml-code-intelligence"
+      ],
+      "performance_profile": "high-efficiency",
+      "security_level": "read-write",
+      "file_path": "/home/dell/coding/bash/10x-agentic-setup/.claude/agents/10x-resource-intelligence-manager.md"
+    },
+    "10x-enterprise-coordination-director": {
+      "name": "10x-enterprise-coordination-director",
+      "description": "Enterprise Coordination Director specializing in enterprise-grade coordination with comprehensive monitoring, security, compliance, audit frameworks, and dashboard integration",
+      "domain": "10x-enterprise-coordination",
+      "tools": "Read, Grep, Glob, Bash, Task, LS, TodoWrite, Edit, MultiEdit",
+      "integration_mcps": [
+        "agentic-workflow",
+        "ml-code-intelligence",
+        "predictive-analytics",
+        "context-aware-memory",
+        "ml-testing-qa",
+        "knowledge-graph",
+        "command-analytics"
+      ],
+      "performance_profile": "enterprise-high-availability, multi-tier-coordination, security-enhanced",
+      "security_level": "enterprise-admin-full-coordination",
+      "file_path": "/home/dell/coding/bash/10x-agentic-setup/.claude/agents/10x-enterprise-coordination-director.md"
+    },
+    "10x-code-architecture-specialist": {
+      "name": "10x-code-architecture-specialist",
+      "description": "System architecture specialist leveraging 10X Agentic Setup's proven coordination and MCP integration patterns for advanced code architecture analysis and optimization",
+      "domain": "10x-code-architecture",
+      "tools": [
+        "Read",
+        "Grep",
+        "Glob",
+        "Bash",
+        "Task",
+        "LS",
+        "MultiEdit",
+        "Edit"
+      ],
+      "integration_mcps": [
+        "ml-code-intelligence",
+        "agentic-workflow",
+        "10x-knowledge-graph",
+        "predictive-analytics"
+      ],
+      "performance_profile": "0.020s-execution, 95%-integration-success, 5-10x-performance-gains",
+      "security_level": "read-write-execute-validated",
+      "file_path": "/home/dell/coding/bash/10x-agentic-setup/.claude/agents/10x-code-architecture-specialist.md"
+    },
+    "research-domain-specialist": {
+      "name": "research-domain-specialist",
+      "description": "Adaptive research specialist that dynamically configures for specific domains while leveraging comprehensive research infrastructure and existing knowledge assets",
+      "domain": "adaptive-domain-research",
+      "tools": [
+        "WebSearch",
+        "WebFetch",
+        "Read",
+        "Grep",
+        "Glob",
+        "Task",
+        "LS",
+        "MultiEdit",
+        "Edit"
+      ],
+      "integration_mcps": [
+        "chroma-rag",
+        "websearch",
+        "competitive-intelligence",
+        "pattern-analysis",
+        "context-aware-memory",
+        "10x-knowledge-graph"
+      ],
+      "performance_profile": "domain-adaptive, specialized-methodology, knowledge-targeting, creative-exploration",
+      "security_level": "read-write-validated",
+      "file_path": "/home/dell/coding/bash/10x-agentic-setup/.claude/agents/research-domain-specialist.md"
+    },
+    "10x-predictive-performance-oracle": {
+      "name": "10x-predictive-performance-oracle",
+      "description": "ML-powered performance forecasting specialist with bottleneck prediction and resource planning capabilities",
+      "domain": "10x-predictive-performance",
+      "tools": [
+        "WebSearch",
+        "WebFetch",
+        "Read",
+        "Grep",
+        "Glob",
+        "Task",
+        "LS",
+        "MultiEdit",
+        "Edit"
+      ],
+      "integration_mcps": [
+        "predictive-analytics",
+        "ml-code-intelligence",
+        "context-aware-memory",
+        "10x-command-analytics"
+      ],
+      "performance_profile": "ml-powered-forecasting, bottleneck-prediction, resource-planning",
+      "security_level": "read-write-validated",
+      "file_path": "/home/dell/coding/bash/10x-agentic-setup/.claude/agents/10x-predictive-performance-oracle.md"
+    },
+    "10x-security-intelligence-auditor": {
+      "name": "10x-security-intelligence-auditor",
+      "description": "Advanced Security Intelligence Auditor leveraging 87.5% validation success patterns, multi-layer protection strategies, and enterprise-grade threat detection frameworks",
+      "domain": "10x-security-intelligence",
+      "tools": "Read, Grep, Glob, Task, WebSearch, WebFetch",
+      "integration_mcps": [
+        "ml-code-intelligence",
+        "predictive-analytics",
+        "agentic-workflow",
+        "context-aware-memory",
+        "10x-knowledge-graph"
+      ],
+      "performance_profile": "optimized-security, minimal-overhead",
+      "security_level": "enterprise-grade-secure",
+      "file_path": "/home/dell/coding/bash/10x-agentic-setup/.claude/agents/10x-security-intelligence-auditor.md"
+    },
+    "mcp-orchestration-master": {
+      "name": "mcp-orchestration-master",
+      "description": "Enterprise MCP Orchestration Master specializing in 7-server coordination, parallel execution, and comprehensive MCP ecosystem management",
+      "domain": "10x-mcp-orchestration",
+      "tools": "Read, Grep, Glob, Bash, Task, LS, TodoWrite, Edit, MultiEdit",
+      "integration_mcps": [
+        "agentic-workflow",
+        "ml-code-intelligence",
+        "predictive-analytics",
+        "context-aware-memory",
+        "ml-testing-qa",
+        "knowledge-graph",
+        "command-analytics"
+      ],
+      "performance_profile": "high-cpu, high-memory, enterprise-coordination",
+      "security_level": "enterprise-read-write-orchestrate",
+      "file_path": "/home/dell/coding/bash/10x-agentic-setup/.claude/agents/mcp-orchestration-master.md"
+    },
+    "10x-intelligence-coordination-hub": {
+      "name": "10x-intelligence-coordination-hub",
+      "description": "Central intelligence coordination and information flow management across all knowledge assets and research capabilities",
+      "domain": "10x-intelligence-coordination",
+      "tools": [
+        "WebSearch",
+        "WebFetch",
+        "Read",
+        "Grep",
+        "Glob",
+        "Task",
+        "LS",
+        "MultiEdit",
+        "Edit"
+      ],
+      "integration_mcps": [
+        "chroma-rag",
+        "websearch",
+        "context-aware-memory",
+        "10x-knowledge-graph",
+        "10x-command-analytics",
+        "predictive-analytics",
+        "ml-code-intelligence"
+      ],
+      "performance_profile": "multi-source-coordination, intelligent-aggregation, comprehensive-mcp-integration",
+      "security_level": "read-write-validated",
+      "file_path": "/home/dell/coding/bash/10x-agentic-setup/.claude/agents/10x-intelligence-coordination-hub.md"
+    },
+    "agent-orchestrator": {
+      "name": "agent-orchestrator",
+      "description": "Master orchestrator for coordinating all sub-agents and managing complex multi-agent workflows",
+      "domain": "agent-coordination",
+      "tools": "Read, Grep, Glob, Bash, Task, LS, TodoWrite",
+      "integration_mcps": [
+        "agentic-workflow",
+        "ml-code-intelligence",
+        "predictive-analytics",
+        "context-aware-memory"
+      ],
+      "performance_profile": "moderate-cpu, high-memory",
+      "security_level": "read-write-coordinate",
+      "file_path": "/home/dell/coding/bash/10x-agentic-setup/.claude/agents/agent-orchestrator.md"
+    },
+    "security-auditor": {
+      "name": "security-auditor",
+      "description": "Comprehensive security specialist for 10X Agentic Setup with expertise in threat detection, vulnerability assessment, and security architecture",
+      "domain": "security-analysis",
+      "tools": "Read, Grep, Glob, Task",
+      "integration_mcps": [
+        "ml-code-intelligence",
+        "agentic-workflow",
+        "predictive-analytics"
+      ],
+      "performance_profile": "moderate-cpu, moderate-memory",
+      "security_level": "read-only-secure",
+      "file_path": "/home/dell/coding/bash/10x-agentic-setup/.claude/agents/security-auditor.md"
+    },
+    "10x-workflow-acceleration-engine": {
+      "name": "10x-workflow-acceleration-engine",
+      "description": "Workflow optimization specialist using proven coordination patterns, SubagentStop hooks, MCP orchestration efficiency, and parallel execution frameworks to achieve 0.020s coordination efficiency and 5-10x performance gains",
+      "domain": "10x-workflow-acceleration",
+      "tools": [
+        "Edit",
+        "MultiEdit",
+        "Read",
+        "Write",
+        "Bash",
+        "Grep",
+        "Glob",
+        "LS",
+        "TodoWrite",
+        "WebSearch",
+        "WebFetch"
+      ],
+      "integration_mcps": [
+        "agentic-workflow",
+        "predictive-analytics",
+        "performance-monitoring",
+        "ml-code-intelligence",
+        "context-aware-memory"
+      ],
+      "performance_profile": "ultra-high-performance",
+      "security_level": "read-write-coordinate",
+      "file_path": "/home/dell/coding/bash/10x-agentic-setup/.claude/agents/10x-workflow-acceleration-engine.md"
+    },
+    "10x-competitive-intelligence-researcher": {
+      "name": "10x-competitive-intelligence-researcher",
+      "description": "Advanced competitive intelligence researcher leveraging proven market research frameworks, competitive analysis assets, and intelligent caching patterns",
+      "domain": "10x-competitive-intelligence",
+      "tools": [
+        "WebSearch",
+        "WebFetch",
+        "Read",
+        "Grep",
+        "Glob",
+        "Task",
+        "LS",
+        "MultiEdit",
+        "Edit"
+      ],
+      "integration_mcps": [
+        "websearch",
+        "fetch",
+        "chroma-rag",
+        "pattern-analysis",
+        "competitive-intelligence",
+        "context-aware-memory"
+      ],
+      "performance_profile": "70%-cache-hit-rate, 3-5-concurrent-intelligence-streams, semantic-search-integration",
+      "security_level": "read-write-validated",
+      "file_path": "/home/dell/coding/bash/10x-agentic-setup/.claude/agents/10x-competitive-intelligence-researcher.md"
+    },
+    "10x-knowledge-synthesis-coordinator": {
+      "name": "10x-knowledge-synthesis-coordinator",
+      "description": "Advanced knowledge synthesis coordinator specializing in cross-domain knowledge integration using accumulated intelligence assets and vector database infrastructure",
+      "domain": "10x-knowledge-synthesis",
+      "tools": [
+        "WebSearch",
+        "WebFetch",
+        "Read",
+        "Grep",
+        "Glob",
+        "Task",
+        "LS",
+        "MultiEdit",
+        "Edit"
+      ],
+      "integration_mcps": [
+        "10x-knowledge-graph",
+        "chroma-rag",
+        "context-aware-memory",
+        "10x-command-analytics"
+      ],
+      "performance_profile": "cross-domain-synthesis, vector-integration, semantic-search-coordination",
+      "security_level": "read-write-validated",
+      "file_path": "/home/dell/coding/bash/10x-agentic-setup/.claude/agents/10x-knowledge-synthesis-coordinator.md"
+    },
+    "10x-test-command-validation-specialist": {
+      "name": "10x-test-command-validation-specialist",
+      "description": "Advanced specialist agent for comprehensive command testing and validation within the 10X Agentic Setup ecosystem",
+      "domain": "test-command-validation",
+      "tools": [
+        "Bash",
+        "Read",
+        "Write",
+        "Edit",
+        "MultiEdit",
+        "Grep",
+        "Glob",
+        "LS"
+      ],
+      "integration_mcps": [
+        "ml-testing-qa",
+        "agentic-workflow",
+        "ml-code-intelligence",
+        "predictive-analytics",
+        "context-aware-memory"
+      ],
+      "performance_profile": "Medium computational load with burst capabilities for comprehensive validation testing",
+      "security_level": "High - Full access to security validation systems and test execution environments",
+      "file_path": "/home/dell/coding/bash/10x-agentic-setup/.claude/agents/10x-test-command-validation-specialist.md"
+    },
+    "10x-technical-pattern-discovery": {
+      "name": "10x-technical-pattern-discovery",
+      "description": "Advanced technical pattern discovery agent leveraging ML code intelligence, knowledge graph integration, and proven optimization patterns",
+      "domain": "10x-technical-pattern-discovery",
+      "tools": [
+        "WebSearch",
+        "WebFetch",
+        "Read",
+        "Grep",
+        "Glob",
+        "Task",
+        "LS",
+        "MultiEdit",
+        "Edit"
+      ],
+      "integration_mcps": [
+        "ml-code-intelligence",
+        "10x-knowledge-graph",
+        "chroma-rag",
+        "context-aware-memory",
+        "predictive-analytics"
+      ],
+      "performance_profile": "pattern-mining, technical-trend-analysis, optimization-discovery",
+      "security_level": "read-write-validated",
+      "file_path": "/home/dell/coding/bash/10x-agentic-setup/.claude/agents/10x-technical-pattern-discovery.md"
+    },
+    "10x-performance-intelligence-specialist": {
+      "name": "10x-performance-intelligence-specialist",
+      "description": "Performance optimization specialist leveraging 57+ metrics, 24 velocity predictions, and proven 5-10x optimization patterns for comprehensive performance intelligence",
+      "domain": "10x-performance-intelligence",
+      "tools": [
+        "Edit",
+        "MultiEdit",
+        "Read",
+        "Write",
+        "Bash",
+        "WebSearch",
+        "WebFetch",
+        "TodoWrite",
+        "Glob",
+        "Grep",
+        "LS",
+        "Task"
+      ],
+      "integration_mcps": [
+        "predictive-analytics",
+        "ml-code-intelligence",
+        "agentic-workflow",
+        "context-aware-memory",
+        "10x-knowledge-graph"
+      ],
+      "performance_profile": "high-performance",
+      "security_level": "read-write",
+      "file_path": "/home/dell/coding/bash/10x-agentic-setup/.claude/agents/10x-performance-intelligence-specialist.md"
+    },
+    "project-architect": {
+      "name": "project-architect",
+      "description": "Master system architect specializing in 10X Agentic Setup project design, analysis, and optimization",
+      "domain": "system-architecture",
+      "tools": "Read, Grep, Glob, Bash, Task, LS",
+      "integration_mcps": [
+        "ml-code-intelligence",
+        "agentic-workflow",
+        "10x-knowledge-graph"
+      ],
+      "performance_profile": "high-cpu, moderate-memory",
+      "security_level": "read-write-execute",
+      "file_path": "/home/dell/coding/bash/10x-agentic-setup/.claude/agents/project-architect.md"
+    },
+    "performance-engineer": {
+      "name": "performance-engineer",
+      "description": "Performance optimization specialist for 10X Agentic Setup with expertise in bottleneck detection and system optimization",
+      "domain": "performance-optimization",
+      "tools": "Read, Grep, Glob, Bash, Task",
+      "integration_mcps": [
+        "predictive-analytics",
+        "ml-code-intelligence",
+        "context-aware-memory"
+      ],
+      "performance_profile": "moderate-cpu, high-memory",
+      "security_level": "read-execute",
+      "file_path": "/home/dell/coding/bash/10x-agentic-setup/.claude/agents/performance-engineer.md"
+    },
+    "10x-strategic-research-orchestrator": {
+      "name": "10x-strategic-research-orchestrator",
+      "description": "Ultimate strategic research orchestrator leveraging comprehensive research infrastructure, 40+ knowledge assets, and sophisticated caching for world-class iterative research",
+      "domain": "strategic-research-intelligence",
+      "tools": [
+        "WebSearch",
+        "WebFetch",
+        "Read",
+        "Grep",
+        "Glob",
+        "Task",
+        "LS",
+        "MultiEdit",
+        "Edit"
+      ],
+      "integration_mcps": [
+        "chroma-rag",
+        "websearch",
+        "competitive-intelligence",
+        "pattern-analysis",
+        "context-aware-memory",
+        "10x-knowledge-graph",
+        "10x-command-analytics"
+      ],
+      "performance_profile": "85%-cache-hit-rate, multi-phase-methodology, creative-search-diversification, cross-domain-synthesis",
+      "security_level": "read-write-validated",
+      "file_path": "/home/dell/coding/bash/10x-agentic-setup/.claude/agents/10x-strategic-research-orchestrator.md"
+    },
+    "10x-innovation-intelligence-analyst": {
+      "name": "10x-innovation-intelligence-analyst",
+      "description": "Market and competitive intelligence specialist using accumulated research assets with 70% cache hit rates and intelligent research patterns for strategic innovation decisions",
+      "domain": "10x-innovation-intelligence",
+      "tools": [
+        "WebSearch",
+        "WebFetch",
+        "Read",
+        "Grep",
+        "Glob",
+        "Task",
+        "LS",
+        "MultiEdit",
+        "Edit"
+      ],
+      "integration_mcps": [
+        "chroma-rag",
+        "websearch",
+        "competitive-intelligence",
+        "pattern-analysis",
+        "context-aware-memory",
+        "10x-knowledge-graph"
+      ],
+      "performance_profile": "70%-cache-hit-rate, 5-10x-research-efficiency, parallel-intelligence-gathering",
+      "security_level": "read-write-validated",
+      "file_path": "/home/dell/coding/bash/10x-agentic-setup/.claude/agents/10x-innovation-intelligence-analyst.md"
+    }
+  },
+  "domains": [
+    "system-architecture",
+    "10x-knowledge-synthesis",
+    "security-analysis",
+    "10x-competitive-intelligence",
+    "adaptive-domain-research",
+    "10x-innovation-intelligence",
+    "test-command-validation",
+    "10x-workflow-acceleration",
+    "10x-predictive-performance",
+    "10x-technical-pattern-discovery",
+    "10x-enterprise-coordination",
+    "strategic-research-intelligence",
+    "10x-security-intelligence",
+    "10x-mcp-orchestration",
+    "10x-performance-intelligence",
+    "10x-code-architecture",
+    "10x-resource-intelligence",
+    "10x-intelligence-coordination",
+    "performance-optimization",
+    "agent-coordination"
+  ],
+  "available_tools": [
+    "Glob",
+    "LS",
+    "Write",
+    "Read",
+    "Grep",
+    "WebSearch",
+    "Bash",
+    "Task",
+    "Edit",
+    "MultiEdit",
+    "TodoWrite",
+    "WebFetch"
+  ],
+  "integrated_mcps": [
+    "ml-code-intelligence",
+    "predictive-analytics",
+    "command-analytics",
+    "10x-knowledge-graph",
+    "websearch",
+    "fetch",
+    "chroma-rag",
+    "10x-command-analytics",
+    "ml-testing-qa",
+    "resource-optimization",
+    "performance-monitoring",
+    "knowledge-graph",
+    "pattern-analysis",
+    "competitive-intelligence",
+    "agentic-workflow",
+    "context-aware-memory"
+  ]
+}

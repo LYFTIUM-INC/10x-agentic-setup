@@ -1,0 +1,10 @@
+{
+  "server_name": "ml-code-intelligence",
+  "version": "1.0.0",
+  "features": [
+    "semantic search",
+    "code quality metrics",
+    "pattern detection"
+  ],
+  "status": "mock"
+}

@@ -1,0 +1,3 @@
+# Core dependencies for Smart Command Orchestrator
+# No external dependencies - uses only Python standard library
+EOF < /dev/null
