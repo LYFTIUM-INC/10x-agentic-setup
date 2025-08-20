@@ -2,38 +2,61 @@
 
 Enterprise-grade AI agent orchestration system with persistent memory, research capabilities, and advanced MCP integrations for accelerated development workflows.
 
-## 📋 Quick Installation
+## ⚡ One-Line Installation
+
+### 🚀 First-Time Setup (Copy & Paste)
+
+```bash
+# Complete setup: clone, configure, install agents & MCP servers
+curl -sSL https://raw.githubusercontent.com/LYFTIUM-INC/10x-agentic-setup/master/10x-agentic-setup.sh | bash -s -- --full-install
+```
+
+### 🔄 Quick Re-run (After First Install)
+
+```bash
+# Run from any directory (if you have the alias)
+10x
+
+# Or run directly
+~/10x-agentic-setup/10x-agentic-setup.sh
+```
+
+### 📋 Manual Installation (Step-by-Step)
+
+```bash
+# 1. Clone and setup
+git clone https://github.com/LYFTIUM-INC/10x-agentic-setup.git
+cd 10x-agentic-setup && chmod +x 10x-agentic-setup.sh
+
+# 2. Run complete installation
+./10x-agentic-setup.sh
+
+# 3. Copy configuration files
+cp -r .claude/* ~/.claude/ 2>/dev/null || mkdir -p ~/.claude && cp -r .claude/* ~/.claude/
+
+# 4. Setup MCP servers
+cd mcp_servers && python start_mcp_servers.py
+```
+
+### 🎯 Create '10x' Alias (Recommended)
+
+```bash
+# Add to your shell profile (~/.bashrc, ~/.zshrc, etc.)
+echo 'alias 10x="~/10x-agentic-setup/10x-agentic-setup.sh"' >> ~/.bashrc && source ~/.bashrc
+
+# Or for zsh users
+echo 'alias 10x="~/10x-agentic-setup/10x-agentic-setup.sh"' >> ~/.zshrc && source ~/.zshrc
+
+# Test the alias
+10x --help
+```
 
 ### Prerequisites
 - Linux/macOS system
-- Python 3.8+ with pip
+- Python 3.8+ with pip  
 - Node.js 16+ with npm
 - Git configured
 - 8GB+ RAM recommended
-
-### Complete Setup (Recommended)
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/your-org/10x-agentic-setup.git
-cd 10x-agentic-setup
-
-# 2. Make setup script executable
-chmod +x 10x-agentic-setup.sh
-
-# 3. Run complete installation
-./10x-agentic-setup.sh
-
-# 4. Copy configuration files to your project
-cp .claude/claude.json ~/.claude/
-cp .claude/settings.json ~/.claude/
-cp -r .claude/agents ~/.claude/
-cp -r .claude/commands ~/.claude/
-cp -r .claude/hooks ~/.claude/
-
-# 5. Verify installation
-./verify_global_mcps.sh
-```
 
 ### Manual Installation Steps
 
@@ -153,7 +176,7 @@ for server in servers:
 /mcp-debug --check all
 ```
 
-For detailed MCP configuration instructions, see: [GitHub Repository MCP Setup Guide](https://github.com/your-org/10x-agentic-setup/blob/main/mcp_servers/README.md)
+For detailed MCP configuration instructions, see: [MCP Setup Guide](https://github.com/LYFTIUM-INC/10x-agentic-setup/blob/master/mcp_servers/README.md)
 
 ## 📁 Project Structure
 
@@ -365,6 +388,21 @@ Task: Use the agent-orchestrator to coordinate a complete project knowledge audi
 
 ---
 
-**Repository**: [GitHub - 10X Agentic Setup](https://github.com/your-org/10x-agentic-setup)
-**MCP Documentation**: [MCP Setup Guide](https://github.com/your-org/10x-agentic-setup/blob/main/mcp_servers/README.md)
-**Support**: Create issues on GitHub for bugs and feature requests
+## 🔗 Links & Support
+
+**📦 Repository**: [LYFTIUM-INC/10x-agentic-setup](https://github.com/LYFTIUM-INC/10x-agentic-setup)  
+**👤 Personal Fork**: [PreistlyPython/10x-agentic-setup](https://github.com/PreistlyPython/10x-agentic-setup)  
+**📚 MCP Documentation**: [MCP Setup Guide](https://github.com/LYFTIUM-INC/10x-agentic-setup/blob/master/mcp_servers/README.md)  
+**🐛 Support**: Create issues on [GitHub Issues](https://github.com/LYFTIUM-INC/10x-agentic-setup/issues)
+
+### Quick Commands Reference
+```bash
+# First-time install (one-liner)
+curl -sSL https://raw.githubusercontent.com/LYFTIUM-INC/10x-agentic-setup/master/10x-agentic-setup.sh | bash -s -- --full-install
+
+# Create alias for easy access
+echo 'alias 10x="~/10x-agentic-setup/10x-agentic-setup.sh"' >> ~/.bashrc && source ~/.bashrc
+
+# Run anytime
+10x
+```
