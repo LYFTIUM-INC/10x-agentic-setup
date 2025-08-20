@@ -17,8 +17,9 @@ curl -sSL https://raw.githubusercontent.com/LYFTIUM-INC/10x-agentic-setup/master
 # Run from any directory (if you have the alias)
 10x
 
-# Or run directly
-~/10x-agentic-setup/10x-agentic-setup.sh
+# Or run bash script directly in new directory
+bash /your/10x/project/location/10x-agentic-setup.sh
+
 ```
 
 ### 📋 Manual Installation (Step-by-Step)
